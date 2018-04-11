@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Mar 22 21:46:41 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : HELEN
+Top-level Entity Name : top
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 5,938 / 22,320 ( 27 % )
+    Total combinational functions : 5,235 / 22,320 ( 23 % )
+    Dedicated logic registers : 3,345 / 22,320 ( 15 % )
+Total registers : 3414
+Total pins : 64 / 154 ( 42 % )
+Total virtual pins : 0
+Total memory bits : 291,968 / 608,256 ( 48 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )
