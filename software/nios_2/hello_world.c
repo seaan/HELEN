@@ -85,70 +85,82 @@ float getTemperature (int tempData){
 	return 1 / (a_const + b_const * log(resistance / 10000) + d_const * log(resistance / 10000) * log(resistance / 10000) * log(resistance / 10000));
 }
 
+#include <stdio.h>
+#include "altera_avalon_spi.h"
+#include "altera_avalon_spi_regs.h"
+#include <alt_types.h>
+#include <system.h>
 #include <math.h>
 
 /* Global Variable Declaration */
 struct Pressure {
-	alt_u8 calibration_code[6] = { 0b10100010, 0b10100100, 0b10100110,
-			0b10101000, 0b10101010, 0b10101100 };
+	alt_u8 calibration_code[6];
 	alt_u16 calibration[6];
 
-	alt_u8 read_code[2] = {0x48, 0x58};
+	alt_u8 read_code[2];
 
 } p;
+
+alt_32 getPressure(void);
+void calibratePressure(void);
+alt_32 getPressure(void);
+
+/* Pressure Sensor Testing */
+int main(void) {
+	calibratePressure();
+
+	while(1){
+		fprintf(stderr, "%ld\n", getPressure());
+		usleep(10000000);
+	}
+	return 0;
+}
+
 /* Calibrate pressure from factory settings on the MS5611 */
 void calibratePressure(void) {
+	p.calibration_code[0] = 0b10100010;
+	p.calibration_code[0] = 0b10100100;
+	p.calibration_code[0] = 0b10100110;
+	p.calibration_code[0] = 0b10101000;
+	p.calibration_code[0] = 0b10101010;
+	p.calibration_code[0] = 0b10101100;
+
+	p.read_code[0] = 0x48;
+	p.read_code[1] = 0x58;
 	/* Calibrate values c1 through c6 */
 	for (int i = 0; i < 6; i++) {
 		alt_avalon_spi_command(SPI_0_BASE, 0,
 				1, &(p.calibration_code[i]), //write data, 1 byte
 				2, &(p.calibration[i]),		 //read data, 2 bytes
 				0);
+
 	}
 }
 
 /* Get Current Pressure value */
-int32_t getPressure(void) {
+alt_32 getPressure(void) {
 	/* Request and read current pressure value */
+	alt_u32 uncal_pressure = 0;
 	alt_avalon_spi_command(SPI_0_BASE, 0,
-			1, &(p.calibration_code[i]), //write data, 1 byte
-			2, &(p.calibration[i]),		 //read data, 2 bytes
+			1, &(p.read_code[0]), //write data, 1 byte
+			4, &(uncal_pressure), //read data, 2 bytes
 			0);
-	spi_select();
-	spi_write(0x48);
-	spi_deselect();
-	delay_ms(10);
 
-	/* Read current pressure value */
-	spi_select();
-	spi_write(0x00);
-	uint32_t uncal_pressure = ((uint32_t) spi_read()) << 16; //Typecast the 8 bit data to 32 bit, then move it 16 places to the left. Stores in temp variable.
-	uncal_pressure += ((uint32_t) spi_read()) << 8; //Assign data to data + the new data but in the lower 8 bits.
-	uncal_pressure += ((uint32_t) spi_read());
-	spi_deselect();
-
-	/* Request current temperature value */
-	spi_select();
-	spi_write(0x58); //Ask for temp value.
-	spi_deselect();
-	delay_ms(10);
-
-	/* Read current temperature value */
-	spi_select();
-	spi_write(0x00);
-	uint32_t d2 = ((uint32_t) spi_read()) << 16;
-	d2 += ((uint32_t) spi_read()) << 8;
-	d2 += ((uint32_t) spi_read());
-	spi_deselect();
+	/* Request and read current temperature value */
+	alt_u32 d2 = 0;
+		alt_avalon_spi_command(SPI_0_BASE, 0,
+				1, &(p.read_code[1]), //write data, 1 byte
+				4, &(d2), //read data, 2 bytes
+				0);
 
 	/* Calculate temperature-adjusted pressure */
-	int32_t dT = (int64_t) d2 - (((int64_t) cal_pres_c5) * (256));
-	int64_t offset = ((int64_t) cal_pres_c2) * (65536)
-			+ ((((int64_t) cal_pres_c4) * ((int64_t) dT)) / (128));
-	int64_t sens = (((int64_t) cal_pres_c1) * (32768))
-			+ ((((int64_t) cal_pres_c3) * ((int64_t) dT)) / 256);
-	float pressure = ((((int64_t) uncal_pressure)
-			* (((uint64_t) sens) / 2097152)) - (int64_t) offset) / 32768;
+	alt_32 dT = (alt_64) d2 - (((alt_64) p.calibration[4]) * (256));
+	alt_64 offset = ((alt_64) p.calibration[1]) * (65536)
+			+ ((((alt_64) p.calibration[3]) * ((alt_64) dT)) / (128));
+	alt_64 sens = (((alt_64) p.calibration[0]) * (32768))
+			+ ((((alt_64) p.calibration[2]) * ((alt_64) dT)) / 256);
+	alt_32 pressure = ((((alt_64) uncal_pressure)
+			* (((alt_u64) sens) / 2097152)) - (alt_64) offset) / 32768;
 
 	return pressure; //pressure given in pascals.
 }
