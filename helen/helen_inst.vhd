@@ -23,10 +23,6 @@
 			sdram_wire_dqm               : out   std_logic_vector(1 downto 0);                     -- dqm
 			sdram_wire_ras_n             : out   std_logic;                                        -- ras_n
 			sdram_wire_we_n              : out   std_logic;                                        -- we_n
-			spi_MISO                     : in    std_logic                     := 'X';             -- MISO
-			spi_MOSI                     : out   std_logic;                                        -- MOSI
-			spi_SCLK                     : out   std_logic;                                        -- SCLK
-			spi_SS_n                     : out   std_logic;                                        -- SS_n
 			uart_rxd                     : in    std_logic                     := 'X';             -- rxd
 			uart_txd                     : out   std_logic                                         -- txd
 		);
@@ -57,10 +53,6 @@
 			sdram_wire_dqm               => CONNECTED_TO_sdram_wire_dqm,               --                      .dqm
 			sdram_wire_ras_n             => CONNECTED_TO_sdram_wire_ras_n,             --                      .ras_n
 			sdram_wire_we_n              => CONNECTED_TO_sdram_wire_we_n,              --                      .we_n
-			spi_MISO                     => CONNECTED_TO_spi_MISO,                     --                   spi.MISO
-			spi_MOSI                     => CONNECTED_TO_spi_MOSI,                     --                      .MOSI
-			spi_SCLK                     => CONNECTED_TO_spi_SCLK,                     --                      .SCLK
-			spi_SS_n                     => CONNECTED_TO_spi_SS_n,                     --                      .SS_n
 			uart_rxd                     => CONNECTED_TO_uart_rxd,                     --                  uart.rxd
 			uart_txd                     => CONNECTED_TO_uart_txd                      --                      .txd
 		);

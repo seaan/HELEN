@@ -52,18 +52,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "spi_MOSI",
-					"strict" : false
-				},
-				{
-					"name" : "spi_SCLK",
-					"strict" : false
-				},
-				{
-					"name" : "spi_SS_n",
-					"strict" : false
-				},
-				{
 					"name" : "DRAM_ADDR[12]",
 					"strict" : false
 				},
@@ -237,10 +225,6 @@
 				},
 				{
 					"name" : "flash_data0",
-					"strict" : false
-				},
-				{
-					"name" : "spi_MISO",
 					"strict" : false
 				},
 				{

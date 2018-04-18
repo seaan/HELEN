@@ -22,10 +22,6 @@
 		.sdram_wire_dqm               (<connected-to-sdram_wire_dqm>),               //                      .dqm
 		.sdram_wire_ras_n             (<connected-to-sdram_wire_ras_n>),             //                      .ras_n
 		.sdram_wire_we_n              (<connected-to-sdram_wire_we_n>),              //                      .we_n
-		.spi_MISO                     (<connected-to-spi_MISO>),                     //                   spi.MISO
-		.spi_MOSI                     (<connected-to-spi_MOSI>),                     //                      .MOSI
-		.spi_SCLK                     (<connected-to-spi_SCLK>),                     //                      .SCLK
-		.spi_SS_n                     (<connected-to-spi_SS_n>),                     //                      .SS_n
 		.uart_rxd                     (<connected-to-uart_rxd>),                     //                  uart.rxd
 		.uart_txd                     (<connected-to-uart_txd>)                      //                      .txd
 	);

@@ -34,16 +34,7 @@ i_state.011 0 0 1 0 0 1
 i_state.101 0 1 0 0 0 1 
 i_state.111 1 0 0 0 0 1 
 
-State Machine - |top|helen:inst|helen_nios_2:nios_2|helen_nios_2_cpu:cpu|helen_nios_2_cpu_nios2_oci:the_helen_nios_2_cpu_nios2_oci|helen_nios_2_cpu_debug_slave_wrapper:the_helen_nios_2_cpu_debug_slave_wrapper|helen_nios_2_cpu_debug_slave_tck:the_helen_nios_2_cpu_debug_slave_tck|DRsize
-Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
-DRsize.000 0 0 0 0 0 0 
-DRsize.001 0 0 0 0 1 1 
-DRsize.010 0 0 0 1 0 1 
-DRsize.011 0 0 1 0 0 1 
-DRsize.100 0 1 0 0 0 1 
-DRsize.101 1 0 0 0 0 1 
-
-State Machine - |top|helen:inst|helen_nios_1:nios_1|helen_nios_1_cpu:cpu|helen_nios_1_cpu_nios2_oci:the_helen_nios_1_cpu_nios2_oci|helen_nios_1_cpu_debug_slave_wrapper:the_helen_nios_1_cpu_debug_slave_wrapper|helen_nios_1_cpu_debug_slave_tck:the_helen_nios_1_cpu_debug_slave_tck|DRsize
+State Machine - |top|helen:inst|helen_nios:nios|helen_nios_cpu:cpu|helen_nios_cpu_nios2_oci:the_helen_nios_cpu_nios2_oci|helen_nios_cpu_debug_slave_wrapper:the_helen_nios_cpu_debug_slave_wrapper|helen_nios_cpu_debug_slave_tck:the_helen_nios_cpu_debug_slave_tck|DRsize
 Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
 DRsize.000 0 0 0 0 0 0 
 DRsize.001 0 0 0 0 1 1 

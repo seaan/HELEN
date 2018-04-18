@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Apr 12 21:19:13 2018
+Analysis & Synthesis Status : Successful - Sun Feb 25 14:34:29 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : HELEN
 Top-level Entity Name : top
 Family : Cyclone IV E
-Total logic elements : 6,332
-    Total combinational functions : 5,218
-    Dedicated logic registers : 3,389
-Total registers : 3389
-Total pins : 64
+Total logic elements : 4,005
+    Total combinational functions : 3,172
+    Dedicated logic registers : 2,361
+Total registers : 2361
+Total pins : 60
 Total virtual pins : 0
-Total memory bits : 291,968
+Total memory bits : 281,728
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1

@@ -3,7 +3,7 @@
 <name>helen</name>
 <peripherals>
 <peripheral>
-      <name>helen_sysid_qsys_1_control_slave_altera_avalon_sysid</name><baseAddress>0x00000000</baseAddress> 
+      <name>helen_sysid_qsys_0_control_slave_altera_avalon_sysid</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>8</size>

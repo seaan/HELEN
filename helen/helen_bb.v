@@ -23,10 +23,6 @@ module helen (
 	sdram_wire_dqm,
 	sdram_wire_ras_n,
 	sdram_wire_we_n,
-	spi_MISO,
-	spi_MOSI,
-	spi_SCLK,
-	spi_SS_n,
 	uart_rxd,
 	uart_txd);	
 
@@ -53,10 +49,6 @@ module helen (
 	output	[1:0]	sdram_wire_dqm;
 	output		sdram_wire_ras_n;
 	output		sdram_wire_we_n;
-	input		spi_MISO;
-	output		spi_MOSI;
-	output		spi_SCLK;
-	output		spi_SS_n;
 	input		uart_rxd;
 	output		uart_txd;
 endmodule
