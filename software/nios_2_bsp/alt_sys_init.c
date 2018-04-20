@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios_2' in SOPC Builder design 'helen'
  * SOPC Builder design path: ../../helen.sopcinfo
  *
- * Generated: Thu Apr 12 21:22:59 CDT 2018
+ * Generated: Thu Apr 19 20:34:54 CDT 2018
  */
 
 /*
@@ -103,6 +103,6 @@ void alt_sys_init( void )
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_SPI_INIT ( SPI_0, spi_0);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID_QSYS_1, sysid_qsys_1);
-//  ALTERA_AVALON_UART_INIT ( UART, uart);
+//    ALTERA_AVALON_UART_INIT ( UART, uart);
     ALTERA_UP_AVALON_ADC_INIT ( ADC, adc);
 }

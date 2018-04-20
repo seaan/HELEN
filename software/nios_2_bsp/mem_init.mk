@@ -161,7 +161,7 @@ ACDS_VERSION := 17.1
 SIM_OPTIMIZE ?= 0
 
 # The CPU reset address as needed by elf2flash
-RESET_ADDRESS ?= 0x04000060
+RESET_ADDRESS ?= 0x00008000
 
 # The specific Nios II ELF file format to use.
 NIOS2_ELF_FORMAT ?= elf32-littlenios2
@@ -181,8 +181,8 @@ HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_0).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).sym
 FLASH_FILES += $(MEM_0).flash
-$(MEM_0)_START := 0x0c001000
-$(MEM_0)_END := 0x0c0017ff
+$(MEM_0)_START := 0x04011000
+$(MEM_0)_END := 0x040117ff
 $(MEM_0)_SPAN := 0x00000800
 $(MEM_0)_HIERARCHICAL_PATH := flash
 $(MEM_0)_WIDTH := 32
@@ -195,9 +195,9 @@ $(MEM_0)_NO_ZERO_FILL_FLAG := --no-zero-fill
 .PHONY: flash
 flash: check_elf_exists $(HDL_SIM_DIR)/$(MEM_0).hex $(HDL_SIM_DIR)/$(MEM_0).dat $(HDL_SIM_DIR)/$(MEM_0).sym $(MEM_0).flash
 
-# Memory: onchip
-MEM_1 := helen_onchip
-$(MEM_1)_NAME := onchip
+# Memory: onchip_2
+MEM_1 := helen_onchip_2
+$(MEM_1)_NAME := onchip_2
 $(MEM_1)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
 HEX_FILES += $(MEM_INIT_DIR)/$(MEM_1).hex
 MEM_INIT_INSTALL_FILES += $(MEM_INIT_INSTALL_DIR)/$(MEM_1).hex
@@ -205,17 +205,17 @@ DAT_FILES += $(HDL_SIM_DIR)/$(MEM_1).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_1).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).sym
-$(MEM_1)_START := 0x04000000
-$(MEM_1)_END := 0x04007fff
-$(MEM_1)_SPAN := 0x00008000
-$(MEM_1)_HIERARCHICAL_PATH := onchip
+$(MEM_1)_START := 0x00008000
+$(MEM_1)_END := 0x0000bfff
+$(MEM_1)_SPAN := 0x00004000
+$(MEM_1)_HIERARCHICAL_PATH := onchip_2
 $(MEM_1)_WIDTH := 32
 $(MEM_1)_HEX_DATA_WIDTH := 32
 $(MEM_1)_ENDIANNESS := --little-endian-mem
 $(MEM_1)_CREATE_LANES := 0
 
-.PHONY: onchip
-onchip: check_elf_exists $(MEM_INIT_DIR)/$(MEM_1).hex $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym
+.PHONY: onchip_2
+onchip_2: check_elf_exists $(MEM_INIT_DIR)/$(MEM_1).hex $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym
 
 # Memory: sdram
 MEM_2 := sdram
@@ -225,8 +225,8 @@ DAT_FILES += $(HDL_SIM_DIR)/$(MEM_2).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_2).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).sym
-$(MEM_2)_START := 0x0a000000
-$(MEM_2)_END := 0x0bffffff
+$(MEM_2)_START := 0x02000000
+$(MEM_2)_END := 0x03ffffff
 $(MEM_2)_SPAN := 0x02000000
 $(MEM_2)_HIERARCHICAL_PATH := sdram
 $(MEM_2)_WIDTH := 16

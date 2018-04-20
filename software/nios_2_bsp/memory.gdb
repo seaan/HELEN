@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios_2' in SOPC Builder design 'helen'
 # SOPC Builder design path: ../../helen.sopcinfo
 #
-# Generated: Thu Mar 15 21:38:19 CDT 2018
+# Generated: Thu Apr 19 20:13:51 CDT 2018
 
 # DO NOT MODIFY THIS FILE
 #
@@ -46,11 +46,11 @@
 # The cache attribute is specified which improves GDB performance
 # by allowing GDB to cache memory contents on the host.
 
-# onchip
-memory 0x4000000 0x4008000 cache
+# onchip_2
+memory 0x8000 0xc000 cache
 
 # sdram
-memory 0xa000000 0xc000000 cache
+memory 0x2000000 0x4000000 cache
 
 # flash
-memory 0xc001000 0xc001800 cache
+memory 0x4011000 0x4011800 cache

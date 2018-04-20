@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 12, 2018 9:23:16 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1523586196231</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\smw0025\Documents\HELEN\QuartusPrime\software\nios_1_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Apr 19, 2018 8:31:20 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1524187880026</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\Sean\Documents\GitHub\HELEN\software\nios_1_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\helen.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -218,7 +218,7 @@
                 <SettingName>hal.stderr</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>uart</Value>
+                <Value>jtag_uart_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Slave descriptor of STDERR character-mode device. This setting is used by the ALT_STDERR family of defines in system.h.</Description>
@@ -922,119 +922,63 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
-        <LinkerRegion>
-                <regionName>reset</regionName>
-                <memoryName>onchip</memoryName>
-                <offset>0</offset>
-                <size>32</size>
-                <baseAddress>0x4000000</baseAddress>
-                <addressRange>0x04000000 - 0x0400001F</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>onchip</regionName>
-                <memoryName>onchip</memoryName>
-                <offset>32</offset>
-                <size>224</size>
-                <baseAddress>0x4000020</baseAddress>
-                <addressRange>0x04000020 - 0x040000FF</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>sdram</regionName>
-                <memoryName>sdram</memoryName>
-                <offset>0</offset>
-                <size>16777216</size>
-                <baseAddress>0xa000000</baseAddress>
-                <addressRange>0x0A000000 - 0x0AFFFFFF</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>PressureSharedMemory</regionName>
-                <memoryName>sdram</memoryName>
-                <offset>33514416</offset>
-                <size>8</size>
-                <baseAddress>0xbff63b0</baseAddress>
-                <addressRange>0x0BFF63B0 - 0x0BFF63B7</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>TempSharedMemory</regionName>
-                <memoryName>sdram</memoryName>
-                <offset>33514424</offset>
-                <size>8</size>
-                <baseAddress>0xbff63b8</baseAddress>
-                <addressRange>0x0BFF63B8 - 0x0BFF63BF</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>RadiationSharedMemory</regionName>
-                <memoryName>sdram</memoryName>
-                <offset>33514432</offset>
-                <size>40000</size>
-                <baseAddress>0xbff63c0</baseAddress>
-                <addressRange>0x0BFF63C0 - 0x0BFFFFFF</addressRange>
-        </LinkerRegion>
-        <LinkerRegion>
-                <regionName>flash</regionName>
-                <memoryName>flash</memoryName>
-                <offset>0</offset>
-                <size>2048</size>
-                <baseAddress>0xc001000</baseAddress>
-                <addressRange>0x0C001000 - 0x0C0017FF</addressRange>
-        </LinkerRegion>
-        <MemoryMap>
-                <slaveDescriptor>spi_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000001F</addressRange>
-                <addressSpan>32</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>onchip</slaveDescriptor>
-                <addressRange>0x04000000 - 0x04007FFF</addressRange>
-                <addressSpan>32768</addressSpan>
-                <attributes>memory</attributes>
-        </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sdram</slaveDescriptor>
-                <addressRange>0x0A000000 - 0x0BFFFFFF</addressRange>
+                <addressRange>0x02000000 - 0x03FFFFFF</addressRange>
                 <addressSpan>33554432</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>onchip_1</slaveDescriptor>
+                <addressRange>0x04008000 - 0x0400BFFF</addressRange>
+                <addressSpan>16384</addressSpan>
+                <attributes>memory</attributes>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>flash</slaveDescriptor>
-                <addressRange>0x0C001000 - 0x0C0017FF</addressRange>
+                <addressRange>0x04011000 - 0x040117FF</addressRange>
                 <addressSpan>2048</addressSpan>
                 <attributes>flash, memory, non-volatile</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>spi_0</slaveDescriptor>
+                <addressRange>0x04012020 - 0x0401203F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>uart</slaveDescriptor>
-                <addressRange>0x0C002000 - 0x0C00201F</addressRange>
+                <addressRange>0x04012040 - 0x0401205F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>adc</slaveDescriptor>
-                <addressRange>0x0C002020 - 0x0C00203F</addressRange>
+                <addressRange>0x04012060 - 0x0401207F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>led</slaveDescriptor>
-                <addressRange>0x0C002040 - 0x0C00204F</addressRange>
+                <addressRange>0x04012080 - 0x0401208F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>altpll</slaveDescriptor>
-                <addressRange>0x0C002050 - 0x0C00205F</addressRange>
+                <addressRange>0x04012090 - 0x0401209F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid_qsys_1</slaveDescriptor>
-                <addressRange>0x0C002060 - 0x0C002067</addressRange>
+                <addressRange>0x040120A0 - 0x040120A7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x0C002068 - 0x0C00206F</addressRange>
+                <addressRange>0x040120A8 - 0x040120AF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
@@ -1061,17 +1005,5 @@
         <LinkerSection>
                 <sectionName>.stack</sectionName>
                 <regionName>sdram</regionName>
-        </LinkerSection>
-        <LinkerSection>
-                <sectionName>RadMemory</sectionName>
-                <regionName>RadiationSharedMemory</regionName>
-        </LinkerSection>
-        <LinkerSection>
-                <sectionName>TempMemory</sectionName>
-                <regionName>TempSharedMemory</regionName>
-        </LinkerSection>
-        <LinkerSection>
-                <sectionName>PressureMemory</sectionName>
-                <regionName>PressureSharedMemory</regionName>
         </LinkerSection>
 </sch:Settings>

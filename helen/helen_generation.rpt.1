@@ -1,6 +1,6 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Users\smw0025\Documents\HELEN\QuartusPrime\helen.qsys --block-symbol-file --output-directory=C:\Users\smw0025\Documents\HELEN\QuartusPrime\helen --family="Cyclone IV E" --part=EP4CE22F17C6
-Progress: Loading QuartusPrime/helen.qsys
+Info: qsys-generate C:\Users\Sean\Documents\GitHub\HELEN\helen.qsys --block-symbol-file --output-directory=C:\Users\Sean\Documents\GitHub\HELEN\helen --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading HELEN/helen.qsys
 Progress: Reading input file
 Progress: Adding adc [altera_up_avalon_adc 17.1]
 Progress: Parameterizing module adc
@@ -18,8 +18,10 @@ Progress: Adding nios_1 [altera_nios2_gen2 17.1]
 Progress: Parameterizing module nios_1
 Progress: Adding nios_2 [altera_nios2_gen2 17.1]
 Progress: Parameterizing module nios_2
-Progress: Adding onchip [altera_avalon_onchip_memory2 17.1]
-Progress: Parameterizing module onchip
+Progress: Adding onchip_1 [altera_avalon_onchip_memory2 17.1]
+Progress: Parameterizing module onchip_1
+Progress: Adding onchip_2 [altera_avalon_onchip_memory2 17.1]
+Progress: Parameterizing module onchip_2
 Progress: Adding sdram [altera_avalon_new_sdram_controller 17.1]
 Progress: Parameterizing module sdram
 Progress: Adding spi_0 [altera_avalon_spi 17.1]
@@ -42,8 +44,8 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\smw0025\Documents\HELEN\QuartusPrime\helen.qsys --synthesis=VERILOG --output-directory=C:\Users\smw0025\Documents\HELEN\QuartusPrime\helen\synthesis --family="Cyclone IV E" --part=EP4CE22F17C6
-Progress: Loading QuartusPrime/helen.qsys
+Info: qsys-generate C:\Users\Sean\Documents\GitHub\HELEN\helen.qsys --synthesis=VERILOG --output-directory=C:\Users\Sean\Documents\GitHub\HELEN\helen\synthesis --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading HELEN/helen.qsys
 Progress: Reading input file
 Progress: Adding adc [altera_up_avalon_adc 17.1]
 Progress: Parameterizing module adc
@@ -61,8 +63,10 @@ Progress: Adding nios_1 [altera_nios2_gen2 17.1]
 Progress: Parameterizing module nios_1
 Progress: Adding nios_2 [altera_nios2_gen2 17.1]
 Progress: Parameterizing module nios_2
-Progress: Adding onchip [altera_avalon_onchip_memory2 17.1]
-Progress: Parameterizing module onchip
+Progress: Adding onchip_1 [altera_avalon_onchip_memory2 17.1]
+Progress: Parameterizing module onchip_1
+Progress: Adding onchip_2 [altera_avalon_onchip_memory2 17.1]
+Progress: Parameterizing module onchip_2
 Progress: Adding sdram [altera_avalon_new_sdram_controller 17.1]
 Progress: Parameterizing module sdram
 Progress: Adding spi_0 [altera_avalon_spi 17.1]
@@ -85,38 +89,42 @@ Info: helen: Generating helen "helen" for QUARTUS_SYNTH
 Info: Inserting clock-crossing logic between cmd_demux.src5 and cmd_mux_005.sink0
 Info: Inserting clock-crossing logic between rsp_demux_005.src0 and rsp_mux.sink5
 Info: adc: Starting Generation of ADC Controller for DE-series Board
-Info: adc: C:/intelfpga_lite/17.1/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/altera_up_avalon_adv_adc.v C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0102_sopcgen/helen_adc.v
+Info: adc: C:/intelfpga_lite/17.1/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/altera_up_avalon_adv_adc.v C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0053_sopcgen/helen_adc.v
 Info: adc: "helen" instantiated altera_up_avalon_adc "adc"
 Info: altpll: "helen" instantiated altpll "altpll"
 Info: flash: Starting RTL generation for module 'helen_flash'
-Info: flash:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller/generate_rtl.pl --name=helen_flash --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0107_flash_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0107_flash_gen//helen_flash_component_configuration.pl  --do_build_sim=0  ]
+Info: flash:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller/generate_rtl.pl --name=helen_flash --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0058_flash_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0058_flash_gen//helen_flash_component_configuration.pl  --do_build_sim=0  ]
 Info: flash: Done RTL generation for module 'helen_flash'
 Info: flash: "helen" instantiated altera_avalon_epcs_flash_controller "flash"
 Info: jtag_uart_0: Starting RTL generation for module 'helen_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=helen_jtag_uart_0 --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0108_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0108_jtag_uart_0_gen//helen_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=helen_jtag_uart_0 --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0059_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0059_jtag_uart_0_gen//helen_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'helen_jtag_uart_0'
 Info: jtag_uart_0: "helen" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: led: Starting RTL generation for module 'helen_led'
-Info: led:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=helen_led --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0109_led_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0109_led_gen//helen_led_component_configuration.pl  --do_build_sim=0  ]
+Info: led:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=helen_led --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0060_led_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0060_led_gen//helen_led_component_configuration.pl  --do_build_sim=0  ]
 Info: led: Done RTL generation for module 'helen_led'
 Info: led: "helen" instantiated altera_avalon_pio "led"
 Info: nios_1: "helen" instantiated altera_nios2_gen2 "nios_1"
 Info: nios_2: "helen" instantiated altera_nios2_gen2 "nios_2"
-Info: onchip: Starting RTL generation for module 'helen_onchip'
-Info: onchip:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=helen_onchip --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0110_onchip_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0110_onchip_gen//helen_onchip_component_configuration.pl  --do_build_sim=0  ]
-Info: onchip: Done RTL generation for module 'helen_onchip'
-Info: onchip: "helen" instantiated altera_avalon_onchip_memory2 "onchip"
+Info: onchip_1: Starting RTL generation for module 'helen_onchip_1'
+Info: onchip_1:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=helen_onchip_1 --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0061_onchip_1_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0061_onchip_1_gen//helen_onchip_1_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_1: Done RTL generation for module 'helen_onchip_1'
+Info: onchip_1: "helen" instantiated altera_avalon_onchip_memory2 "onchip_1"
+Info: onchip_2: Starting RTL generation for module 'helen_onchip_2'
+Info: onchip_2:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=helen_onchip_2 --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0062_onchip_2_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0062_onchip_2_gen//helen_onchip_2_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_2: Done RTL generation for module 'helen_onchip_2'
+Info: onchip_2: "helen" instantiated altera_avalon_onchip_memory2 "onchip_2"
 Info: sdram: Starting RTL generation for module 'helen_sdram'
-Info: sdram:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=helen_sdram --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0111_sdram_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0111_sdram_gen//helen_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=helen_sdram --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0063_sdram_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0063_sdram_gen//helen_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'helen_sdram'
 Info: sdram: "helen" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: spi_0: Starting RTL generation for module 'helen_spi_0'
-Info: spi_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=helen_spi_0 --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0112_spi_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0112_spi_0_gen//helen_spi_0_component_configuration.pl  --do_build_sim=0  ]
+Info: spi_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=helen_spi_0 --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0064_spi_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0064_spi_0_gen//helen_spi_0_component_configuration.pl  --do_build_sim=0  ]
 Info: spi_0: Done RTL generation for module 'helen_spi_0'
 Info: spi_0: "helen" instantiated altera_avalon_spi "spi_0"
 Info: sysid_qsys_1: "helen" instantiated altera_avalon_sysid_qsys "sysid_qsys_1"
 Info: uart: Starting RTL generation for module 'helen_uart'
-Info: uart:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=helen_uart --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0114_uart_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0114_uart_gen//helen_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: uart:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=helen_uart --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0066_uart_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0066_uart_gen//helen_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: uart: Done RTL generation for module 'helen_uart'
 Info: uart: "helen" instantiated altera_avalon_uart "uart"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -131,40 +139,41 @@ Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "helen" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "helen" instantiated altera_irq_mapper "irq_mapper"
 Info: irq_mapper_001: "helen" instantiated altera_irq_mapper "irq_mapper_001"
 Info: rst_controller: "helen" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'helen_nios_1_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/17.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/17.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=helen_nios_1_cpu --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0118_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/17.1/quartus/bin64/ --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0118_cpu_gen//helen_nios_1_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2018.03.22 21:43:12 (*) Starting Nios II generation
-Info: cpu: # 2018.03.22 21:43:12 (*)   Checking for plaintext license.
-Info: cpu: # 2018.03.22 21:43:13 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/17.1/quartus/bin64/
-Info: cpu: # 2018.03.22 21:43:13 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2018.03.22 21:43:13 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2018.03.22 21:43:13 (*)   Plaintext license not found.
-Info: cpu: # 2018.03.22 21:43:13 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2018.03.22 21:43:13 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2018.03.22 21:43:13 (*)   Creating all objects for CPU
-Info: cpu: # 2018.03.22 21:43:15 (*)   Generating RTL from CPU objects
-Info: cpu: # 2018.03.22 21:43:15 (*)   Creating plain-text RTL
-Info: cpu: # 2018.03.22 21:43:15 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/17.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/17.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=helen_nios_1_cpu --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0070_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/17.1/quartus/bin64/ --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0070_cpu_gen//helen_nios_1_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.04.19 20:01:58 (*) Starting Nios II generation
+Info: cpu: # 2018.04.19 20:01:58 (*)   Checking for plaintext license.
+Info: cpu: # 2018.04.19 20:01:59 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/17.1/quartus/bin64/
+Info: cpu: # 2018.04.19 20:01:59 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.04.19 20:01:59 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.04.19 20:01:59 (*)   Plaintext license not found.
+Info: cpu: # 2018.04.19 20:01:59 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.04.19 20:01:59 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.04.19 20:01:59 (*)   Creating all objects for CPU
+Info: cpu: # 2018.04.19 20:02:00 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.04.19 20:02:00 (*)   Creating plain-text RTL
+Info: cpu: # 2018.04.19 20:02:01 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'helen_nios_1_cpu'
 Info: cpu: "nios_1" instantiated altera_nios2_gen2_unit "cpu"
 Info: cpu: Starting RTL generation for module 'helen_nios_2_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/17.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/17.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=helen_nios_2_cpu --dir=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0119_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/17.1/quartus/bin64/ --verilog --config=C:/Users/smw0025/AppData/Local/Temp/alt7613_2933755102664058893.dir/0119_cpu_gen//helen_nios_2_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2018.03.22 21:43:16 (*) Starting Nios II generation
-Info: cpu: # 2018.03.22 21:43:16 (*)   Checking for plaintext license.
-Info: cpu: # 2018.03.22 21:43:17 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/17.1/quartus/bin64/
-Info: cpu: # 2018.03.22 21:43:17 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2018.03.22 21:43:17 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2018.03.22 21:43:17 (*)   Plaintext license not found.
-Info: cpu: # 2018.03.22 21:43:17 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2018.03.22 21:43:17 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2018.03.22 21:43:17 (*)   Creating all objects for CPU
-Info: cpu: # 2018.03.22 21:43:19 (*)   Generating RTL from CPU objects
-Info: cpu: # 2018.03.22 21:43:19 (*)   Creating plain-text RTL
-Info: cpu: # 2018.03.22 21:43:20 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/17.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/17.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=helen_nios_2_cpu --dir=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0071_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/17.1/quartus/bin64/ --verilog --config=C:/Users/Sean/AppData/Local/Temp/alt7641_614080659725288884.dir/0071_cpu_gen//helen_nios_2_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.04.19 20:02:02 (*) Starting Nios II generation
+Info: cpu: # 2018.04.19 20:02:02 (*)   Checking for plaintext license.
+Info: cpu: # 2018.04.19 20:02:03 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/17.1/quartus/bin64/
+Info: cpu: # 2018.04.19 20:02:03 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.04.19 20:02:03 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.04.19 20:02:03 (*)   Plaintext license not found.
+Info: cpu: # 2018.04.19 20:02:03 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.04.19 20:02:03 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.04.19 20:02:03 (*)   Creating all objects for CPU
+Info: cpu: # 2018.04.19 20:02:05 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.04.19 20:02:05 (*)   Creating plain-text RTL
+Info: cpu: # 2018.04.19 20:02:06 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'helen_nios_2_cpu'
 Info: cpu: "nios_2" instantiated altera_nios2_gen2_unit "cpu"
 Info: nios_1_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios_1_data_master_translator"
@@ -188,27 +197,27 @@ Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexe
 Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: cmd_mux_005: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_005"
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_004"
 Info: rsp_demux_005: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_005"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: sdram_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_s1_rsp_width_adapter"
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file C:/Users/smw0025/Documents/HELEN/QuartusPrime/helen/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/Users/Sean/Documents/GitHub/HELEN/helen/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_007: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_007"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_007" instantiated error_adapter "error_adapter_0"
-Info: helen: Done "helen" with 53 modules, 89 files
+Info: helen: Done "helen" with 54 modules, 91 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

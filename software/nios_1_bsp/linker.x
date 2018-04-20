@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios_1' in SOPC Builder design 'helen'
  * SOPC Builder design path: ../../helen.sopcinfo
  *
- * Generated: Thu Apr 12 20:45:39 CDT 2018
+ * Generated: Thu Apr 19 20:30:48 CDT 2018
  */
 
 /*
@@ -50,19 +50,17 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x4000000, LENGTH = 32
-    onchip : ORIGIN = 0x4000020, LENGTH = 224
-    sdram : ORIGIN = 0xa000000, LENGTH = 16777216
-    PressureSharedMemory : ORIGIN = 0xbff63b0, LENGTH = 8
-    TempSharedMemory : ORIGIN = 0xbff63b8, LENGTH = 8
-    RadiationSharedMemory : ORIGIN = 0xbff63c0, LENGTH = 40000
-    flash : ORIGIN = 0xc001000, LENGTH = 2048
+    sdram : ORIGIN = 0x2000000, LENGTH = 33554432
+    reset : ORIGIN = 0x4008000, LENGTH = 32
+    onchip_1_BEFORE_EXCEPTION : ORIGIN = 0x4008020, LENGTH = 224
+    onchip_1 : ORIGIN = 0x4008100, LENGTH = 16128
+    flash : ORIGIN = 0x4011000, LENGTH = 2048
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_onchip = 0x4000000;
-__alt_mem_sdram = 0xa000000;
-__alt_mem_flash = 0xc001000;
+__alt_mem_sdram = 0x2000000;
+__alt_mem_onchip_1 = 0x4008000;
+__alt_mem_flash = 0x4011000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -118,33 +116,9 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > sdram
+    } > onchip_1
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
-
-    RadMemory :
-    {
-        PROVIDE (_alt_partition_RadMemory_start = ABSOLUTE(.));
-        *(RadMemory RadMemory.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_RadMemory_end = ABSOLUTE(.));
-    } > RadiationSharedMemory
-
-    TempMemory :
-    {
-        PROVIDE (_alt_partition_TempMemory_start = ABSOLUTE(.));
-        *(TempMemory TempMemory.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_TempMemory_end = ABSOLUTE(.));
-    } > TempSharedMemory
-
-    PressureMemory :
-    {
-        PROVIDE (_alt_partition_PressureMemory_start = ABSOLUTE(.));
-        *(PressureMemory PressureMemory.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_PressureMemory_end = ABSOLUTE(.));
-    } > PressureSharedMemory
 
     .text :
     {
@@ -338,24 +312,7 @@ SECTIONS
      *
      */
 
-    .onchip : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
-    {
-        PROVIDE (_alt_partition_onchip_start = ABSOLUTE(.));
-        *(.onchip .onchip. onchip.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_onchip_end = ABSOLUTE(.));
-    } > onchip
-
-    PROVIDE (_alt_partition_onchip_load_addr = LOADADDR(.onchip));
-
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .sdram LOADADDR (.onchip) + SIZEOF (.onchip) : AT ( LOADADDR (.onchip) + SIZEOF (.onchip) )
+    .sdram LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_sdram_start = ABSOLUTE(.));
         *(.sdram .sdram. sdram.*)
@@ -375,7 +332,24 @@ SECTIONS
      *
      */
 
-    .flash : AT ( LOADADDR (.sdram) + SIZEOF (.sdram) )
+    .onchip_1 : AT ( LOADADDR (.sdram) + SIZEOF (.sdram) )
+    {
+        PROVIDE (_alt_partition_onchip_1_start = ABSOLUTE(.));
+        *(.onchip_1 .onchip_1. onchip_1.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_onchip_1_end = ABSOLUTE(.));
+    } > onchip_1
+
+    PROVIDE (_alt_partition_onchip_1_load_addr = LOADADDR(.onchip_1));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .flash : AT ( LOADADDR (.onchip_1) + SIZEOF (.onchip_1) )
     {
         PROVIDE (_alt_partition_flash_start = ABSOLUTE(.));
         *(.flash .flash. flash.*)
@@ -432,7 +406,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0xb000000;
+__alt_data_end = 0x4000000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -448,4 +422,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0xb000000 );
+PROVIDE( __alt_heap_limit    = 0x4000000 );

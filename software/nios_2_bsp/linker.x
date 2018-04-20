@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios_2' in SOPC Builder design 'helen'
  * SOPC Builder design path: ../../helen.sopcinfo
  *
- * Generated: Thu Apr 12 20:44:25 CDT 2018
+ * Generated: Thu Apr 19 20:34:54 CDT 2018
  */
 
 /*
@@ -50,19 +50,17 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x4000060, LENGTH = 32
-    onchip : ORIGIN = 0x4000120, LENGTH = 32480
-    sdram : ORIGIN = 0xb000000, LENGTH = 16737200
-    PressureSharedMemory : ORIGIN = 0xbff63b0, LENGTH = 8
-    TempSharedMemory : ORIGIN = 0xbff63b8, LENGTH = 8
-    RadiationSharedMemory : ORIGIN = 0xbff63c0, LENGTH = 40000
-    flash : ORIGIN = 0xc001000, LENGTH = 2048
+    reset : ORIGIN = 0x8000, LENGTH = 32
+    onchip_2_BEFORE_EXCEPTION : ORIGIN = 0x8020, LENGTH = 224
+    onchip_2 : ORIGIN = 0x8100, LENGTH = 16128
+    sdram : ORIGIN = 0x2000000, LENGTH = 33554432
+    flash : ORIGIN = 0x4011000, LENGTH = 2048
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_onchip = 0x4000000;
-__alt_mem_sdram = 0xa000000;
-__alt_mem_flash = 0xc001000;
+__alt_mem_onchip_2 = 0x8000;
+__alt_mem_sdram = 0x2000000;
+__alt_mem_flash = 0x4011000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -118,33 +116,9 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > sdram
+    } > onchip_2
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
-
-    RadMemory :
-    {
-        PROVIDE (_alt_partition_RadMemory_start = ABSOLUTE(.));
-        *(RadMemory RadMemory.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_RadMemory_end = ABSOLUTE(.));
-    } > RadiationSharedMemory
-
-    TempMemory :
-    {
-        PROVIDE (_alt_partition_TempMemory_start = ABSOLUTE(.));
-        *(TempMemory TempMemory.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_TempMemory_end = ABSOLUTE(.));
-    } > TempSharedMemory
-
-    PressureMemory :
-    {
-        PROVIDE (_alt_partition_PressureMemory_start = ABSOLUTE(.));
-        *(PressureMemory PressureMemory.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_PressureMemory_end = ABSOLUTE(.));
-    } > PressureSharedMemory
 
     .text :
     {
@@ -338,15 +312,15 @@ SECTIONS
      *
      */
 
-    .onchip : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
+    .onchip_2 : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
-        PROVIDE (_alt_partition_onchip_start = ABSOLUTE(.));
-        *(.onchip .onchip. onchip.*)
+        PROVIDE (_alt_partition_onchip_2_start = ABSOLUTE(.));
+        *(.onchip_2 .onchip_2. onchip_2.*)
         . = ALIGN(4);
-        PROVIDE (_alt_partition_onchip_end = ABSOLUTE(.));
-    } > onchip
+        PROVIDE (_alt_partition_onchip_2_end = ABSOLUTE(.));
+    } > onchip_2
 
-    PROVIDE (_alt_partition_onchip_load_addr = LOADADDR(.onchip));
+    PROVIDE (_alt_partition_onchip_2_load_addr = LOADADDR(.onchip_2));
 
     /*
      *
@@ -355,7 +329,7 @@ SECTIONS
      *
      */
 
-    .sdram LOADADDR (.onchip) + SIZEOF (.onchip) : AT ( LOADADDR (.onchip) + SIZEOF (.onchip) )
+    .sdram LOADADDR (.onchip_2) + SIZEOF (.onchip_2) : AT ( LOADADDR (.onchip_2) + SIZEOF (.onchip_2) )
     {
         PROVIDE (_alt_partition_sdram_start = ABSOLUTE(.));
         *(.sdram .sdram. sdram.*)
@@ -432,7 +406,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0xbff63b0;
+__alt_data_end = 0x4000000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -448,4 +422,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0xbff63b0 );
+PROVIDE( __alt_heap_limit    = 0x4000000 );

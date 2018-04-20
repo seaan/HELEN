@@ -1,137 +1,35 @@
-13:35:06 **** Build of configuration Nios II for project nios_2 ****
+20:39:53 **** Build of configuration Nios II for project nios_2 ****
 make mem_init_generate 
-Info: Compiling hello_world.c to obj/default/hello_world.o
-nios2-elf-gcc -xc -MP -MMD -c -I../nios_2_bsp//HAL/inc -I../nios_2_bsp/ -I../nios_2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
-hello_world.c: In function 'main':
-hello_world.c:50:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
-    usleep(10);
-    ^
-hello_world.c:40:6: warning: unused variable 'count' [-Wunused-variable]
-  int count = 0;
-      ^
-hello_world.c:39:6: warning: unused variable 'tempChannel' [-Wunused-variable]
-  int tempChannel = 5;
-      ^
-hello_world.c:38:6: warning: unused variable 'presChannel' [-Wunused-variable]
-  int presChannel = 3;
-      ^
-hello_world.c:37:6: warning: unused variable 'radChannel' [-Wunused-variable]
-  int radChannel = 1;
-      ^
-hello_world.c:36:6: warning: unused variable 'tempData' [-Wunused-variable]
-  int tempData = 0;
-      ^
-hello_world.c:35:6: warning: unused variable 'presData' [-Wunused-variable]
-  int presData = 0;
-      ^
-hello_world.c: At top level:
-hello_world.c:92:29: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
-  alt_u8 calibration_code[6] = { 0b10100010, 0b10100100, 0b10100110,
-                             ^
-hello_world.c: In function 'calibratePressure':
-hello_world.c:103:3: warning: implicit declaration of function 'alt_avalon_spi_command' [-Wimplicit-function-declaration]
-   alt_avalon_spi_command(SPI_0_BASE, 0,
-   ^
-hello_world.c:104:11: error: 'struct Pressure' has no member named 'calibration_code'
-     1, &(p.calibration_code[i]), //write data, 1 byte
-           ^
-hello_world.c:105:11: error: 'struct Pressure' has no member named 'calibration'
-     2, &(p.calibration[i]),   //read data, 2 bytes
-           ^
-hello_world.c: At top level:
-hello_world.c:111:1: error: unknown type name 'int32_t'
- int32_t getPressure(void) {
- ^
-hello_world.c:111:9: error: conflicting types for 'getPressure'
- int32_t getPressure(void) {
-         ^
-hello_world.c:29:7: note: previous declaration of 'getPressure' was here
- float getPressure(void);
-       ^
-hello_world.c: In function 'getPressure':
-hello_world.c:114:10: error: 'struct Pressure' has no member named 'calibration_code'
-    1, &(p.calibration_code[i]), //write data, 1 byte
-          ^
-hello_world.c:114:28: error: 'i' undeclared (first use in this function)
-    1, &(p.calibration_code[i]), //write data, 1 byte
-                            ^
-hello_world.c:114:28: note: each undeclared identifier is reported only once for each function it appears in
-hello_world.c:115:10: error: 'struct Pressure' has no member named 'calibration'
-    2, &(p.calibration[i]),   //read data, 2 bytes
-          ^
-hello_world.c:117:2: warning: implicit declaration of function 'spi_select' [-Wimplicit-function-declaration]
-  spi_select();
-  ^
-hello_world.c:118:2: warning: implicit declaration of function 'spi_write' [-Wimplicit-function-declaration]
-  spi_write(0x48);
-  ^
-hello_world.c:119:2: warning: implicit declaration of function 'spi_deselect' [-Wimplicit-function-declaration]
-  spi_deselect();
-  ^
-hello_world.c:120:2: warning: implicit declaration of function 'delay_ms' [-Wimplicit-function-declaration]
-  delay_ms(10);
-  ^
-hello_world.c:125:2: error: unknown type name 'uint32_t'
-  uint32_t uncal_pressure = ((uint32_t) spi_read()) << 16; //Typecast the 8 bit data to 32 bit, then move it 16 places to the left. Stores in temp variable.
-  ^
-hello_world.c:125:30: error: 'uint32_t' undeclared (first use in this function)
-  uint32_t uncal_pressure = ((uint32_t) spi_read()) << 16; //Typecast the 8 bit data to 32 bit, then move it 16 places to the left. Stores in temp variable.
-                              ^
-hello_world.c:125:40: error: expected ')' before 'spi_read'
-  uint32_t uncal_pressure = ((uint32_t) spi_read()) << 16; //Typecast the 8 bit data to 32 bit, then move it 16 places to the left. Stores in temp variable.
-                                        ^
-hello_world.c:126:32: error: expected ')' before 'spi_read'
-  uncal_pressure += ((uint32_t) spi_read()) << 8; //Assign data to data + the new data but in the lower 8 bits.
-                                ^
-hello_world.c:127:32: error: expected ')' before 'spi_read'
-  uncal_pressure += ((uint32_t) spi_read());
-                                ^
-hello_world.c:139:11: error: expected ';' before 'd2'
-  uint32_t d2 = ((uint32_t) spi_read()) << 16;
-           ^
-hello_world.c:140:2: error: 'd2' undeclared (first use in this function)
-  d2 += ((uint32_t) spi_read()) << 8;
-  ^
-hello_world.c:140:20: error: expected ')' before 'spi_read'
-  d2 += ((uint32_t) spi_read()) << 8;
-                    ^
-hello_world.c:141:20: error: expected ')' before 'spi_read'
-  d2 += ((uint32_t) spi_read());
-                    ^
-hello_world.c:145:2: error: unknown type name 'int32_t'
-  int32_t dT = (int64_t) d2 - (((int64_t) cal_pres_c5) * (256));
-  ^
-hello_world.c:145:16: error: 'int64_t' undeclared (first use in this function)
-  int32_t dT = (int64_t) d2 - (((int64_t) cal_pres_c5) * (256));
-                ^
-hello_world.c:145:25: error: expected ',' or ';' before 'd2'
-  int32_t dT = (int64_t) d2 - (((int64_t) cal_pres_c5) * (256));
-                         ^
-hello_world.c:146:10: error: expected ';' before 'offset'
-  int64_t offset = ((int64_t) cal_pres_c2) * (65536)
-          ^
-hello_world.c:148:10: error: expected ';' before 'sens'
-  int64_t sens = (((int64_t) cal_pres_c1) * (32768))
-          ^
-hello_world.c:150:32: error: expected ')' before 'uncal_pressure'
-  float pressure = ((((int64_t) uncal_pressure)
-                                ^
-hello_world.c:151:9: error: 'uint64_t' undeclared (first use in this function)
-    * (((uint64_t) sens) / 2097152)) - (int64_t) offset) / 32768;
-         ^
-hello_world.c:151:19: error: expected ')' before 'sens'
-    * (((uint64_t) sens) / 2097152)) - (int64_t) offset) / 32768;
-                   ^
-hello_world.c:151:49: error: expected ')' before 'offset'
-    * (((uint64_t) sens) / 2097152)) - (int64_t) offset) / 32768;
-                                                 ^
-hello_world.c:145:10: warning: unused variable 'dT' [-Wunused-variable]
-  int32_t dT = (int64_t) d2 - (((int64_t) cal_pres_c5) * (256));
-          ^
-hello_world.c:125:11: warning: variable 'uncal_pressure' set but not used [-Wunused-but-set-variable]
-  uint32_t uncal_pressure = ((uint32_t) spi_read()) << 16; //Typecast the 8 bit data to 32 bit, then move it 16 places to the left. Stores in temp variable.
-           ^
-make: *** [obj/default/hello_world.o] Error 1
+Info: Building ../nios_2_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_2_bsp/
+[BSP build complete]
+Post-processing to create mem_init/hdl_sim/helen_flash_boot_rom.hex...
+elf2hex nios_2.elf 0x04011000 0x040117ff --width=32 --little-endian-mem --create-lanes=0 --no-zero-fill mem_init/hdl_sim/helen_flash_boot_rom.hex
+Post-processing to create mem_init/helen_onchip_2.hex...
+elf2hex nios_2.elf 0x00008000 0x0000bfff --width=32 --little-endian-mem --create-lanes=0 mem_init/helen_onchip_2.hex
+Post-processing to create mem_init/hdl_sim/helen_flash_boot_rom.dat...
+elf2dat --infile=nios_2.elf --outfile=mem_init/hdl_sim/helen_flash_boot_rom.dat \
+		--base=0x04011000 --end=0x040117ff --width=32 \
+		--little-endian-mem --create-lanes=0 
+Post-processing to create mem_init/hdl_sim/helen_onchip_2.dat...
+elf2dat --infile=nios_2.elf --outfile=mem_init/hdl_sim/helen_onchip_2.dat \
+		--base=0x00008000 --end=0x0000bfff --width=32 \
+		--little-endian-mem --create-lanes=0 
+Post-processing to create mem_init/hdl_sim/sdram.dat...
+elf2dat --infile=nios_2.elf --outfile=mem_init/hdl_sim/sdram.dat \
+		--base=0x02000000 --end=0x03ffffff --width=16 \
+		--little-endian-mem --create-lanes=0 
+Post-processing to create mem_init/hdl_sim/helen_flash_boot_rom.sym...
+nios2-elf-nm -n nios_2.elf > mem_init/hdl_sim/helen_flash_boot_rom.sym
+Post-processing to create mem_init/hdl_sim/helen_onchip_2.sym...
+nios2-elf-nm -n nios_2.elf > mem_init/hdl_sim/helen_onchip_2.sym
+Post-processing to create mem_init/hdl_sim/sdram.sym...
+nios2-elf-nm -n nios_2.elf > mem_init/hdl_sim/sdram.sym
+Post-processing to create helen_flash_boot_rom.flash...
+elf2flash --input=nios_2.elf --outfile=helen_flash_boot_rom.flash --sim_optimize=0 --little-endian-mem \
+		 --epcs 
+Post-processing to create mem_init/meminit.spd...
+Post-processing to create mem_init/meminit.qip...
 
-13:35:07 Build Finished (took 389ms)
+20:39:58 Build Finished (took 4s.452ms)
 

@@ -22,13 +22,13 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Apr 12, 2018 9:22:59 PM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Apr 19, 2018 8:34:53 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1523586179332</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1524188093458</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\smw0025\Documents\HELEN\QuartusPrime\software\nios_2_bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\Sean\Documents\GitHub\HELEN\software\nios_2_bsp</td>
 </tr>
 </table>
 <br>
@@ -38,31 +38,31 @@
 <th align="left" width="20%">Slave Descriptor</th><th align="left" width="40%">Address Range</th><th align="left" width="20%">Size</th><th align="left" width="20%">Attributes</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>jtag_uart_0</td><td>0x0C002068 - 0x0C00206F</td><td>8</td><td class="listing">printable</td>
+<td>jtag_uart_0</td><td>0x040120A8 - 0x040120AF</td><td>8</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>sysid_qsys_1</td><td>0x0C002060 - 0x0C002067</td><td>8</td><td class="listing">&nbsp;</td>
+<td>sysid_qsys_1</td><td>0x040120A0 - 0x040120A7</td><td>8</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>led</td><td>0x0C002040 - 0x0C00204F</td><td>16</td><td class="listing">&nbsp;</td>
+<td>led</td><td>0x04012080 - 0x0401208F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>adc</td><td>0x0C002020 - 0x0C00203F</td><td>32</td><td class="listing">&nbsp;</td>
+<td>adc</td><td>0x04012060 - 0x0401207F</td><td>32</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>uart</td><td>0x0C002000 - 0x0C00201F</td><td>32</td><td class="listing">printable</td>
+<td>uart</td><td>0x04012040 - 0x0401205F</td><td>32</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>flash</td><td>0x0C001000 - 0x0C0017FF</td><td>2048</td><td class="listing">flash, memory, non-volatile</td>
+<td>spi_0</td><td>0x04012020 - 0x0401203F</td><td>32</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>sdram</td><td>0x0A000000 - 0x0BFFFFFF</td><td>33554432</td><td class="listing">memory</td>
+<td>flash</td><td>0x04011000 - 0x040117FF</td><td>2048</td><td class="listing">flash, memory, non-volatile</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>onchip</td><td>0x04000000 - 0x04007FFF</td><td>32768</td><td class="listing">memory</td>
+<td>sdram</td><td>0x02000000 - 0x03FFFFFF</td><td>33554432</td><td class="listing">memory</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>spi_0</td><td>0x00000000 - 0x0000001F</td><td>32</td><td class="listing">&nbsp;</td>
+<td>onchip_2</td><td>0x00008000 - 0x0000BFFF</td><td>16384</td><td class="listing">memory</td>
 </tr>
 </table>
 <br>
@@ -71,27 +71,6 @@
 <table border="1" bgcolor="#FFFFCC" width="90%">
 <tr bgcolor="#77BBFF" mode="wrap">
 <th align="left" width="15%">Region</th><th align="left" width="40%">Address Range</th><th align="left" width="15%">Size</th><th align="left" width="15%">Memory</th><th align="left" width="15%">Offset</th>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>flash</td><td>0x0C001000 - 0x0C0017FF</td><td>2048</td><td>flash</td><td>0</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>RadiationSharedMemory</td><td>0x0BFF63C0 - 0x0BFFFFFF</td><td>40000</td><td>sdram</td><td>33514432</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>TempSharedMemory</td><td>0x0BFF63B8 - 0x0BFF63BF</td><td>8</td><td>sdram</td><td>33514424</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>PressureSharedMemory</td><td>0x0BFF63B0 - 0x0BFF63B7</td><td>8</td><td>sdram</td><td>33514416</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>sdram</td><td>0x0B000000 - 0x0BFF63AF</td><td>16737200</td><td>sdram</td><td>16777216</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>onchip</td><td>0x04000120 - 0x04007FFF</td><td>32480</td><td>onchip</td><td>288</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>reset</td><td>0x04000060 - 0x0400007F</td><td>32</td><td>onchip</td><td>96</td>
 </tr>
 </table>
 <br>
@@ -118,15 +97,6 @@
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>.stack</td><td>sdram</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>RadMemory</td><td>RadiationSharedMemory</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>TempMemory</td><td>TempSharedMemory</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>PressureMemory</td><td>PressureSharedMemory</td>
 </tr>
 </table>
 <h3>Settings</h3>
@@ -789,7 +759,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>none</td>
+<td width="20%">Value:</td><td>sdram</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -843,7 +813,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>none</td>
+<td width="20%">Value:</td><td>sdram</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -2112,7 +2082,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>uart</td>
+<td width="20%">Value:</td><td>jtag_uart_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>

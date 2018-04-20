@@ -43,9 +43,9 @@
 //   ARBITRATION_SHARES:  1 1 1 1
 //   ARBITRATION_SCHEME   "round-robin"
 //   PIPELINE_ARB:        1
-//   PKT_TRANS_LOCK:      68 (arbitration locking enabled)
-//   ST_DATA_W:           106
-//   ST_CHANNEL_W:        12
+//   PKT_TRANS_LOCK:      67 (arbitration locking enabled)
+//   ST_DATA_W:           105
+//   ST_CHANNEL_W:        13
 // ------------------------------------------
 
 module helen_mm_interconnect_0_cmd_mux_004
@@ -54,29 +54,29 @@ module helen_mm_interconnect_0_cmd_mux_004
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [106-1   : 0]  sink0_data,
-    input [12-1: 0]  sink0_channel,
+    input [105-1   : 0]  sink0_data,
+    input [13-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
 
     input                       sink1_valid,
-    input [106-1   : 0]  sink1_data,
-    input [12-1: 0]  sink1_channel,
+    input [105-1   : 0]  sink1_data,
+    input [13-1: 0]  sink1_channel,
     input                       sink1_startofpacket,
     input                       sink1_endofpacket,
     output                      sink1_ready,
 
     input                       sink2_valid,
-    input [106-1   : 0]  sink2_data,
-    input [12-1: 0]  sink2_channel,
+    input [105-1   : 0]  sink2_data,
+    input [13-1: 0]  sink2_channel,
     input                       sink2_startofpacket,
     input                       sink2_endofpacket,
     output                      sink2_ready,
 
     input                       sink3_valid,
-    input [106-1   : 0]  sink3_data,
-    input [12-1: 0]  sink3_channel,
+    input [105-1   : 0]  sink3_data,
+    input [13-1: 0]  sink3_channel,
     input                       sink3_startofpacket,
     input                       sink3_endofpacket,
     output                      sink3_ready,
@@ -86,8 +86,8 @@ module helen_mm_interconnect_0_cmd_mux_004
     // Source
     // ----------------------
     output                      src_valid,
-    output [106-1    : 0] src_data,
-    output [12-1 : 0] src_channel,
+    output [105-1    : 0] src_data,
+    output [13-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -98,13 +98,13 @@ module helen_mm_interconnect_0_cmd_mux_004
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 106 + 12 + 2;
+    localparam PAYLOAD_W        = 105 + 13 + 2;
     localparam NUM_INPUTS       = 4;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 1;
-    localparam ST_DATA_W        = 106;
-    localparam ST_CHANNEL_W     = 12;
-    localparam PKT_TRANS_LOCK   = 68;
+    localparam ST_DATA_W        = 105;
+    localparam ST_CHANNEL_W     = 13;
+    localparam PKT_TRANS_LOCK   = 67;
 
     // ------------------------------------------
     // Signals
@@ -142,10 +142,10 @@ module helen_mm_interconnect_0_cmd_mux_004
     // ------------------------------------------
     reg [NUM_INPUTS - 1 : 0] lock;
     always @* begin
-      lock[0] = sink0_data[68];
-      lock[1] = sink1_data[68];
-      lock[2] = sink2_data[68];
-      lock[3] = sink3_data[68];
+      lock[0] = sink0_data[67];
+      lock[1] = sink1_data[67];
+      lock[2] = sink2_data[67];
+      lock[3] = sink3_data[67];
     end
     reg [NUM_INPUTS - 1 : 0] locked = '0;
     always @(posedge clk or posedge reset) begin

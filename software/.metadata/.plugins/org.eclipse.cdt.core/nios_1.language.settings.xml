@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
-	<configuration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1010015775" name="Nios II">
+	<configuration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.259374457" name="Nios II">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="altera.tool.Nios2GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
@@ -1378,10 +1378,16 @@
 			</provider>
 			<provider id="altera.tool.Nios2GCCBuildCommandParser">
 				<language id="org.eclipse.cdt.core.gcc">
-					<resource project-relative-path="hello_world.c">
-						<entry kind="includePath" name="C:/Users/Sean/Documents/GitHub/HELEN/software/nios_1_bsp/HAL/inc"/>
-						<entry kind="includePath" name="C:/Users/Sean/Documents/GitHub/HELEN/software/nios_1_bsp"/>
-						<entry kind="includePath" name="C:/Users/Sean/Documents/GitHub/HELEN/software/nios_1_bsp/drivers/inc"/>
+					<resource project-relative-path="main.c">
+						<entry kind="includePath" name="/nios_1_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_1_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/nios_1_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>

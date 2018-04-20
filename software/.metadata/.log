@@ -7612,3 +7612,60 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY org.eclipse.cdt.core 1 0 2018-04-16 13:34:55.719
 !MESSAGE Indexed 'nios_2' (1 sources, 0 headers) in 0.155 sec: 39 declarations; 84 references; 5 unresolved inclusions; 0 syntax errors; 38 unresolved names (24%)
+!SESSION 2018-04-18 16:41:01.793 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 2 2018-04-18 16:50:39.478
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2018-04-18 16:50:39.478
+!MESSAGE The project description file (.project) for 'RemoteSystemsTempFiles' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-18 16:51:36.973
+!MESSAGE Indexed 'nios_1_bsp' (89 sources, 71 headers) in 1.58 sec: 1,524 declarations; 3,954 references; 125 unresolved inclusions; 6 syntax errors; 216 unresolved names (3.8%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-18 16:51:44.834
+!MESSAGE Indexed 'nios_1' (1 sources, 0 headers) in 0.004 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-18 16:59:34.343
+!MESSAGE Indexed 'nios_2_bsp' (89 sources, 71 headers) in 0.86 sec: 1,524 declarations; 3,954 references; 125 unresolved inclusions; 6 syntax errors; 216 unresolved names (3.8%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-18 16:59:38.208
+!MESSAGE Indexed 'nios_2' (1 sources, 0 headers) in 0.004 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-18 17:03:21.244
+!MESSAGE Indexed 'nios_1' (1 sources, 21 headers) in 0.084 sec: 987 declarations; 1,633 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-18 17:03:24.356
+!MESSAGE Indexed 'nios_2' (1 sources, 23 headers) in 0.142 sec: 1,550 declarations; 1,968 references; 6 unresolved inclusions; 0 syntax errors; 28 unresolved names (0.79%)
+!SESSION 2018-04-18 18:49:47.983 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-04-18 18:52:09.685
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2018-04-19 20:03:18.423 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/17.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY com.altera.sbtgui.core 4 0 2018-04-19 20:07:27.904
+!MESSAGE Error executing 'nios2-bsp-generate-files --bsp-dir . --settings settings.bsp', unexpected return code 1.
+
+Error message:
+
+SEVERE: [Error] hal: <b>hal.linker.exception_stack_memory_region_name</b> "sdram_BEFORE_EXCEPTION" is out of range: "none", "reset", "onchip_2_BEFORE_EXCEPTION", "onchip_2", "sdram", "flash"
+SEVERE: [Error] hal: <b>hal.linker.exception_stack_memory_region_name</b> "sdram_BEFORE_EXCEPTION" is out of range: "none", "reset", "onchip_2_BEFORE_EXCEPTION", "onchip_2", "sdram", "flash"
+SEVERE: nios2-bsp-generate-files failed.
+

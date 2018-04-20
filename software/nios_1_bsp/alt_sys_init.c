@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios_1' in SOPC Builder design 'helen'
  * SOPC Builder design path: ../../helen.sopcinfo
  *
- * Generated: Tue Apr 03 20:38:07 CDT 2018
+ * Generated: Wed Apr 18 16:51:34 CDT 2018
  */
 
 /*

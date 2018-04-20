@@ -156,14 +156,14 @@ SOPC_SYSID_FLAG += --id=0
 ELF_PATCH_FLAG  += --id 0
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0xc002060
-SOPC_SYSID_FLAG += --sidp=0xc002060
-ELF_PATCH_FLAG  += --sidp 0xc002060
+# setting SOPC_SYSID_BASE_ADDRESS is 0x40120a0
+SOPC_SYSID_FLAG += --sidp=0x40120a0
+ELF_PATCH_FLAG  += --sidp 0x40120a0
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1521772971
-SOPC_SYSID_FLAG += --timestamp=1521772971
-ELF_PATCH_FLAG  += --timestamp 1521772971
+# setting SOPC_TIMESTAMP is 1524186091
+SOPC_SYSID_FLAG += --timestamp=1524186091
+ELF_PATCH_FLAG  += --timestamp 1524186091
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 
@@ -367,8 +367,8 @@ ELF_PATCH_FLAG  += --stdin_dev jtag_uart_0
 
 # Slave descriptor of STDOUT character-mode device. This setting is used by the 
 # ALT_STDOUT family of defines in system.h. none 
-# setting hal.stdout is uart
-ELF_PATCH_FLAG  += --stdout_dev uart
+# setting hal.stdout is jtag_uart_0
+ELF_PATCH_FLAG  += --stdout_dev jtag_uart_0
 
 
 #------------------------------------------------------------------------------

@@ -236,11 +236,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "flash_data0",
+					"name" : "spi_MISO",
 					"strict" : false
 				},
 				{
-					"name" : "spi_MISO",
+					"name" : "flash_data0",
 					"strict" : false
 				},
 				{
