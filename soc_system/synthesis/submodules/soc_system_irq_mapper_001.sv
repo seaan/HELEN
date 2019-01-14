@@ -1,19 +1,19 @@
-// (C) 2001-2016 Intel Corporation. All rights reserved.
+// (C) 2001-2017 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
-// files any of the foregoing (including device programming or simulation 
+// files from any of the foregoing (including device programming or simulation 
 // files), and any associated documentation or information are expressly subject 
 // to the terms and conditions of the Intel Program License Subscription 
-// Agreement, Intel MegaCore Function License Agreement, or other applicable 
+// Agreement, Intel FPGA IP License Agreement, or other applicable 
 // license agreement, including, without limitation, that your use is for the 
 // sole purpose of programming logic devices manufactured by Intel and sold by 
 // Intel or its authorized distributors.  Please refer to the applicable 
 // agreement for further details.
 
 
-// $Id: //acds/rel/16.1/ip/merlin/altera_irq_mapper/altera_irq_mapper.sv.terp#1 $
+// $Id: //acds/rel/17.1std/ip/merlin/altera_irq_mapper/altera_irq_mapper.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2016/08/07 $
+// $Date: 2017/07/30 $
 // $Author: swbranch $
 
 // -------------------------------------------------------
@@ -22,7 +22,7 @@
 // Parameters
 //   NUM_RCVRS        : 3
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:2,1:1,2:0
+//   IRQ_MAP          : 0:0,1:1,2:2
 //
 // -------------------------------------------------------
 
@@ -53,9 +53,9 @@ module soc_system_irq_mapper_001
     always @* begin
 	sender_irq = 0;
 
-        sender_irq[2] = receiver0_irq;
+        sender_irq[0] = receiver0_irq;
         sender_irq[1] = receiver1_irq;
-        sender_irq[0] = receiver2_irq;
+        sender_irq[2] = receiver2_irq;
     end
 
 endmodule

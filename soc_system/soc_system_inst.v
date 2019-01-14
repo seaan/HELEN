@@ -1,4 +1,5 @@
 	soc_system u0 (
+		.addc_hsmc_addc_hsmc                   (<connected-to-addc_hsmc_addc_hsmc>),                   //                      addc_hsmc.addc_hsmc
 		.button_pio_external_connection_export (<connected-to-button_pio_external_connection_export>), // button_pio_external_connection.export
 		.clk_clk                               (<connected-to-clk_clk>),                               //                            clk.clk
 		.dipsw_pio_external_connection_export  (<connected-to-dipsw_pio_external_connection_export>),  //  dipsw_pio_external_connection.export

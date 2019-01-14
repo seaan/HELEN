@@ -331,7 +331,7 @@ soc_system u0 (
 		  .hps_0_f2h_debug_reset_req_reset_n     (~hps_debug_reset ),     //      hps_0_f2h_debug_reset_req.reset_n
 		  .hps_0_f2h_stm_hw_events_stm_hwevents  (stm_hw_events ),  //        hps_0_f2h_stm_hw_events.stm_hwevents
 		  .hps_0_f2h_warm_reset_req_reset_n      (~hps_warm_reset ),      //       hps_0_f2h_warm_reset_req.reset_n
-  
+		  .addc_hsmc									   (HSMC_RX_D_P),
     );
 
 	 
@@ -405,4 +405,50 @@ end
 assign LEDR[0]=led_level;
 endmodule
 
-  
+module custom_leds 
+(
+    input  logic        clk,            // clock.clk
+    input  logic        reset,          // reset.reset
+
+    // Memory mapped read/write slave interface
+    input  logic        avs_s0_address,   // avs_s0.address
+    input  logic        avs_s0_read,      //       .read
+    input  logic        avs_s0_write,     //       .write
+    output logic [31:0] avs_s0_readdata,  //       .readdata
+    input  logic [31:0] avs_s0_writedata,  //      .writedata
+
+    // The LED outputs
+    input logic [7:0] leds,
+
+    // The HSMC input
+    input logic [13:0] hsmc,
+
+    // The LED outputs
+    input logic [1:0] pps,
+);
+
+// Read operations performed on the Avalon-MM Slave interface
+always_comb begin
+    if(avs_s0_read) begin
+        case(avs_s0_address)
+            1'b0 : avs_s0_readdata = {24'b0, hsmc};
+            default : avs_s0_readdata = 'x;
+        endcase
+    end else begin
+        avs_s0_readdata = 'x;
+    end
+end
+
+// Write operations performed on the Avalon-MM Slave interface
+always_ff @(posedge clk) begin
+    if(reset) begin
+        leds <= '0;
+    end else if (avs_s0_write) begin
+        case(avs_s0_address)
+            1'b0 : leds <= avs_s0_writedata;
+            default : leds <= leds;
+        endcase
+    end
+end
+
+endmodule // custom_leds

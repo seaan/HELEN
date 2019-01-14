@@ -1,5 +1,6 @@
 
 module soc_system (
+	addc_hsmc_addc_hsmc,
 	button_pio_external_connection_export,
 	clk_clk,
 	dipsw_pio_external_connection_export,
@@ -89,6 +90,7 @@ module soc_system (
 	memory_oct_rzqin,
 	reset_reset_n);	
 
+	input	[13:0]	addc_hsmc_addc_hsmc;
 	input	[3:0]	button_pio_external_connection_export;
 	input		clk_clk;
 	input	[9:0]	dipsw_pio_external_connection_export;
