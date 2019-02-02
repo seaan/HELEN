@@ -1,6 +1,5 @@
 
 module soc_system (
-	addc_hsmc_addc_hsmc,
 	button_pio_external_connection_export,
 	clk_clk,
 	dipsw_pio_external_connection_export,
@@ -71,7 +70,6 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
-	led_pio_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -88,9 +86,16 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n);	
+	reset_reset_n,
+	custom_leds_0_leds1_leds,
+	Custom_leds_0_s0_address,
+	Custom_leds_0_s0_read,
+	Custom_leds_0_s0_readdata,
+	Custom_leds_0_s0_write,
+	Custom_leds_0_s0_writedata,
+	Custom_leds_0_reset_reset,
+	custom_leds_0_leds_leds);	
 
-	input	[13:0]	addc_hsmc_addc_hsmc;
 	input	[3:0]	button_pio_external_connection_export;
 	input		clk_clk;
 	input	[9:0]	dipsw_pio_external_connection_export;
@@ -161,7 +166,6 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
-	output	[9:0]	led_pio_external_connection_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;
@@ -179,4 +183,12 @@ module soc_system (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
+	input	[7:0]	custom_leds_0_leds1_leds;
+	output		Custom_leds_0_s0_address;
+	output		Custom_leds_0_s0_read;
+	input	[31:0]	Custom_leds_0_s0_readdata;
+	output		Custom_leds_0_s0_write;
+	output	[31:0]	Custom_leds_0_s0_writedata;
+	output		Custom_leds_0_reset_reset;
+	output	[7:0]	custom_leds_0_leds_leds;
 endmodule
