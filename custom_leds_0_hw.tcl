@@ -132,3 +132,12 @@ set_interface_property reset SVD_ADDRESS_GROUP ""
 
 add_interface_port reset reset reset Input 1
 
+# +-----------------------------------
+# | Device tree generation
+# |
+set_module_assignment embeddedsw.dts.vendor "dsa"
+set_module_assignment embeddedsw.dts.compatible "dev,custom-leds"
+set_module_assignment embeddedsw.dts.group "leds"
+# |
+# +-----------------------------------
+
