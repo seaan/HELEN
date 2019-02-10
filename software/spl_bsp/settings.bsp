@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>spl</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Feb 8, 2019 4:12:52 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1549663972896</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 10, 2019 3:55:28 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1549835728726</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>./</BspGeneratedLocation>
         <BspSettingsFile>/home/sean/Documents/shc/HELEN/software/spl_bsp/settings.bsp</BspSettingsFile>
         <HpsSettingsPath>../../hps_isw_handoff/soc_system_hps_0</HpsSettingsPath>
@@ -266,7 +266,7 @@
                 <SettingName>spl.boot.FAT_SUPPORT</SettingName>
                 <Identifier>none</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Enable FAT partition support when booting from SDMMC.</Description>
