@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.0 614 (Future versions may contain additional information.) -->
- <!-- 2019.02.10.14:15:40 -->
+ <!-- 2019.02.10.14:50:47 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1549829739</value>
+  <value>1549831846</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -1342,7 +1342,7 @@ parameters are a RESULT of the module parameters. -->
  </module>
  <module
    name="custom_leds_0"
-   kind="Custom_leds"
+   kind="custom_leds"
    version="1.0"
    path="custom_leds_0">
   <!-- Describes a single module. Module parameters are
@@ -80209,7 +80209,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1549829739</value>
+   <value>1549831846</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -80229,7 +80229,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1549829739</value>
+   <value>1549831846</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -80245,7 +80245,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1549829739</value>
+   <value>1549831846</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -91971,7 +91971,7 @@ parameters are a RESULT of the module parameters. -->
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>Custom_leds</name>
+  <name>custom_leds</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>Custom LEDS</displayName>

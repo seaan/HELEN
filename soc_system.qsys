@@ -205,6 +205,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element sysid_qsys
    {
       datum _sortIndex
@@ -248,29 +256,29 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface
-   name="Custom_leds_0_reset"
-   internal="custom_leds_0.reset1"
-   type="conduit"
-   dir="end" />
- <interface
-   name="Custom_leds_0_s0"
-   internal="custom_leds_0.s01"
-   type="conduit"
-   dir="end" />
- <interface
    name="button_pio_external_connection"
    internal="button_pio.external_connection"
    type="conduit"
    dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
-   name="custom_leds_0"
+   name="custom_leds_0_led"
+   internal="custom_leds_0.leds1"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="custom_leds_0_leds"
    internal="custom_leds_0.leds"
    type="conduit"
    dir="end" />
  <interface
-   name="custom_leds_0_leds1"
-   internal="custom_leds_0.leds1"
+   name="custom_leds_0_reset"
+   internal="custom_leds_0.reset1"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="custom_leds_0_s0"
+   internal="custom_leds_0.s01"
    type="conduit"
    dir="end" />
  <interface
@@ -338,7 +346,7 @@
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
- <module name="custom_leds_0" kind="Custom_leds" version="1.0" enabled="1" />
+ <module name="custom_leds_0" kind="custom_leds" version="1.0" enabled="1" />
  <module name="dipsw_pio" kind="altera_avalon_pio" version="18.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="true" />
   <parameter name="bitModifyingOutReg" value="false" />

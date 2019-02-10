@@ -1,14 +1,6 @@
 	soc_system u0 (
-		.Custom_leds_0_reset_reset             (<connected-to-Custom_leds_0_reset_reset>),             //            Custom_leds_0_reset.reset
-		.Custom_leds_0_s0_address              (<connected-to-Custom_leds_0_s0_address>),              //               Custom_leds_0_s0.address
-		.Custom_leds_0_s0_read                 (<connected-to-Custom_leds_0_s0_read>),                 //                               .read
-		.Custom_leds_0_s0_readdata             (<connected-to-Custom_leds_0_s0_readdata>),             //                               .readdata
-		.Custom_leds_0_s0_write                (<connected-to-Custom_leds_0_s0_write>),                //                               .write
-		.Custom_leds_0_s0_writedata            (<connected-to-Custom_leds_0_s0_writedata>),            //                               .writedata
 		.button_pio_external_connection_export (<connected-to-button_pio_external_connection_export>), // button_pio_external_connection.export
 		.clk_clk                               (<connected-to-clk_clk>),                               //                            clk.clk
-		.custom_leds_0_leds                    (<connected-to-custom_leds_0_leds>),                    //                  custom_leds_0.leds
-		.custom_leds_0_leds1_leds              (<connected-to-custom_leds_0_leds1_leds>),              //            custom_leds_0_leds1.leds
 		.dipsw_pio_external_connection_export  (<connected-to-dipsw_pio_external_connection_export>),  //  dipsw_pio_external_connection.export
 		.hps_0_f2h_cold_reset_req_reset_n      (<connected-to-hps_0_f2h_cold_reset_req_reset_n>),      //       hps_0_f2h_cold_reset_req.reset_n
 		.hps_0_f2h_debug_reset_req_reset_n     (<connected-to-hps_0_f2h_debug_reset_req_reset_n>),     //      hps_0_f2h_debug_reset_req.reset_n
@@ -93,6 +85,14 @@
 		.memory_mem_odt                        (<connected-to-memory_mem_odt>),                        //                               .mem_odt
 		.memory_mem_dm                         (<connected-to-memory_mem_dm>),                         //                               .mem_dm
 		.memory_oct_rzqin                      (<connected-to-memory_oct_rzqin>),                      //                               .oct_rzqin
-		.reset_reset_n                         (<connected-to-reset_reset_n>)                          //                          reset.reset_n
+		.reset_reset_n                         (<connected-to-reset_reset_n>),                         //                          reset.reset_n
+		.custom_leds_0_led_leds                (<connected-to-custom_leds_0_led_leds>),                //              custom_leds_0_led.leds
+		.custom_leds_0_s0_address              (<connected-to-custom_leds_0_s0_address>),              //               custom_leds_0_s0.address
+		.custom_leds_0_s0_read                 (<connected-to-custom_leds_0_s0_read>),                 //                               .read
+		.custom_leds_0_s0_readdata             (<connected-to-custom_leds_0_s0_readdata>),             //                               .readdata
+		.custom_leds_0_s0_write                (<connected-to-custom_leds_0_s0_write>),                //                               .write
+		.custom_leds_0_s0_writedata            (<connected-to-custom_leds_0_s0_writedata>),            //                               .writedata
+		.custom_leds_0_reset_reset             (<connected-to-custom_leds_0_reset_reset>),             //            custom_leds_0_reset.reset
+		.custom_leds_0_leds_leds               (<connected-to-custom_leds_0_leds_leds>)                //             custom_leds_0_leds.leds
 	);
 

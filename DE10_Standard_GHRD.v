@@ -333,7 +333,7 @@ soc_system u0 (
 		  .hps_0_f2h_warm_reset_req_reset_n      (~hps_warm_reset ),      //       hps_0_f2h_warm_reset_req.reset_n
 		  //.addc_hsmc									   (HSMC_RX_D_P),
 		  //FPGA Partion
-        .custom_leds_0_leds               (LED),               //             custom_leds_0_leds.leds
+        .custom_leds_0_leds_leds               (LED),               //             custom_leds_0_leds.leds
     );
 
 	 

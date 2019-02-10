@@ -1,15 +1,7 @@
 
 module soc_system (
-	Custom_leds_0_reset_reset,
-	Custom_leds_0_s0_address,
-	Custom_leds_0_s0_read,
-	Custom_leds_0_s0_readdata,
-	Custom_leds_0_s0_write,
-	Custom_leds_0_s0_writedata,
 	button_pio_external_connection_export,
 	clk_clk,
-	custom_leds_0_leds,
-	custom_leds_0_leds1_leds,
 	dipsw_pio_external_connection_export,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
@@ -94,18 +86,18 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n);	
+	reset_reset_n,
+	custom_leds_0_led_leds,
+	custom_leds_0_s0_address,
+	custom_leds_0_s0_read,
+	custom_leds_0_s0_readdata,
+	custom_leds_0_s0_write,
+	custom_leds_0_s0_writedata,
+	custom_leds_0_reset_reset,
+	custom_leds_0_leds_leds);	
 
-	output		Custom_leds_0_reset_reset;
-	output		Custom_leds_0_s0_address;
-	output		Custom_leds_0_s0_read;
-	input	[31:0]	Custom_leds_0_s0_readdata;
-	output		Custom_leds_0_s0_write;
-	output	[31:0]	Custom_leds_0_s0_writedata;
 	input	[3:0]	button_pio_external_connection_export;
 	input		clk_clk;
-	output	[7:0]	custom_leds_0_leds;
-	input	[7:0]	custom_leds_0_leds1_leds;
 	input	[9:0]	dipsw_pio_external_connection_export;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
@@ -191,4 +183,12 @@ module soc_system (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
+	input	[7:0]	custom_leds_0_led_leds;
+	output		custom_leds_0_s0_address;
+	output		custom_leds_0_s0_read;
+	input	[31:0]	custom_leds_0_s0_readdata;
+	output		custom_leds_0_s0_write;
+	output	[31:0]	custom_leds_0_s0_writedata;
+	output		custom_leds_0_reset_reset;
+	output	[7:0]	custom_leds_0_leds_leds;
 endmodule

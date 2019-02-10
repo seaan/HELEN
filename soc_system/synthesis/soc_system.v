@@ -4,16 +4,16 @@
 
 `timescale 1 ps / 1 ps
 module soc_system (
-		output wire        Custom_leds_0_reset_reset,             //            Custom_leds_0_reset.reset
-		output wire        Custom_leds_0_s0_address,              //               Custom_leds_0_s0.address
-		output wire        Custom_leds_0_s0_read,                 //                               .read
-		input  wire [31:0] Custom_leds_0_s0_readdata,             //                               .readdata
-		output wire        Custom_leds_0_s0_write,                //                               .write
-		output wire [31:0] Custom_leds_0_s0_writedata,            //                               .writedata
 		input  wire [3:0]  button_pio_external_connection_export, // button_pio_external_connection.export
 		input  wire        clk_clk,                               //                            clk.clk
-		output wire [7:0]  custom_leds_0_leds,                    //                  custom_leds_0.leds
-		input  wire [7:0]  custom_leds_0_leds1_leds,              //            custom_leds_0_leds1.leds
+		input  wire [7:0]  custom_leds_0_led_leds,                //              custom_leds_0_led.leds
+		output wire [7:0]  custom_leds_0_leds_leds,               //             custom_leds_0_leds.leds
+		output wire        custom_leds_0_reset_reset,             //            custom_leds_0_reset.reset
+		output wire        custom_leds_0_s0_address,              //               custom_leds_0_s0.address
+		output wire        custom_leds_0_s0_read,                 //                               .read
+		input  wire [31:0] custom_leds_0_s0_readdata,             //                               .readdata
+		output wire        custom_leds_0_s0_write,                //                               .write
+		output wire [31:0] custom_leds_0_s0_writedata,            //                               .writedata
 		input  wire [9:0]  dipsw_pio_external_connection_export,  //  dipsw_pio_external_connection.export
 		input  wire        hps_0_f2h_cold_reset_req_reset_n,      //       hps_0_f2h_cold_reset_req.reset_n
 		input  wire        hps_0_f2h_debug_reset_req_reset_n,     //      hps_0_f2h_debug_reset_req.reset_n
@@ -236,7 +236,7 @@ module soc_system (
 
 	soc_system_button_pio button_pio (
 		.clk        (clk_clk),                                    //                 clk.clk
-		.reset_n    (~Custom_leds_0_reset_reset),                 //               reset.reset_n
+		.reset_n    (~custom_leds_0_reset_reset),                 //               reset.reset_n
 		.address    (mm_interconnect_0_button_pio_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_button_pio_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_button_pio_s1_writedata),  //                    .writedata
@@ -248,7 +248,7 @@ module soc_system (
 
 	soc_system_dipsw_pio dipsw_pio (
 		.clk        (clk_clk),                                   //                 clk.clk
-		.reset_n    (~Custom_leds_0_reset_reset),                //               reset.reset_n
+		.reset_n    (~custom_leds_0_reset_reset),                //               reset.reset_n
 		.address    (mm_interconnect_0_dipsw_pio_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_dipsw_pio_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_dipsw_pio_s1_writedata),  //                    .writedata
@@ -528,7 +528,7 @@ module soc_system (
 
 	soc_system_jtag_uart jtag_uart (
 		.clk            (clk_clk),                                                   //               clk.clk
-		.rst_n          (~Custom_leds_0_reset_reset),                                //             reset.reset_n
+		.rst_n          (~custom_leds_0_reset_reset),                                //             reset.reset_n
 		.av_chipselect  (mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect),  // avalon_jtag_slave.chipselect
 		.av_address     (mm_interconnect_0_jtag_uart_avalon_jtag_slave_address),     //                  .address
 		.av_read_n      (~mm_interconnect_0_jtag_uart_avalon_jtag_slave_read),       //                  .read_n
@@ -541,7 +541,7 @@ module soc_system (
 
 	soc_system_sysid_qsys sysid_qsys (
 		.clock    (clk_clk),                                             //           clk.clk
-		.reset_n  (~Custom_leds_0_reset_reset),                          //         reset.reset_n
+		.reset_n  (~custom_leds_0_reset_reset),                          //         reset.reset_n
 		.readdata (mm_interconnect_0_sysid_qsys_control_slave_readdata), // control_slave.readdata
 		.address  (mm_interconnect_0_sysid_qsys_control_slave_address)   //              .address
 	);
@@ -584,8 +584,8 @@ module soc_system (
 		.hps_0_h2f_lw_axi_master_rvalid                                      (hps_0_h2f_lw_axi_master_rvalid),                            //                                                              .rvalid
 		.hps_0_h2f_lw_axi_master_rready                                      (hps_0_h2f_lw_axi_master_rready),                            //                                                              .rready
 		.clk_0_clk_clk                                                       (clk_clk),                                                   //                                                     clk_0_clk.clk
-		.custom_leds_0_reset_reset_bridge_in_reset_reset                     (Custom_leds_0_reset_reset),                                 //                     custom_leds_0_reset_reset_bridge_in_reset.reset
-		.fpga_only_master_clk_reset_reset_bridge_in_reset_reset              (Custom_leds_0_reset_reset),                                 //              fpga_only_master_clk_reset_reset_bridge_in_reset.reset
+		.custom_leds_0_reset_reset_bridge_in_reset_reset                     (custom_leds_0_reset_reset),                                 //                     custom_leds_0_reset_reset_bridge_in_reset.reset
+		.fpga_only_master_clk_reset_reset_bridge_in_reset_reset              (custom_leds_0_reset_reset),                                 //              fpga_only_master_clk_reset_reset_bridge_in_reset.reset
 		.hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                        // hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		.fpga_only_master_master_address                                     (fpga_only_master_master_address),                           //                                       fpga_only_master_master.address
 		.fpga_only_master_master_waitrequest                                 (fpga_only_master_master_waitrequest),                       //                                                              .waitrequest
@@ -600,11 +600,11 @@ module soc_system (
 		.button_pio_s1_readdata                                              (mm_interconnect_0_button_pio_s1_readdata),                  //                                                              .readdata
 		.button_pio_s1_writedata                                             (mm_interconnect_0_button_pio_s1_writedata),                 //                                                              .writedata
 		.button_pio_s1_chipselect                                            (mm_interconnect_0_button_pio_s1_chipselect),                //                                                              .chipselect
-		.custom_leds_0_s0_address                                            (Custom_leds_0_s0_address),                                  //                                              custom_leds_0_s0.address
-		.custom_leds_0_s0_write                                              (Custom_leds_0_s0_write),                                    //                                                              .write
-		.custom_leds_0_s0_read                                               (Custom_leds_0_s0_read),                                     //                                                              .read
-		.custom_leds_0_s0_readdata                                           (Custom_leds_0_s0_readdata),                                 //                                                              .readdata
-		.custom_leds_0_s0_writedata                                          (Custom_leds_0_s0_writedata),                                //                                                              .writedata
+		.custom_leds_0_s0_address                                            (custom_leds_0_s0_address),                                  //                                              custom_leds_0_s0.address
+		.custom_leds_0_s0_write                                              (custom_leds_0_s0_write),                                    //                                                              .write
+		.custom_leds_0_s0_read                                               (custom_leds_0_s0_read),                                     //                                                              .read
+		.custom_leds_0_s0_readdata                                           (custom_leds_0_s0_readdata),                                 //                                                              .readdata
+		.custom_leds_0_s0_writedata                                          (custom_leds_0_s0_writedata),                                //                                                              .writedata
 		.dipsw_pio_s1_address                                                (mm_interconnect_0_dipsw_pio_s1_address),                    //                                                  dipsw_pio_s1.address
 		.dipsw_pio_s1_write                                                  (mm_interconnect_0_dipsw_pio_s1_write),                      //                                                              .write
 		.dipsw_pio_s1_readdata                                               (mm_interconnect_0_dipsw_pio_s1_readdata),                   //                                                              .readdata
@@ -662,8 +662,8 @@ module soc_system (
 		.hps_0_f2h_axi_slave_rready                                          (mm_interconnect_1_hps_0_f2h_axi_slave_rready),  //                                                              .rready
 		.clk_0_clk_clk                                                       (clk_clk),                                       //                                                     clk_0_clk.clk
 		.hps_0_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset_reset    (rst_controller_001_reset_out_reset),            //    hps_0_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset.reset
-		.hps_only_master_clk_reset_reset_bridge_in_reset_reset               (Custom_leds_0_reset_reset),                     //               hps_only_master_clk_reset_reset_bridge_in_reset.reset
-		.hps_only_master_master_translator_reset_reset_bridge_in_reset_reset (Custom_leds_0_reset_reset),                     // hps_only_master_master_translator_reset_reset_bridge_in_reset.reset
+		.hps_only_master_clk_reset_reset_bridge_in_reset_reset               (custom_leds_0_reset_reset),                     //               hps_only_master_clk_reset_reset_bridge_in_reset.reset
+		.hps_only_master_master_translator_reset_reset_bridge_in_reset_reset (custom_leds_0_reset_reset),                     // hps_only_master_master_translator_reset_reset_bridge_in_reset.reset
 		.hps_only_master_master_address                                      (hps_only_master_master_address),                //                                        hps_only_master_master.address
 		.hps_only_master_master_waitrequest                                  (hps_only_master_master_waitrequest),            //                                                              .waitrequest
 		.hps_only_master_master_byteenable                                   (hps_only_master_master_byteenable),             //                                                              .byteenable
@@ -676,8 +676,8 @@ module soc_system (
 
 	soc_system_mm_interconnect_2 mm_interconnect_2 (
 		.clk_0_clk_clk                                                           (clk_clk),                                               //                                                         clk_0_clk.clk
-		.f2sdram_only_master_clk_reset_reset_bridge_in_reset_reset               (Custom_leds_0_reset_reset),                             //               f2sdram_only_master_clk_reset_reset_bridge_in_reset.reset
-		.f2sdram_only_master_master_translator_reset_reset_bridge_in_reset_reset (Custom_leds_0_reset_reset),                             // f2sdram_only_master_master_translator_reset_reset_bridge_in_reset.reset
+		.f2sdram_only_master_clk_reset_reset_bridge_in_reset_reset               (custom_leds_0_reset_reset),                             //               f2sdram_only_master_clk_reset_reset_bridge_in_reset.reset
+		.f2sdram_only_master_master_translator_reset_reset_bridge_in_reset_reset (custom_leds_0_reset_reset),                             // f2sdram_only_master_master_translator_reset_reset_bridge_in_reset.reset
 		.hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset      (rst_controller_001_reset_out_reset),                    //      hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset.reset
 		.f2sdram_only_master_master_address                                      (f2sdram_only_master_master_address),                    //                                        f2sdram_only_master_master.address
 		.f2sdram_only_master_master_waitrequest                                  (f2sdram_only_master_master_waitrequest),                //                                                                  .waitrequest
@@ -741,7 +741,7 @@ module soc_system (
 	) rst_controller (
 		.reset_in0      (~reset_reset_n),            // reset_in0.reset
 		.clk            (clk_clk),                   //       clk.clk
-		.reset_out      (Custom_leds_0_reset_reset), // reset_out.reset
+		.reset_out      (custom_leds_0_reset_reset), // reset_out.reset
 		.reset_req      (),                          // (terminated)
 		.reset_req_in0  (1'b0),                      // (terminated)
 		.reset_in1      (1'b0),                      // (terminated)
@@ -839,6 +839,6 @@ module soc_system (
 		.reset_req_in15 (1'b0)                                // (terminated)
 	);
 
-	assign custom_leds_0_leds = custom_leds_0_leds1_leds;
+	assign custom_leds_0_leds_leds = custom_leds_0_led_leds;
 
 endmodule
