@@ -222,8 +222,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 296)
 		(output)
-		(text "custom_leds_0_leds_leds[7..0]" (rect 0 0 123 12)(font "Arial" (font_size 8)))
-		(text "custom_leds_0_leds_leds[7..0]" (rect 4 285 178 296)(font "Arial" (font_size 8)))
+		(text "custom_leds_0_leds[7..0]" (rect 0 0 102 12)(font "Arial" (font_size 8)))
+		(text "custom_leds_0_leds[7..0]" (rect 4 285 148 296)(font "Arial" (font_size 8)))
 		(line (pt 0 296)(pt 272 296)(line_width 3))
 	)
 	(port
@@ -701,7 +701,7 @@ refer to the applicable agreement for further details.
 		(text "export" (rect 277 211 590 432)(font "Arial" (color 0 0 0)))
 		(text "clk" (rect 257 227 532 467)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "clk" (rect 277 251 572 512)(font "Arial" (color 0 0 0)))
-		(text "custom_leds_0_leds" (rect 152 267 412 547)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "custom_leds_0" (rect 184 267 446 547)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "leds" (rect 277 291 578 592)(font "Arial" (color 0 0 0)))
 		(text "custom_leds_0_leds1" (rect 147 307 408 627)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "leds" (rect 277 331 578 672)(font "Arial" (color 0 0 0)))

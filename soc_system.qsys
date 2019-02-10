@@ -9,14 +9,6 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element ADDC_HSMC_0.s0
-   {
-      datum baseAddress
-      {
-         value = "16777216";
-         type = "String";
-      }
-   }
    element ILC
    {
       datum _sortIndex
@@ -272,7 +264,7 @@
    dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
-   name="custom_leds_0_leds"
+   name="custom_leds_0"
    internal="custom_leds_0.leds"
    type="conduit"
    dir="end" />
