@@ -6,6 +6,7 @@
 module soc_system (
 		input  wire [3:0]  button_pio_external_connection_export, // button_pio_external_connection.export
 		input  wire        clk_clk,                               //                            clk.clk
+		input  wire [31:0] custom_adc_0_adc_adc,                  //               custom_adc_0_adc.adc
 		output wire [7:0]  custom_leds_0_leds_leds,               //             custom_leds_0_leds.leds
 		input  wire [9:0]  dipsw_pio_external_connection_export,  //  dipsw_pio_external_connection.export
 		input  wire        hps_0_f2h_cold_reset_req_reset_n,      //       hps_0_f2h_cold_reset_req.reset_n
@@ -143,6 +144,11 @@ module soc_system (
 	wire          mm_interconnect_0_custom_leds_0_s0_read;                   // mm_interconnect_0:custom_leds_0_s0_read -> custom_leds_0:avs_s0_read
 	wire          mm_interconnect_0_custom_leds_0_s0_write;                  // mm_interconnect_0:custom_leds_0_s0_write -> custom_leds_0:avs_s0_write
 	wire   [31:0] mm_interconnect_0_custom_leds_0_s0_writedata;              // mm_interconnect_0:custom_leds_0_s0_writedata -> custom_leds_0:avs_s0_writedata
+	wire   [31:0] mm_interconnect_0_custom_adc_0_s0_readdata;                // custom_adc_0:avs_s0_readdata -> mm_interconnect_0:custom_adc_0_s0_readdata
+	wire    [0:0] mm_interconnect_0_custom_adc_0_s0_address;                 // mm_interconnect_0:custom_adc_0_s0_address -> custom_adc_0:avs_s0_address
+	wire          mm_interconnect_0_custom_adc_0_s0_read;                    // mm_interconnect_0:custom_adc_0_s0_read -> custom_adc_0:avs_s0_read
+	wire          mm_interconnect_0_custom_adc_0_s0_write;                   // mm_interconnect_0:custom_adc_0_s0_write -> custom_adc_0:avs_s0_write
+	wire   [31:0] mm_interconnect_0_custom_adc_0_s0_writedata;               // mm_interconnect_0:custom_adc_0_s0_writedata -> custom_adc_0:avs_s0_writedata
 	wire          mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_uart_avalon_jtag_slave_chipselect -> jtag_uart:av_chipselect
 	wire   [31:0] mm_interconnect_0_jtag_uart_avalon_jtag_slave_readdata;    // jtag_uart:av_readdata -> mm_interconnect_0:jtag_uart_avalon_jtag_slave_readdata
 	wire          mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest; // jtag_uart:av_waitrequest -> mm_interconnect_0:jtag_uart_avalon_jtag_slave_waitrequest
@@ -230,7 +236,7 @@ module soc_system (
 	wire          irq_mapper_receiver2_irq;                                  // dipsw_pio:irq -> irq_mapper:receiver2_irq
 	wire   [31:0] hps_0_f2h_irq0_irq;                                        // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
 	wire   [31:0] hps_0_f2h_irq1_irq;                                        // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
-	wire          rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [button_pio:reset_n, custom_leds_0:reset, dipsw_pio:reset_n, jtag_uart:rst_n, mm_interconnect_0:custom_leds_0_reset_reset_bridge_in_reset_reset, mm_interconnect_0:fpga_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_only_master_master_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_2:f2sdram_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_2:f2sdram_only_master_master_translator_reset_reset_bridge_in_reset_reset, sysid_qsys:reset_n]
+	wire          rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [button_pio:reset_n, custom_adc_0:reset, custom_leds_0:reset, dipsw_pio:reset_n, jtag_uart:rst_n, mm_interconnect_0:custom_leds_0_reset_reset_bridge_in_reset_reset, mm_interconnect_0:fpga_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_only_master_master_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_2:f2sdram_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_2:f2sdram_only_master_master_translator_reset_reset_bridge_in_reset_reset, sysid_qsys:reset_n]
 	wire          rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_0_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset_reset, mm_interconnect_2:hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset]
 
 	soc_system_button_pio button_pio (
@@ -243,6 +249,17 @@ module soc_system (
 		.readdata   (mm_interconnect_0_button_pio_s1_readdata),   //                    .readdata
 		.in_port    (button_pio_external_connection_export),      // external_connection.export
 		.irq        (irq_mapper_receiver1_irq)                    //                 irq.irq
+	);
+
+	custom_adc custom_adc_0 (
+		.clk              (clk_clk),                                     // clock.clk
+		.reset            (rst_controller_reset_out_reset),              // reset.reset
+		.avs_s0_address   (mm_interconnect_0_custom_adc_0_s0_address),   //    s0.address
+		.avs_s0_read      (mm_interconnect_0_custom_adc_0_s0_read),      //      .read
+		.avs_s0_write     (mm_interconnect_0_custom_adc_0_s0_write),     //      .write
+		.avs_s0_readdata  (mm_interconnect_0_custom_adc_0_s0_readdata),  //      .readdata
+		.avs_s0_writedata (mm_interconnect_0_custom_adc_0_s0_writedata), //      .writedata
+		.adc              (custom_adc_0_adc_adc)                         //   adc.adc
 	);
 
 	custom_leds custom_leds_0 (
@@ -610,6 +627,11 @@ module soc_system (
 		.button_pio_s1_readdata                                              (mm_interconnect_0_button_pio_s1_readdata),                  //                                                              .readdata
 		.button_pio_s1_writedata                                             (mm_interconnect_0_button_pio_s1_writedata),                 //                                                              .writedata
 		.button_pio_s1_chipselect                                            (mm_interconnect_0_button_pio_s1_chipselect),                //                                                              .chipselect
+		.custom_adc_0_s0_address                                             (mm_interconnect_0_custom_adc_0_s0_address),                 //                                               custom_adc_0_s0.address
+		.custom_adc_0_s0_write                                               (mm_interconnect_0_custom_adc_0_s0_write),                   //                                                              .write
+		.custom_adc_0_s0_read                                                (mm_interconnect_0_custom_adc_0_s0_read),                    //                                                              .read
+		.custom_adc_0_s0_readdata                                            (mm_interconnect_0_custom_adc_0_s0_readdata),                //                                                              .readdata
+		.custom_adc_0_s0_writedata                                           (mm_interconnect_0_custom_adc_0_s0_writedata),               //                                                              .writedata
 		.custom_leds_0_s0_address                                            (mm_interconnect_0_custom_leds_0_s0_address),                //                                              custom_leds_0_s0.address
 		.custom_leds_0_s0_write                                              (mm_interconnect_0_custom_leds_0_s0_write),                  //                                                              .write
 		.custom_leds_0_s0_read                                               (mm_interconnect_0_custom_leds_0_s0_read),                   //                                                              .read

@@ -334,7 +334,8 @@ soc_system u0 (
 		  //.addc_hsmc									   (HSMC_RX_D_P),
 		  //FPGA Partion
         .custom_leds_0_leds_leds               (LED),               //             custom_leds_0_leds.leds
-    );
+		  .custom_adc_0_adc_adc						  (ADC),
+	 );
 
 	 
 	 // Debounce logic to clean out glitches within 1ms
@@ -385,24 +386,4 @@ altera_edge_detector pulse_debug_reset (
   defparam pulse_debug_reset.EDGE_TYPE = 1;
   defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
   
-reg [25:0] counter; 
-reg  led_level;
-always @(posedge fpga_clk_50 or negedge hps_fpga_reset_n)
-begin
-if(~hps_fpga_reset_n)
-begin
-                counter<=0;
-                led_level<=0;
-end
-
-else if(counter==24999999)
-        begin
-                counter<=0;
-                led_level<=~led_level;
-        end
-else
-                counter<=counter+1'b1;
-end
-
-assign LEDR[0]=led_level;
 endmodule

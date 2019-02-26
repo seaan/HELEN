@@ -2,6 +2,8 @@
 		port (
 			button_pio_external_connection_export : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
 			clk_clk                               : in    std_logic                     := 'X';             -- clk
+			custom_adc_0_adc_adc                  : out   std_logic_vector(31 downto 0);                    -- adc
+			custom_leds_0_leds_leds               : out   std_logic_vector(7 downto 0);                     -- leds
 			dipsw_pio_external_connection_export  : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
 			hps_0_f2h_cold_reset_req_reset_n      : in    std_logic                     := 'X';             -- reset_n
 			hps_0_f2h_debug_reset_req_reset_n     : in    std_logic                     := 'X';             -- reset_n
@@ -86,15 +88,7 @@
 			memory_mem_odt                        : out   std_logic;                                        -- mem_odt
 			memory_mem_dm                         : out   std_logic_vector(3 downto 0);                     -- mem_dm
 			memory_oct_rzqin                      : in    std_logic                     := 'X';             -- oct_rzqin
-			reset_reset_n                         : in    std_logic                     := 'X';             -- reset_n
-			custom_leds_0_led_leds                : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- leds
-			custom_leds_0_s0_address              : out   std_logic;                                        -- address
-			custom_leds_0_s0_read                 : out   std_logic;                                        -- read
-			custom_leds_0_s0_readdata             : in    std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
-			custom_leds_0_s0_write                : out   std_logic;                                        -- write
-			custom_leds_0_s0_writedata            : out   std_logic_vector(31 downto 0);                    -- writedata
-			custom_leds_0_reset_reset             : out   std_logic;                                        -- reset
-			custom_leds_0_leds_leds               : out   std_logic_vector(7 downto 0)                      -- leds
+			reset_reset_n                         : in    std_logic                     := 'X'              -- reset_n
 		);
 	end component soc_system;
 
@@ -102,6 +96,8 @@
 		port map (
 			button_pio_external_connection_export => CONNECTED_TO_button_pio_external_connection_export, -- button_pio_external_connection.export
 			clk_clk                               => CONNECTED_TO_clk_clk,                               --                            clk.clk
+			custom_adc_0_adc_adc                  => CONNECTED_TO_custom_adc_0_adc_adc,                  --               custom_adc_0_adc.adc
+			custom_leds_0_leds_leds               => CONNECTED_TO_custom_leds_0_leds_leds,               --             custom_leds_0_leds.leds
 			dipsw_pio_external_connection_export  => CONNECTED_TO_dipsw_pio_external_connection_export,  --  dipsw_pio_external_connection.export
 			hps_0_f2h_cold_reset_req_reset_n      => CONNECTED_TO_hps_0_f2h_cold_reset_req_reset_n,      --       hps_0_f2h_cold_reset_req.reset_n
 			hps_0_f2h_debug_reset_req_reset_n     => CONNECTED_TO_hps_0_f2h_debug_reset_req_reset_n,     --      hps_0_f2h_debug_reset_req.reset_n
@@ -186,14 +182,6 @@
 			memory_mem_odt                        => CONNECTED_TO_memory_mem_odt,                        --                               .mem_odt
 			memory_mem_dm                         => CONNECTED_TO_memory_mem_dm,                         --                               .mem_dm
 			memory_oct_rzqin                      => CONNECTED_TO_memory_oct_rzqin,                      --                               .oct_rzqin
-			reset_reset_n                         => CONNECTED_TO_reset_reset_n,                         --                          reset.reset_n
-			custom_leds_0_led_leds                => CONNECTED_TO_custom_leds_0_led_leds,                --              custom_leds_0_led.leds
-			custom_leds_0_s0_address              => CONNECTED_TO_custom_leds_0_s0_address,              --               custom_leds_0_s0.address
-			custom_leds_0_s0_read                 => CONNECTED_TO_custom_leds_0_s0_read,                 --                               .read
-			custom_leds_0_s0_readdata             => CONNECTED_TO_custom_leds_0_s0_readdata,             --                               .readdata
-			custom_leds_0_s0_write                => CONNECTED_TO_custom_leds_0_s0_write,                --                               .write
-			custom_leds_0_s0_writedata            => CONNECTED_TO_custom_leds_0_s0_writedata,            --                               .writedata
-			custom_leds_0_reset_reset             => CONNECTED_TO_custom_leds_0_reset_reset,             --            custom_leds_0_reset.reset
-			custom_leds_0_leds_leds               => CONNECTED_TO_custom_leds_0_leds_leds                --             custom_leds_0_leds.leds
+			reset_reset_n                         => CONNECTED_TO_reset_reset_n                          --                          reset.reset_n
 		);
 
