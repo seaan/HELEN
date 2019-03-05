@@ -32,7 +32,7 @@
 // ============================================================================
 
 `define ENABLE_HPS
-//`define ENABLE_HSMC
+`define ENABLE_HSMC
 
 module DE10_Standard_GHRD(
 
@@ -121,16 +121,16 @@ module DE10_Standard_GHRD(
       ///////// HSMC /////////
       input              HSMC_CLKIN_P1,
       input              HSMC_CLKIN_N1,
-      input              HSMC_CLKIN_P2,
-      input              HSMC_CLKIN_N2,
+      input              ADA_DCO,
+      input              ADB_DCO,
       output             HSMC_CLKOUT_P1,
       output             HSMC_CLKOUT_N1,
       output             HSMC_CLKOUT_P2,
       output             HSMC_CLKOUT_N2,
       inout    [16: 0]   HSMC_TX_D_P,
       inout    [16: 0]   HSMC_TX_D_N,
-      inout    [16: 0]   HSMC_RX_D_P,
-      inout    [16: 0]   HSMC_RX_D_N,
+      inout    [13: 0]   ADA_D,
+      inout    [13: 0]   ADB_D,
       input              HSMC_CLKIN0,
       output             HSMC_CLKOUT0,
       inout    [ 3: 0]   HSMC_D,
@@ -221,10 +221,19 @@ module DE10_Standard_GHRD(
   wire        hps_debug_reset;
   wire [27:0] stm_hw_events;
   wire        fpga_clk_50;
+  wire 			reset_n;
 // connection of internal logics
   assign LEDR[9:1] = fpga_led_internal;
   assign stm_hw_events    = {{4{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
   assign fpga_clk_50=CLOCK_50;
+  
+	//// ADC ////
+	reg			[13:0]	per_a2da_d;
+	reg			[13:0]	per_a2db_d;
+	reg			[13:0]	a2da_data;
+	reg			[13:0]	a2db_data;
+	
+	assign 		reset_n = KEY[3];
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -405,4 +414,93 @@ else
 end
 
 assign LEDR[0]=led_level;
+
+//--- analog to digital converter capture and sync
+	//--- Channel A
+always @(negedge reset_n or posedge ADA_DCO)
+begin
+	if (!reset_n) begin
+		per_a2da_d	<= 14'd0;
+	end
+	else begin
+		per_a2da_d	<= ADA_D;
+	end
+end
+
+reg [15:0] bcd_adc;
+always @(negedge reset_n or posedge fpga_clk_50)
+begin
+	if (!reset_n) begin
+		a2da_data	<= 14'd0;
+	end
+	else begin
+		a2da_data	<= per_a2da_d;
+		
+		bcd_adc = bintobcd(a2da_data); // convert to bcd
+		bintohex(bcd_adc[3:0], HEX0[6:0]); // display
+		bintohex(bcd_adc[7:4], HEX1[6:0]);
+		bintohex(bcd_adc[11:8], HEX2[6:0]);
+		bintohex(bcd_adc[15:12], HEX3[6:0]);
+	end
+end
+
+	//--- Channel B
+always @(negedge reset_n or posedge ADB_DCO)
+begin
+	if (!reset_n) begin
+		per_a2db_d	<= 14'd0;
+	end
+	else begin
+		per_a2db_d	<= ADB_D;
+	end
+end
+
+always @(negedge reset_n or posedge fpga_clk_50)
+begin
+	if (!reset_n) begin
+		a2db_data	<= 14'd0;
+	end
+	else begin
+		a2db_data	<= per_a2db_d;
+	end
+end
+
+   // binary to 7-seg hexadecimal output task
+   task bintohex (input [3:0] bin_num, output [6:0] hex_num);
+      case (bin_num)
+         0  : hex_num <= 7'b1000000;
+         1  : hex_num <= 7'b1111001;
+         2  : hex_num <= 7'b0100100;
+         3  : hex_num <= 7'b0110000;
+         4  : hex_num <= 7'b0011001;
+         5  : hex_num <= 7'b0010010;
+         6  : hex_num <= 7'b0000010;
+         7  : hex_num <= 7'b1111000;
+         8  : hex_num <= 7'b0000000;
+         9  : hex_num <= 7'b0011000;
+         10 : hex_num <= 7'b0001000;
+         11 : hex_num <= 7'b0000011;
+         12 : hex_num <= 7'b1000110;
+         13 : hex_num <= 7'b0100001;
+         14 : hex_num <= 7'b0000110;
+         15 : hex_num <= 7'b0001110;
+    default : hex_num <= 7'bx;
+      endcase
+   endtask
+	
+	   // This is a user-defined function that returns a 16-bit BCD 
+   // value from a 14-bit unsigned binary value
+   function [15:0] bintobcd;
+      input [13:0] bin_num;
+      reg [15:0] bcd_num=0;
+
+      reg [3:0] i;
+      for (i=0;i<=3;i=i+1)
+         begin
+            bcd_num=bcd_num+((bin_num-(bin_num/5'd10)*5'd10)<<4'd4*i);
+            bin_num = bin_num/5'd10;
+         end
+      bintobcd=bcd_num; 
+   endfunction
+	
 endmodule
