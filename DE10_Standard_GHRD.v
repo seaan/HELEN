@@ -343,7 +343,8 @@ soc_system u0 (
 		  //.addc_hsmc									   (HSMC_RX_D_P),
 		  //FPGA Partion
         .custom_leds_0_leds_leds               (LED),               //             custom_leds_0_leds.leds
-    );
+		  .custom_adc_0_adc_adc						  (ADC),
+	 );
 
 	 
 	 // Debounce logic to clean out glitches within 1ms
@@ -502,5 +503,4 @@ end
          end
       bintobcd=bcd_num; 
    endfunction
-	
 endmodule

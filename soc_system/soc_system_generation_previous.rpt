@@ -8,6 +8,8 @@ Progress: Adding button_pio [altera_avalon_pio 18.0]
 Progress: Parameterizing module button_pio
 Progress: Adding clk_0 [clock_source 18.0]
 Progress: Parameterizing module clk_0
+Progress: Adding custom_adc_0 [custom_adc 1.0]
+Progress: Parameterizing module custom_adc_0
 Progress: Adding custom_leds_0 [custom_leds 1.0]
 Progress: Parameterizing module custom_leds_0
 Progress: Adding dipsw_pio [altera_avalon_pio 18.0]
@@ -55,6 +57,8 @@ Progress: Adding button_pio [altera_avalon_pio 18.0]
 Progress: Parameterizing module button_pio
 Progress: Adding clk_0 [clock_source 18.0]
 Progress: Parameterizing module clk_0
+Progress: Adding custom_adc_0 [custom_adc 1.0]
+Progress: Parameterizing module custom_adc_0
 Progress: Adding custom_leds_0 [custom_leds 1.0]
 Progress: Parameterizing module custom_leds_0
 Progress: Adding dipsw_pio [altera_avalon_pio 18.0]
@@ -100,11 +104,13 @@ Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
 Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
-Info: button_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7937_5416033492541476136.dir/0002_button_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7937_5416033492541476136.dir/0002_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: button_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0002_button_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0002_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
 Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
+Info: custom_adc_0: "soc_system" instantiated custom_adc "custom_adc_0"
+Info: custom_leds_0: "soc_system" instantiated custom_leds "custom_leds_0"
 Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
-Info: dipsw_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7937_5416033492541476136.dir/0003_dipsw_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7937_5416033492541476136.dir/0003_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: dipsw_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0005_dipsw_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0005_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: dipsw_pio: Done RTL generation for module 'soc_system_dipsw_pio'
 Info: dipsw_pio: "soc_system" instantiated altera_avalon_pio "dipsw_pio"
 Info: f2sdram_only_master: "soc_system" instantiated altera_jtag_avalon_master "f2sdram_only_master"
@@ -116,7 +122,7 @@ Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MH
 Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7937_5416033492541476136.dir/0004_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7937_5416033492541476136.dir/0004_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0006_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0006_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
@@ -125,6 +131,7 @@ Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -150,8 +157,8 @@ Info: custom_leds_0_s0_agent: "mm_interconnect_0" instantiated altera_merlin_sla
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
-Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
-Info: fpga_only_master_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "fpga_only_master_master_limiter"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
 Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: custom_leds_0_s0_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "custom_leds_0_s0_burst_adapter"
@@ -161,9 +168,10 @@ Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/alte
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
 Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
@@ -195,6 +203,6 @@ Info: avalon_st_adapter: "mm_interconnect_2" instantiated altera_avalon_st_adapt
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: soc_system: Done "soc_system" with 59 modules, 125 files
+Info: soc_system: Done "soc_system" with 62 modules, 128 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

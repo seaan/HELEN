@@ -54,6 +54,22 @@
          type = "int";
       }
    }
+   element custom_adc_0
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element custom_adc_0.s0
+   {
+      datum baseAddress
+      {
+         value = "40";
+         type = "String";
+      }
+   }
    element custom_leds_0
    {
       datum _sortIndex
@@ -230,7 +246,7 @@
       }
       datum baseAddress
       {
-         value = "40";
+         value = "48";
          type = "String";
       }
    }
@@ -262,25 +278,18 @@
    dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
-   name="custom_leds_0_led"
-   internal="custom_leds_0.leds1"
+   name="custom_adc_0_adc"
+   internal="custom_adc_0.adc"
    type="conduit"
    dir="end" />
+ <interface name="custom_leds_0_led" internal="custom_leds_0.leds1" />
  <interface
    name="custom_leds_0_leds"
    internal="custom_leds_0.leds"
    type="conduit"
    dir="end" />
- <interface
-   name="custom_leds_0_reset"
-   internal="custom_leds_0.reset1"
-   type="conduit"
-   dir="end" />
- <interface
-   name="custom_leds_0_s0"
-   internal="custom_leds_0.s01"
-   type="conduit"
-   dir="end" />
+ <interface name="custom_leds_0_reset" internal="custom_leds_0.reset1" />
+ <interface name="custom_leds_0_s0" internal="custom_leds_0.s01" />
  <interface
    name="dipsw_pio_external_connection"
    internal="dipsw_pio.external_connection"
@@ -346,6 +355,7 @@
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
+ <module name="custom_adc_0" kind="custom_adc" version="1.0" enabled="1" />
  <module name="custom_leds_0" kind="custom_leds" version="1.0" enabled="1" />
  <module name="dipsw_pio" kind="altera_avalon_pio" version="18.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="true" />
@@ -1012,6 +1022,15 @@
  <connection
    kind="avalon"
    version="18.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="custom_adc_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0028" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
    start="mm_bridge_0.m0"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1083,7 +1102,7 @@
    start="fpga_only_master.master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0028" />
+  <parameter name="baseAddress" value="0x0030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1102,6 +1121,15 @@
    end="hps_0.f2h_sdram0_data">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.0"
+   start="fpga_only_master.master"
+   end="custom_adc_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0028" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1167,6 +1195,11 @@
    version="18.0"
    start="clk_0.clk"
    end="custom_leds_0.clock" />
+ <connection
+   kind="clock"
+   version="18.0"
+   start="clk_0.clk"
+   end="custom_adc_0.clock" />
  <connection
    kind="clock"
    version="18.0"
@@ -1267,6 +1300,11 @@
    version="18.0"
    start="clk_0.clk_reset"
    end="custom_leds_0.reset" />
+ <connection
+   kind="reset"
+   version="18.0"
+   start="clk_0.clk_reset"
+   end="custom_adc_0.reset" />
  <connection kind="reset" version="18.0" start="clk_0.clk_reset" end="ILC.reset_n" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
