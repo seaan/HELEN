@@ -251,17 +251,6 @@ module soc_system (
 		.irq        (irq_mapper_receiver1_irq)                    //                 irq.irq
 	);
 
-	custom_adc custom_adc_0 (
-		.clk              (clk_clk),                                     // clock.clk
-		.reset            (rst_controller_reset_out_reset),              // reset.reset
-		.avs_s0_address   (mm_interconnect_0_custom_adc_0_s0_address),   //    s0.address
-		.avs_s0_read      (mm_interconnect_0_custom_adc_0_s0_read),      //      .read
-		.avs_s0_write     (mm_interconnect_0_custom_adc_0_s0_write),     //      .write
-		.avs_s0_readdata  (mm_interconnect_0_custom_adc_0_s0_readdata),  //      .readdata
-		.avs_s0_writedata (mm_interconnect_0_custom_adc_0_s0_writedata), //      .writedata
-		.adc              (custom_adc_0_adc_adc)                         //   adc.adc
-	);
-
 	custom_leds custom_leds_0 (
 		.leds             (custom_leds_0_leds_leds),                      //  leds.leds
 		.avs_s0_address   (mm_interconnect_0_custom_leds_0_s0_address),   //    s0.address
