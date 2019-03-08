@@ -127,8 +127,9 @@ module DE10_Standard_GHRD(
       output             HSMC_CLKOUT_N1,
       output             HSMC_CLKOUT_P2,
       output             HSMC_CLKOUT_N2,
-      inout    [16: 0]   HSMC_TX_D_P,
-      inout    [16: 0]   HSMC_TX_D_N,
+		output				 ADA_OE,
+		input					 ADA_OR,
+		output				 ADA_SPI_CS,
       inout    [13: 0]   ADA_D,
       inout    [13: 0]   ADB_D,
       input              HSMC_CLKIN0,
@@ -343,7 +344,6 @@ soc_system u0 (
 		  //.addc_hsmc									   (HSMC_RX_D_P),
 		  //FPGA Partion
         .custom_leds_0_leds_leds               (LED),               //             custom_leds_0_leds.leds
-		  .custom_adc_0_adc_adc						  (ADC),
 	 );
 
 	 
@@ -417,6 +417,10 @@ end
 assign LEDR[0]=led_level;
 
 //--- analog to digital converter capture and sync
+assign	ADA_OE			= 1'b0;				// enable ADA output
+assign	ADA_SPI_CS		= 1'b1;				// disable ADA_SPI_CS (CSB)
+assign	ADB_OE			= 1'b0;				// enable ADB output
+assign	ADB_SPI_CS		= 1'b1;				// disable ADB_SPI_CS (CSB)
 	//--- Channel A
 always @(negedge reset_n or posedge ADA_DCO)
 begin
