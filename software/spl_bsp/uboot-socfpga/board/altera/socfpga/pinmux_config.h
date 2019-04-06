@@ -44,7 +44,7 @@
 #define CONFIG_HPS_I2C1 (1)
 #define CONFIG_HPS_I2C2 (0)
 #define CONFIG_HPS_I2C3 (0)
-#define CONFIG_HPS_SPIM0 (1)
+#define CONFIG_HPS_SPIM0 (0)
 #define CONFIG_HPS_SPIM1 (1)
 #define CONFIG_HPS_SPIS0 (0)
 #define CONFIG_HPS_SPIS1 (0)

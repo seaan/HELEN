@@ -11,18 +11,18 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/18.0std/ip/merlin/altera_irq_mapper/altera_irq_mapper.sv.terp#1 $
+// $Id: //acds/rel/18.1std/ip/merlin/altera_irq_mapper/altera_irq_mapper.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2018/01/31 $
+// $Date: 2018/07/18 $
 // $Author: psgswbuild $
 
 // -------------------------------------------------------
 // Altera IRQ Mapper
 //
 // Parameters
-//   NUM_RCVRS        : 3
+//   NUM_RCVRS        : 0
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:0,1:1,2:2
+//   IRQ_MAP          : 
 //
 // -------------------------------------------------------
 
@@ -39,9 +39,6 @@ module soc_system_irq_mapper
     // -------------------
     // IRQ Receivers
     // -------------------
-    input                receiver0_irq,
-    input                receiver1_irq,
-    input                receiver2_irq,
 
     // -------------------
     // Command Source (Output)
@@ -49,13 +46,11 @@ module soc_system_irq_mapper
     output reg [31 : 0] sender_irq
 );
 
+    initial sender_irq = 0;
 
     always @* begin
 	sender_irq = 0;
 
-        sender_irq[0] = receiver0_irq;
-        sender_irq[1] = receiver1_irq;
-        sender_irq[2] = receiver2_irq;
     end
 
 endmodule

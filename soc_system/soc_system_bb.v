@@ -1,10 +1,12 @@
 
 module soc_system (
-	button_pio_external_connection_export,
+	axi_signals_awcache,
+	axi_signals_awprot,
+	axi_signals_awuser,
+	axi_signals_arcache,
+	axi_signals_aruser,
+	axi_signals_arprot,
 	clk_clk,
-	custom_adc_0_adc_adc,
-	custom_leds_0_leds_leds,
-	dipsw_pio_external_connection_export,
 	hps_0_f2h_cold_reset_req_reset_n,
 	hps_0_f2h_debug_reset_req_reset_n,
 	hps_0_f2h_stm_hw_events_stm_hwevents,
@@ -48,10 +50,6 @@ module soc_system (
 	hps_0_hps_io_hps_io_usb1_inst_STP,
 	hps_0_hps_io_hps_io_usb1_inst_DIR,
 	hps_0_hps_io_hps_io_usb1_inst_NXT,
-	hps_0_hps_io_hps_io_spim0_inst_CLK,
-	hps_0_hps_io_hps_io_spim0_inst_MOSI,
-	hps_0_hps_io_hps_io_spim0_inst_MISO,
-	hps_0_hps_io_hps_io_spim0_inst_SS0,
 	hps_0_hps_io_hps_io_spim1_inst_CLK,
 	hps_0_hps_io_hps_io_spim1_inst_MOSI,
 	hps_0_hps_io_hps_io_spim1_inst_MISO,
@@ -64,14 +62,13 @@ module soc_system (
 	hps_0_hps_io_hps_io_i2c1_inst_SCL,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO09,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO35,
-	hps_0_hps_io_hps_io_gpio_inst_GPIO37,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO40,
-	hps_0_hps_io_hps_io_gpio_inst_GPIO41,
-	hps_0_hps_io_hps_io_gpio_inst_GPIO44,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO48,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO53,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
+	mcu_axi_signals_in_port,
+	mcu_axi_signals_out_port,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -90,11 +87,13 @@ module soc_system (
 	memory_oct_rzqin,
 	reset_reset_n);	
 
-	input	[3:0]	button_pio_external_connection_export;
+	input	[3:0]	axi_signals_awcache;
+	input	[2:0]	axi_signals_awprot;
+	input	[4:0]	axi_signals_awuser;
+	input	[3:0]	axi_signals_arcache;
+	input	[4:0]	axi_signals_aruser;
+	input	[2:0]	axi_signals_arprot;
 	input		clk_clk;
-	output	[31:0]	custom_adc_0_adc_adc;
-	output	[7:0]	custom_leds_0_leds_leds;
-	input	[9:0]	dipsw_pio_external_connection_export;
 	input		hps_0_f2h_cold_reset_req_reset_n;
 	input		hps_0_f2h_debug_reset_req_reset_n;
 	input	[27:0]	hps_0_f2h_stm_hw_events_stm_hwevents;
@@ -138,10 +137,6 @@ module soc_system (
 	output		hps_0_hps_io_hps_io_usb1_inst_STP;
 	input		hps_0_hps_io_hps_io_usb1_inst_DIR;
 	input		hps_0_hps_io_hps_io_usb1_inst_NXT;
-	output		hps_0_hps_io_hps_io_spim0_inst_CLK;
-	output		hps_0_hps_io_hps_io_spim0_inst_MOSI;
-	input		hps_0_hps_io_hps_io_spim0_inst_MISO;
-	output		hps_0_hps_io_hps_io_spim0_inst_SS0;
 	output		hps_0_hps_io_hps_io_spim1_inst_CLK;
 	output		hps_0_hps_io_hps_io_spim1_inst_MOSI;
 	input		hps_0_hps_io_hps_io_spim1_inst_MISO;
@@ -154,14 +149,13 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_i2c1_inst_SCL;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO09;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO35;
-	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO37;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO40;
-	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO41;
-	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO44;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO48;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
+	input	[31:0]	mcu_axi_signals_in_port;
+	output	[31:0]	mcu_axi_signals_out_port;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output		memory_mem_ck;

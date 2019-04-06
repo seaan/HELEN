@@ -61,7 +61,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define __RW_MGR_ac_read_en 0x21
 #define __RW_MGR_ac_mrs3_mirr 0x0C
 #define __RW_MGR_ac_mrs2 0x05
-#define __RW_MGR_CONTENT_ac_mrs1 0x10090044
+#define __RW_MGR_CONTENT_ac_mrs1 0x10090006
 #define __RW_MGR_CONTENT_ac_mrs3 0x100B0000
 #define __RW_MGR_CONTENT_ac_write_bank_0_col_0_nodata_wl_1 0x18980000
 #define __RW_MGR_CONTENT_ac_act_1 0x106B0000
@@ -82,7 +82,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define __RW_MGR_CONTENT_ac_write_bank_1_col_1 0x1C9B0008
 #define __RW_MGR_CONTENT_ac_write_bank_0_col_0 0x1C980000
 #define __RW_MGR_CONTENT_ac_read_bank_1_0 0x135B0000
-#define __RW_MGR_CONTENT_ac_mrs1_mirr 0x100A0024
+#define __RW_MGR_CONTENT_ac_mrs1_mirr 0x100A0006
 #define __RW_MGR_CONTENT_ac_read_bank_1_1 0x135B0008
 #define __RW_MGR_CONTENT_ac_des_odt_1 0x38780000
 #define __RW_MGR_CONTENT_ac_mrs0_dll_reset_mirr 0x100804E8
@@ -92,11 +92,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define __RW_MGR_CONTENT_ac_ref 0x10480000
 #define __RW_MGR_CONTENT_ac_nop 0x30780000
 #define __RW_MGR_CONTENT_ac_rdimm 0x10780000
-#define __RW_MGR_CONTENT_ac_mrs2_mirr 0x10090008
+#define __RW_MGR_CONTENT_ac_mrs2_mirr 0x10090218
 #define __RW_MGR_CONTENT_ac_write_bank_0_col_0_nodata 0x18180000
 #define __RW_MGR_CONTENT_ac_read_en 0x33780000
 #define __RW_MGR_CONTENT_ac_mrs3_mirr 0x100B0000
-#define __RW_MGR_CONTENT_ac_mrs2 0x100A0010
+#define __RW_MGR_CONTENT_ac_mrs2 0x100A0218
 
 /*
 Copyright (C) 2018  Intel Corporation. All rights reserved.

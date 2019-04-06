@@ -1,119 +1,85 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Users\gamem_000\HELEN\soc_system.qsys --block-symbol-file --output-directory=C:\Users\gamem_000\HELEN\soc_system --family="Cyclone V" --part=5CSXFC6D6F31C6
+Info: qsys-generate /home/sean/Documents/shc/HELEN/soc_system.qsys --block-symbol-file --output-directory=/home/sean/Documents/shc/HELEN/soc_system --family="Cyclone V" --part=5CSXFC6D6F31C6
 Progress: Loading HELEN/soc_system.qsys
 Progress: Reading input file
-Progress: Adding ILC [interrupt_latency_counter 18.0]
-Progress: Parameterizing module ILC
-Progress: Adding button_pio [altera_avalon_pio 18.0]
-Progress: Parameterizing module button_pio
-Progress: Adding clk_0 [clock_source 18.0]
+Progress: Adding axi_conduit_merger_0 [axi_conduit_merger 1.0]
+Progress: Parameterizing module axi_conduit_merger_0
+Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
-Progress: Adding custom_adc_0 [custom_adc 1.0]
-Progress: Parameterizing module custom_adc_0
-Progress: Adding custom_leds_0 [custom_leds 1.0]
-Progress: Parameterizing module custom_leds_0
-Progress: Adding dipsw_pio [altera_avalon_pio 18.0]
-Progress: Parameterizing module dipsw_pio
-Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 18.0]
-Progress: Parameterizing module f2sdram_only_master
-Progress: Adding fpga_only_master [altera_jtag_avalon_master 18.0]
-Progress: Parameterizing module fpga_only_master
-Progress: Adding hps_0 [altera_hps 18.0]
+Progress: Adding dma_0 [altera_avalon_dma 18.1]
+Progress: Parameterizing module dma_0
+Progress: Adding hps_0 [altera_hps 18.1]
 Progress: Parameterizing module hps_0
-Progress: Adding hps_only_master [altera_jtag_avalon_master 18.0]
-Progress: Parameterizing module hps_only_master
-Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
-Progress: Parameterizing module jtag_uart
-Progress: Adding led_pio [altera_avalon_pio 18.0]
-Progress: Parameterizing module led_pio
-Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.0]
-Progress: Parameterizing module mm_bridge_0
-Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 18.0]
-Progress: Parameterizing module sysid_qsys
+Progress: Adding onchip_memory_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_memory_0
+Progress: Adding pio_0 [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_0
+Progress: Adding pll_0 [altera_pll 18.1]
+Progress: Parameterizing module pll_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
-Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dma_0: DMA Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
 Warning: soc_system.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
 Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
-Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
-Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
-Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Info: soc_system.pio_0: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: soc_system.pll_0: Able to implement PLL with user settings
+Warning: soc_system.dma_0: Interrupt sender dma_0.irq is not connected to an interrupt receiver
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\gamem_000\HELEN\soc_system.qsys --synthesis=VERILOG --output-directory=C:\Users\gamem_000\HELEN\soc_system\synthesis --family="Cyclone V" --part=5CSXFC6D6F31C6
+Info: qsys-generate /home/sean/Documents/shc/HELEN/soc_system.qsys --synthesis=VERILOG --output-directory=/home/sean/Documents/shc/HELEN/soc_system/synthesis --family="Cyclone V" --part=5CSXFC6D6F31C6
 Progress: Loading HELEN/soc_system.qsys
 Progress: Reading input file
-Progress: Adding ILC [interrupt_latency_counter 18.0]
-Progress: Parameterizing module ILC
-Progress: Adding button_pio [altera_avalon_pio 18.0]
-Progress: Parameterizing module button_pio
-Progress: Adding clk_0 [clock_source 18.0]
+Progress: Adding axi_conduit_merger_0 [axi_conduit_merger 1.0]
+Progress: Parameterizing module axi_conduit_merger_0
+Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
-Progress: Adding custom_adc_0 [custom_adc 1.0]
-Progress: Parameterizing module custom_adc_0
-Progress: Adding custom_leds_0 [custom_leds 1.0]
-Progress: Parameterizing module custom_leds_0
-Progress: Adding dipsw_pio [altera_avalon_pio 18.0]
-Progress: Parameterizing module dipsw_pio
-Progress: Adding f2sdram_only_master [altera_jtag_avalon_master 18.0]
-Progress: Parameterizing module f2sdram_only_master
-Progress: Adding fpga_only_master [altera_jtag_avalon_master 18.0]
-Progress: Parameterizing module fpga_only_master
-Progress: Adding hps_0 [altera_hps 18.0]
+Progress: Adding dma_0 [altera_avalon_dma 18.1]
+Progress: Parameterizing module dma_0
+Progress: Adding hps_0 [altera_hps 18.1]
 Progress: Parameterizing module hps_0
-Progress: Adding hps_only_master [altera_jtag_avalon_master 18.0]
-Progress: Parameterizing module hps_only_master
-Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
-Progress: Parameterizing module jtag_uart
-Progress: Adding led_pio [altera_avalon_pio 18.0]
-Progress: Parameterizing module led_pio
-Progress: Adding mm_bridge_0 [altera_avalon_mm_bridge 18.0]
-Progress: Parameterizing module mm_bridge_0
-Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 18.0]
-Progress: Parameterizing module sysid_qsys
+Progress: Adding onchip_memory_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_memory_0
+Progress: Adding pio_0 [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_0
+Progress: Adding pll_0 [altera_pll 18.1]
+Progress: Parameterizing module pll_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
-Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dma_0: DMA Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
 Warning: soc_system.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
 Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
-Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
-Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
-Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Info: soc_system.pio_0: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: soc_system.pll_0: Able to implement PLL with user settings
+Warning: soc_system.dma_0: Interrupt sender dma_0.irq is not connected to an interrupt receiver
 Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
-Info: Interconnect is inserted between master hps_only_master.master and slave hps_0.f2h_axi_slave because the master is of type avalon and the slave is of type axi.
-Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 27 bit wide.
-Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has readdata signal 32 bit wide, but the slave is 256 bit wide.
-Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has writedata signal 32 bit wide, but the slave is 256 bit wide.
-Info: Interconnect is inserted between master f2sdram_only_master.master and slave hps_0.f2h_sdram0_data because the master has byteenable signal 4 bit wide, but the slave is 32 bit wide.
+Info: Interconnect is inserted between master dma_0.read_master and slave axi_conduit_merger_0.altera_axi_slave because the master is of type avalon and the slave is of type axi.
+Info: Interconnect is inserted between master dma_0.write_master and slave onchip_memory_0.s2 because the master has address signal 10 bit wide, but the slave is 6 bit wide.
+Info: Interconnect is inserted between master dma_0.write_master and slave onchip_memory_0.s2 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
 Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
 Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
 Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
-Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
-Info: button_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0002_button_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0002_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
-Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
-Info: custom_adc_0: "soc_system" instantiated custom_adc "custom_adc_0"
-Info: custom_leds_0: "soc_system" instantiated custom_leds "custom_leds_0"
-Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
-Info: dipsw_pio:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0005_dipsw_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0005_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: dipsw_pio: Done RTL generation for module 'soc_system_dipsw_pio'
-Info: dipsw_pio: "soc_system" instantiated altera_avalon_pio "dipsw_pio"
-Info: f2sdram_only_master: "soc_system" instantiated altera_jtag_avalon_master "f2sdram_only_master"
+Info: axi_conduit_merger_0: "soc_system" instantiated axi_conduit_merger "axi_conduit_merger_0"
+Info: dma_0: softresetEnable = 1
+Info: dma_0: Starting RTL generation for module 'soc_system_dma_0'
+Info: dma_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64//perl/bin/perl -I /home/sean/app/quartus/quartus/linux64//perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma/generate_rtl.pl --name=soc_system_dma_0 --dir=/tmp/alt7970_7170441906569379752.dir/0003_dma_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7970_7170441906569379752.dir/0003_dma_0_gen//soc_system_dma_0_component_configuration.pl  --do_build_sim=0  ]
+Info: dma_0: # 2019.03.15 16:34:00 (*)   soc_system_dma_0: allowing these transactions: quadword, doubleword, word, hw, byte_access
+Info: dma_0: Done RTL generation for module 'soc_system_dma_0'
+Info: dma_0: "soc_system" instantiated altera_avalon_dma "dma_0"
 Info: hps_0: "Running  for module: hps_0"
 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
@@ -121,88 +87,64 @@ Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_
 Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
 Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
-Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0006_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.0/quartus --verilog --config=C:/Users/GAMEM_~1/AppData/Local/Temp/alt7953_5915225468593565051.dir/0006_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
-Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
-Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
+Info: onchip_memory_0: Starting RTL generation for module 'soc_system_onchip_memory_0'
+Info: onchip_memory_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64/perl/bin/perl -I /home/sean/app/quartus/quartus/linux64/perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory_0 --dir=/tmp/alt7970_7170441906569379752.dir/0004_onchip_memory_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7970_7170441906569379752.dir/0004_onchip_memory_0_gen//soc_system_onchip_memory_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory_0: Done RTL generation for module 'soc_system_onchip_memory_0'
+Info: onchip_memory_0: "soc_system" instantiated altera_avalon_onchip_memory2 "onchip_memory_0"
+Info: pio_0: Starting RTL generation for module 'soc_system_pio_0'
+Info: pio_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64/perl/bin/perl -I /home/sean/app/quartus/quartus/linux64/perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_0 --dir=/tmp/alt7970_7170441906569379752.dir/0005_pio_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7970_7170441906569379752.dir/0005_pio_0_gen//soc_system_pio_0_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_0: Done RTL generation for module 'soc_system_pio_0'
+Info: pio_0: "soc_system" instantiated altera_avalon_pio "pio_0"
+Info: pll_0: "soc_system" instantiated altera_pll "pll_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
-Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
-Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_2: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_2"
+Info: mm_interconnect_3: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_3"
 Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
-Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
 Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
-Info: jtag_phy_embedded_in_jtag_master: "f2sdram_only_master" instantiated altera_jtag_dc_streaming "jtag_phy_embedded_in_jtag_master"
-Info: timing_adt: "f2sdram_only_master" instantiated timing_adapter "timing_adt"
-Info: fifo: "f2sdram_only_master" instantiated altera_avalon_sc_fifo "fifo"
-Info: b2p: "f2sdram_only_master" instantiated altera_avalon_st_bytes_to_packets "b2p"
-Info: p2b: "f2sdram_only_master" instantiated altera_avalon_st_packets_to_bytes "p2b"
-Info: transacto: "f2sdram_only_master" instantiated altera_avalon_packets_to_master "transacto"
-Info: b2p_adapter: "f2sdram_only_master" instantiated channel_adapter "b2p_adapter"
-Info: p2b_adapter: "f2sdram_only_master" instantiated channel_adapter "p2b_adapter"
 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
-Info: fpga_only_master_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "fpga_only_master_master_translator"
-Info: custom_leds_0_s0_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "custom_leds_0_s0_translator"
-Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
-Info: fpga_only_master_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "fpga_only_master_master_agent"
-Info: custom_leds_0_s0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "custom_leds_0_s0_agent"
-Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
-Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
-Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
-Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
-Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
-Info: custom_leds_0_s0_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "custom_leds_0_s0_burst_adapter"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
-Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
-Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
-Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
-Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
-Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: hps_0_f2h_axi_slave_agent: "mm_interconnect_1" instantiated altera_merlin_axi_slave_ni "hps_0_f2h_axi_slave_agent"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: dma_0_control_port_slave_translator: "mm_interconnect_1" instantiated altera_merlin_slave_translator "dma_0_control_port_slave_translator"
+Info: hps_0_h2f_axi_master_agent: "mm_interconnect_1" instantiated altera_merlin_axi_master_ni "hps_0_h2f_axi_master_agent"
+Info: dma_0_control_port_slave_agent: "mm_interconnect_1" instantiated altera_merlin_slave_agent "dma_0_control_port_slave_agent"
+Info: dma_0_control_port_slave_agent_rsp_fifo: "mm_interconnect_1" instantiated altera_avalon_sc_fifo "dma_0_control_port_slave_agent_rsp_fifo"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_1" instantiated altera_merlin_router "router_003"
+Info: hps_0_h2f_axi_master_wr_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "hps_0_h2f_axi_master_wr_limiter"
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: dma_0_control_port_slave_burst_adapter: "mm_interconnect_1" instantiated altera_merlin_burst_adapter "dma_0_control_port_slave_burst_adapter"
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: hps_0_f2h_axi_slave_wr_cmd_width_adapter: "mm_interconnect_1" instantiated altera_merlin_width_adapter "hps_0_f2h_axi_slave_wr_cmd_width_adapter"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: dma_0_control_port_slave_rsp_width_adapter: "mm_interconnect_1" instantiated altera_merlin_width_adapter "dma_0_control_port_slave_rsp_width_adapter"
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_001: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: dma_0_read_master_translator: "mm_interconnect_2" instantiated altera_merlin_master_translator "dma_0_read_master_translator"
+Info: dma_0_read_master_agent: "mm_interconnect_2" instantiated altera_merlin_master_agent "dma_0_read_master_agent"
+Info: axi_conduit_merger_0_altera_axi_slave_agent: "mm_interconnect_2" instantiated altera_merlin_axi_slave_ni "axi_conduit_merger_0_altera_axi_slave_agent"
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/gamem_000/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: avalon_st_adapter: "mm_interconnect_2" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: soc_system: Done "soc_system" with 62 modules, 128 files
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
+Info: soc_system: Done "soc_system" with 42 modules, 101 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

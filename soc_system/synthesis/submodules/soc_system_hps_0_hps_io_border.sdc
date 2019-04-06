@@ -54,10 +54,6 @@ set_false_path -from [get_ports hps_io_hps_io_usb1_inst_CLK] -to *
 set_false_path -from * -to [get_ports hps_io_hps_io_usb1_inst_STP]
 set_false_path -from [get_ports hps_io_hps_io_usb1_inst_DIR] -to *
 set_false_path -from [get_ports hps_io_hps_io_usb1_inst_NXT] -to *
-set_false_path -from * -to [get_ports hps_io_hps_io_spim0_inst_CLK]
-set_false_path -from * -to [get_ports hps_io_hps_io_spim0_inst_MOSI]
-set_false_path -from [get_ports hps_io_hps_io_spim0_inst_MISO] -to *
-set_false_path -from * -to [get_ports hps_io_hps_io_spim0_inst_SS0]
 set_false_path -from * -to [get_ports hps_io_hps_io_spim1_inst_CLK]
 set_false_path -from * -to [get_ports hps_io_hps_io_spim1_inst_MOSI]
 set_false_path -from [get_ports hps_io_hps_io_spim1_inst_MISO] -to *
@@ -76,14 +72,8 @@ set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO09] -to *
 set_false_path -from * -to [get_ports hps_io_hps_io_gpio_inst_GPIO09]
 set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO35] -to *
 set_false_path -from * -to [get_ports hps_io_hps_io_gpio_inst_GPIO35]
-set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO37] -to *
-set_false_path -from * -to [get_ports hps_io_hps_io_gpio_inst_GPIO37]
 set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO40] -to *
 set_false_path -from * -to [get_ports hps_io_hps_io_gpio_inst_GPIO40]
-set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO41] -to *
-set_false_path -from * -to [get_ports hps_io_hps_io_gpio_inst_GPIO41]
-set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO44] -to *
-set_false_path -from * -to [get_ports hps_io_hps_io_gpio_inst_GPIO44]
 set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO48] -to *
 set_false_path -from * -to [get_ports hps_io_hps_io_gpio_inst_GPIO48]
 set_false_path -from [get_ports hps_io_hps_io_gpio_inst_GPIO53] -to *

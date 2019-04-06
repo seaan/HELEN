@@ -1,4 +1,4 @@
-// (C) 2001-2017 Intel Corporation. All rights reserved.
+// (C) 2001-2018 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files from any of the foregoing (including device programming or simulation 
@@ -24,10 +24,10 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/17.1std/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
+// $Id: //acds/rel/18.1std/ip/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2017/07/30 $
-// $Author: swbranch $
+// $Date: 2018/07/18 $
+// $Author: psgswbuild $
 
 // ------------------------------------------
 // Merlin Multiplexer
@@ -43,9 +43,9 @@
 //   ARBITRATION_SHARES:  1
 //   ARBITRATION_SCHEME   "round-robin"
 //   PIPELINE_ARB:        1
-//   PKT_TRANS_LOCK:      72 (arbitration locking enabled)
-//   ST_DATA_W:           112
-//   ST_CHANNEL_W:        1
+//   PKT_TRANS_LOCK:      180 (arbitration locking enabled)
+//   ST_DATA_W:           228
+//   ST_CHANNEL_W:        2
 // ------------------------------------------
 
 module soc_system_mm_interconnect_3_cmd_mux
@@ -54,8 +54,8 @@ module soc_system_mm_interconnect_3_cmd_mux
     // Sinks
     // ----------------------
     input                       sink0_valid,
-    input [112-1   : 0]  sink0_data,
-    input [1-1: 0]  sink0_channel,
+    input [228-1   : 0]  sink0_data,
+    input [2-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
@@ -65,8 +65,8 @@ module soc_system_mm_interconnect_3_cmd_mux
     // Source
     // ----------------------
     output                      src_valid,
-    output [112-1    : 0] src_data,
-    output [1-1 : 0] src_channel,
+    output [228-1    : 0] src_data,
+    output [2-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -77,13 +77,13 @@ module soc_system_mm_interconnect_3_cmd_mux
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 112 + 1 + 2;
+    localparam PAYLOAD_W        = 228 + 2 + 2;
     localparam NUM_INPUTS       = 1;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 1;
-    localparam ST_DATA_W        = 112;
-    localparam ST_CHANNEL_W     = 1;
-    localparam PKT_TRANS_LOCK   = 72;
+    localparam ST_DATA_W        = 228;
+    localparam ST_CHANNEL_W     = 2;
+    localparam PKT_TRANS_LOCK   = 180;
 
     assign	src_valid			=  sink0_valid;
     assign	src_data			=  sink0_data;

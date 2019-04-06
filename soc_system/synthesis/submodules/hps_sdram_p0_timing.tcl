@@ -46,7 +46,7 @@ set t(min_CK) 1.25
 ##########################
 
 # A/C Setup/Hold
-set t(IS) 0.34
+set t(IS) 0.33
 set t(IH) 0.24
 
 # Data Setup/Hold
@@ -87,7 +87,7 @@ set t(DCD) 0.0
 #######################
 
 set t(RL) 11
-set t(WL) 7
+set t(WL) 8
 set t(DWIDTH_RATIO) [expr { 1 * 2 }]
 set t(rd_to_wr_turnaround_oct) 2
 
@@ -139,12 +139,12 @@ set ISI(READ_DQS) 0.0
 # Board skews
 set board(abs_max_CK_delay) 0.03
 set board(abs_max_DQS_delay) 0.02
-set board(minCK_DQS_skew) 0.06
-set board(maxCK_DQS_skew) 0.12
+set board(minCK_DQS_skew) 0.09
+set board(maxCK_DQS_skew) 0.16
 set board(tpd_inter_DIMM) 0.0
 set board(intra_DQS_group_skew) 0.01
-set board(inter_DQS_group_skew) 0.06
-set board(DQ_DQS_skew) 0.05
-set board(intra_addr_ctrl_skew) 0.02
-set board(addresscmd_CK_skew) 0.01
+set board(inter_DQS_group_skew) 0.08
+set board(DQ_DQS_skew) 0.0
+set board(intra_addr_ctrl_skew) 0.03
+set board(addresscmd_CK_skew) 0.0
 
