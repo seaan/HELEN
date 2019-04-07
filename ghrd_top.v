@@ -380,8 +380,8 @@ soc_system_onchip_memory_0 m(
   .reset(hps_fpga_reset_n), 
   .reset_req(1'b0),
   .write(1'b1), 
-  .writedata(32'hF0F0F0F0), 
-  .readdata(datain)
+  .writedata(8'hFF), 
+  .readdata(8'hFF)
 );
  
 endmodule
