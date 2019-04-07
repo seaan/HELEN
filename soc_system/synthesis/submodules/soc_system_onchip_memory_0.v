@@ -43,9 +43,6 @@ module soc_system_onchip_memory_0 (
                                   )
 ;
 
-  parameter INIT_FILE = "soc_system_onchip_memory_0.hex";
-
-
   output  [127: 0] readdata;
   output  [127: 0] readdata2;
   input   [  5: 0] address;
@@ -100,7 +97,7 @@ wire             wren2;
            the_altsyncram.byte_size = 8,
            the_altsyncram.byteena_reg_b = "CLOCK0",
            the_altsyncram.indata_reg_b = "CLOCK0",
-           the_altsyncram.init_file = INIT_FILE,
+           the_altsyncram.init_file = "UNUSED",
            the_altsyncram.lpm_type = "altsyncram",
            the_altsyncram.maximum_depth = 64,
            the_altsyncram.numwords_a = 64,

@@ -375,7 +375,7 @@ soc_system_onchip_memory_0 m(
   .address(1), 
   .byteenable(4'b1111),
   .chipselect(1), 
-  .clk(CLOCK_50), 
+  .clk(pll_0_outclk1), 
   .clken(1'b1), 
   .reset(hps_fpga_reset_n), 
   .reset_req(1'b0),

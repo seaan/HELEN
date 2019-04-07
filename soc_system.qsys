@@ -166,6 +166,11 @@
    type="conduit"
    dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
+ <interface
+   name="pll_0_outclk1"
+   internal="pll_0.outclk1"
+   type="clock"
+   dir="start" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <module
    name="axi_conduit_merger_0"
@@ -759,7 +764,7 @@
   <parameter name="ecc_enabled" value="false" />
   <parameter name="enPRInitMode" value="false" />
   <parameter name="enableDiffWidth" value="false" />
-  <parameter name="initMemContent" value="true" />
+  <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_memory2_0" />
   <parameter name="instanceID" value="NONE" />
   <parameter name="memorySize" value="1024" />
@@ -905,7 +910,7 @@
   <parameter name="gui_fractional_cout" value="32" />
   <parameter name="gui_mif_generate" value="false" />
   <parameter name="gui_multiply_factor" value="1" />
-  <parameter name="gui_number_of_clocks" value="1" />
+  <parameter name="gui_number_of_clocks" value="2" />
   <parameter name="gui_operation_mode" value="direct" />
   <parameter name="gui_output_clock_frequency0" value="100.0" />
   <parameter name="gui_output_clock_frequency1" value="100.0" />
@@ -1013,18 +1018,18 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_axi_master"
-   end="onchip_memory_0.s1">
+   end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x00020000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_axi_master"
-   end="pio_0.s1">
+   end="onchip_memory_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00020000" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1046,8 +1051,8 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="pll_0.refclk" />
- <connection kind="clock" version="18.1" start="pll_0.outclk0" end="dma_0.clk" />
  <connection kind="clock" version="18.1" start="pll_0.outclk0" end="pio_0.clk" />
+ <connection kind="clock" version="18.1" start="pll_0.outclk0" end="dma_0.clk" />
  <connection
    kind="clock"
    version="18.1"

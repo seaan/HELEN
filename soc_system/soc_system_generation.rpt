@@ -78,8 +78,8 @@ Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: axi_conduit_merger_0: "soc_system" instantiated axi_conduit_merger "axi_conduit_merger_0"
 Info: dma_0: softresetEnable = 1
 Info: dma_0: Starting RTL generation for module 'soc_system_dma_0'
-Info: dma_0:   Generation command is [exec /home/chris/intelFPGA_lite/18.1/quartus/linux64//perl/bin/perl -I /home/chris/intelFPGA_lite/18.1/quartus/linux64//perl/lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma -- /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma/generate_rtl.pl --name=soc_system_dma_0 --dir=/tmp/alt7993_1068263286633666165.dir/0003_dma_0_gen/ --quartus_dir=/home/chris/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt7993_1068263286633666165.dir/0003_dma_0_gen//soc_system_dma_0_component_configuration.pl  --do_build_sim=0  ]
-Info: dma_0: # 2019.04.07 15:34:36 (*)   soc_system_dma_0: allowing these transactions: quadword, doubleword, word, hw, byte_access
+Info: dma_0:   Generation command is [exec /home/chris/intelFPGA_lite/18.1/quartus/linux64//perl/bin/perl -I /home/chris/intelFPGA_lite/18.1/quartus/linux64//perl/lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma -- /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma/generate_rtl.pl --name=soc_system_dma_0 --dir=/tmp/alt7993_1068263286633666165.dir/0037_dma_0_gen/ --quartus_dir=/home/chris/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt7993_1068263286633666165.dir/0037_dma_0_gen//soc_system_dma_0_component_configuration.pl  --do_build_sim=0  ]
+Info: dma_0: # 2019.04.07 16:00:12 (*)   soc_system_dma_0: allowing these transactions: quadword, doubleword, word, hw, byte_access
 Info: dma_0: Done RTL generation for module 'soc_system_dma_0'
 Info: dma_0: "soc_system" instantiated altera_avalon_dma "dma_0"
 Info: hps_0: "Running  for module: hps_0"
@@ -90,11 +90,11 @@ Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MH
 Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: onchip_memory_0: Starting RTL generation for module 'soc_system_onchip_memory_0'
-Info: onchip_memory_0:   Generation command is [exec /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory_0 --dir=/tmp/alt7993_1068263286633666165.dir/0004_onchip_memory_0_gen/ --quartus_dir=/home/chris/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt7993_1068263286633666165.dir/0004_onchip_memory_0_gen//soc_system_onchip_memory_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory_0:   Generation command is [exec /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory_0 --dir=/tmp/alt7993_1068263286633666165.dir/0038_onchip_memory_0_gen/ --quartus_dir=/home/chris/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt7993_1068263286633666165.dir/0038_onchip_memory_0_gen//soc_system_onchip_memory_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory_0: Done RTL generation for module 'soc_system_onchip_memory_0'
 Info: onchip_memory_0: "soc_system" instantiated altera_avalon_onchip_memory2 "onchip_memory_0"
 Info: pio_0: Starting RTL generation for module 'soc_system_pio_0'
-Info: pio_0:   Generation command is [exec /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_0 --dir=/tmp/alt7993_1068263286633666165.dir/0005_pio_0_gen/ --quartus_dir=/home/chris/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt7993_1068263286633666165.dir/0005_pio_0_gen//soc_system_pio_0_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_0:   Generation command is [exec /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/bin/perl -I /home/chris/intelFPGA_lite/18.1/quartus/linux64/perl/lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/europa -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin/perl_lib -I /home/chris/intelFPGA_lite/18.1/quartus/sopc_builder/bin -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/chris/intelFPGA_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_0 --dir=/tmp/alt7993_1068263286633666165.dir/0039_pio_0_gen/ --quartus_dir=/home/chris/intelFPGA_lite/18.1/quartus --verilog --config=/tmp/alt7993_1068263286633666165.dir/0039_pio_0_gen//soc_system_pio_0_component_configuration.pl  --do_build_sim=0  ]
 Info: pio_0: Done RTL generation for module 'soc_system_pio_0'
 Info: pio_0: "soc_system" instantiated altera_avalon_pio "pio_0"
 Info: pll_0: "soc_system" instantiated altera_pll "pll_0"
@@ -114,7 +114,7 @@ Info: dma_0_control_port_slave_agent: "mm_interconnect_1" instantiated altera_me
 Info: dma_0_control_port_slave_agent_rsp_fifo: "mm_interconnect_1" instantiated altera_avalon_sc_fifo "dma_0_control_port_slave_agent_rsp_fifo"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
-Info: router_003: "mm_interconnect_1" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_1" instantiated altera_merlin_router "router_004"
 Info: hps_0_h2f_axi_master_wr_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "hps_0_h2f_axi_master_wr_limiter"
 Info: Reusing file /home/chris/HELEN/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: dma_0_control_port_slave_burst_adapter: "mm_interconnect_1" instantiated altera_merlin_burst_adapter "dma_0_control_port_slave_burst_adapter"
@@ -129,7 +129,7 @@ Info: dma_0_control_port_slave_rsp_width_adapter: "mm_interconnect_1" instantiat
 Info: Reusing file /home/chris/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: Reusing file /home/chris/HELEN/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: avalon_st_adapter_001: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: avalon_st_adapter_002: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter_002"
 Info: dma_0_read_master_translator: "mm_interconnect_2" instantiated altera_merlin_master_translator "dma_0_read_master_translator"
 Info: dma_0_write_master_agent: "mm_interconnect_3" instantiated altera_merlin_master_agent "dma_0_write_master_agent"
 Info: axi_conduit_merger_0_altera_axi_slave_agent: "mm_interconnect_3" instantiated altera_merlin_axi_slave_ni "axi_conduit_merger_0_altera_axi_slave_agent"
@@ -146,7 +146,7 @@ Info: rsp_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "rsp_m
 Info: Reusing file /home/chris/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
-Info: soc_system: Done "soc_system" with 42 modules, 102 files
+Info: error_adapter_0: "avalon_st_adapter_002" instantiated error_adapter "error_adapter_0"
+Info: soc_system: Done "soc_system" with 42 modules, 101 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

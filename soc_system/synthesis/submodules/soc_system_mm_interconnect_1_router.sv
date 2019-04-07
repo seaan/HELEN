@@ -44,7 +44,7 @@
 
 module soc_system_mm_interconnect_1_router_default_decode
   #(
-     parameter DEFAULT_CHANNEL = 1,
+     parameter DEFAULT_CHANNEL = 2,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 1 
@@ -192,7 +192,7 @@ module soc_system_mm_interconnect_1_router
 
     // ( 0x0 .. 0x400 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 18'h0   ) begin
-            src_channel = 3'b010;
+            src_channel = 3'b100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
@@ -204,7 +204,7 @@ module soc_system_mm_interconnect_1_router
 
     // ( 0x20000 .. 0x20010 )
     if ( {address[RG:PAD2],{PAD2{1'b0}}} == 18'h20000   ) begin
-            src_channel = 3'b100;
+            src_channel = 3'b010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 

@@ -89,6 +89,7 @@ module soc_system (
 		output wire        memory_mem_odt,                        //                          .mem_odt
 		output wire [3:0]  memory_mem_dm,                         //                          .mem_dm
 		input  wire        memory_oct_rzqin,                      //                          .oct_rzqin
+		output wire        pll_0_outclk1_clk,                     //             pll_0_outclk1.clk
 		input  wire        reset_reset_n                          //                     reset.reset_n
 	);
 
@@ -172,6 +173,11 @@ module soc_system (
 	wire    [2:0] mm_interconnect_1_dma_0_control_port_slave_address;              // mm_interconnect_1:dma_0_control_port_slave_address -> dma_0:dma_ctl_address
 	wire          mm_interconnect_1_dma_0_control_port_slave_write;                // mm_interconnect_1:dma_0_control_port_slave_write -> dma_0:dma_ctl_write_n
 	wire   [31:0] mm_interconnect_1_dma_0_control_port_slave_writedata;            // mm_interconnect_1:dma_0_control_port_slave_writedata -> dma_0:dma_ctl_writedata
+	wire          mm_interconnect_1_pio_0_s1_chipselect;                           // mm_interconnect_1:pio_0_s1_chipselect -> pio_0:chipselect
+	wire   [31:0] mm_interconnect_1_pio_0_s1_readdata;                             // pio_0:readdata -> mm_interconnect_1:pio_0_s1_readdata
+	wire    [1:0] mm_interconnect_1_pio_0_s1_address;                              // mm_interconnect_1:pio_0_s1_address -> pio_0:address
+	wire          mm_interconnect_1_pio_0_s1_write;                                // mm_interconnect_1:pio_0_s1_write -> pio_0:write_n
+	wire   [31:0] mm_interconnect_1_pio_0_s1_writedata;                            // mm_interconnect_1:pio_0_s1_writedata -> pio_0:writedata
 	wire          mm_interconnect_1_onchip_memory_0_s1_chipselect;                 // mm_interconnect_1:onchip_memory_0_s1_chipselect -> onchip_memory_0:chipselect
 	wire  [127:0] mm_interconnect_1_onchip_memory_0_s1_readdata;                   // onchip_memory_0:readdata -> mm_interconnect_1:onchip_memory_0_s1_readdata
 	wire    [5:0] mm_interconnect_1_onchip_memory_0_s1_address;                    // mm_interconnect_1:onchip_memory_0_s1_address -> onchip_memory_0:address
@@ -179,11 +185,6 @@ module soc_system (
 	wire          mm_interconnect_1_onchip_memory_0_s1_write;                      // mm_interconnect_1:onchip_memory_0_s1_write -> onchip_memory_0:write
 	wire  [127:0] mm_interconnect_1_onchip_memory_0_s1_writedata;                  // mm_interconnect_1:onchip_memory_0_s1_writedata -> onchip_memory_0:writedata
 	wire          mm_interconnect_1_onchip_memory_0_s1_clken;                      // mm_interconnect_1:onchip_memory_0_s1_clken -> onchip_memory_0:clken
-	wire          mm_interconnect_1_pio_0_s1_chipselect;                           // mm_interconnect_1:pio_0_s1_chipselect -> pio_0:chipselect
-	wire   [31:0] mm_interconnect_1_pio_0_s1_readdata;                             // pio_0:readdata -> mm_interconnect_1:pio_0_s1_readdata
-	wire    [1:0] mm_interconnect_1_pio_0_s1_address;                              // mm_interconnect_1:pio_0_s1_address -> pio_0:address
-	wire          mm_interconnect_1_pio_0_s1_write;                                // mm_interconnect_1:pio_0_s1_write -> pio_0:write_n
-	wire   [31:0] mm_interconnect_1_pio_0_s1_writedata;                            // mm_interconnect_1:pio_0_s1_writedata -> pio_0:writedata
 	wire          dma_0_read_master_chipselect;                                    // dma_0:read_chipselect -> mm_interconnect_2:dma_0_read_master_chipselect
 	wire  [127:0] dma_0_read_master_readdata;                                      // mm_interconnect_2:dma_0_read_master_readdata -> dma_0:read_readdata
 	wire          dma_0_read_master_waitrequest;                                   // mm_interconnect_2:dma_0_read_master_waitrequest -> dma_0:read_waitrequest
@@ -598,6 +599,7 @@ module soc_system (
 		.refclk   (clk_clk),           //  refclk.clk
 		.rst      (~reset_reset_n),    //   reset.reset
 		.outclk_0 (pll_0_outclk0_clk), // outclk0.clk
+		.outclk_1 (pll_0_outclk1_clk), // outclk1.clk
 		.locked   ()                   // (terminated)
 	);
 
