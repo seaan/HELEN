@@ -66,9 +66,11 @@ Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MH
 Info: soc_system.pll_0: Able to implement PLL with user settings
 Warning: soc_system.dma_0: Interrupt sender dma_0.irq is not connected to an interrupt receiver
 Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
-Info: Interconnect is inserted between master dma_0.read_master and slave axi_conduit_merger_0.altera_axi_slave because the master is of type avalon and the slave is of type axi.
-Info: Interconnect is inserted between master dma_0.write_master and slave onchip_memory_0.s2 because the master has address signal 10 bit wide, but the slave is 6 bit wide.
-Info: Interconnect is inserted between master dma_0.write_master and slave onchip_memory_0.s2 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master dma_0.read_master and slave onchip_memory_0.s2 because the master has address signal 10 bit wide, but the slave is 6 bit wide.
+Info: Interconnect is inserted between master dma_0.read_master and slave onchip_memory_0.s2 because the master has read_n signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master dma_0.read_master and slave onchip_memory_0.s2 because the master has readdatavalid signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master dma_0.read_master and slave onchip_memory_0.s2 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master dma_0.write_master and slave axi_conduit_merger_0.altera_axi_slave because the master is of type avalon and the slave is of type axi.
 Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
 Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
 Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
@@ -76,8 +78,8 @@ Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: axi_conduit_merger_0: "soc_system" instantiated axi_conduit_merger "axi_conduit_merger_0"
 Info: dma_0: softresetEnable = 1
 Info: dma_0: Starting RTL generation for module 'soc_system_dma_0'
-Info: dma_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64//perl/bin/perl -I /home/sean/app/quartus/quartus/linux64//perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma/generate_rtl.pl --name=soc_system_dma_0 --dir=/tmp/alt7970_7170441906569379752.dir/0003_dma_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7970_7170441906569379752.dir/0003_dma_0_gen//soc_system_dma_0_component_configuration.pl  --do_build_sim=0  ]
-Info: dma_0: # 2019.03.15 16:34:00 (*)   soc_system_dma_0: allowing these transactions: quadword, doubleword, word, hw, byte_access
+Info: dma_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64//perl/bin/perl -I /home/sean/app/quartus/quartus/linux64//perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_dma/generate_rtl.pl --name=soc_system_dma_0 --dir=/tmp/alt7984_8801949417349764644.dir/0003_dma_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7984_8801949417349764644.dir/0003_dma_0_gen//soc_system_dma_0_component_configuration.pl  --do_build_sim=0  ]
+Info: dma_0: # 2019.03.29 17:01:40 (*)   soc_system_dma_0: allowing these transactions: quadword, doubleword, word, hw, byte_access
 Info: dma_0: Done RTL generation for module 'soc_system_dma_0'
 Info: dma_0: "soc_system" instantiated altera_avalon_dma "dma_0"
 Info: hps_0: "Running  for module: hps_0"
@@ -88,11 +90,11 @@ Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MH
 Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: onchip_memory_0: Starting RTL generation for module 'soc_system_onchip_memory_0'
-Info: onchip_memory_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64/perl/bin/perl -I /home/sean/app/quartus/quartus/linux64/perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory_0 --dir=/tmp/alt7970_7170441906569379752.dir/0004_onchip_memory_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7970_7170441906569379752.dir/0004_onchip_memory_0_gen//soc_system_onchip_memory_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64/perl/bin/perl -I /home/sean/app/quartus/quartus/linux64/perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory_0 --dir=/tmp/alt7984_8801949417349764644.dir/0004_onchip_memory_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7984_8801949417349764644.dir/0004_onchip_memory_0_gen//soc_system_onchip_memory_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory_0: Done RTL generation for module 'soc_system_onchip_memory_0'
 Info: onchip_memory_0: "soc_system" instantiated altera_avalon_onchip_memory2 "onchip_memory_0"
 Info: pio_0: Starting RTL generation for module 'soc_system_pio_0'
-Info: pio_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64/perl/bin/perl -I /home/sean/app/quartus/quartus/linux64/perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_0 --dir=/tmp/alt7970_7170441906569379752.dir/0005_pio_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7970_7170441906569379752.dir/0005_pio_0_gen//soc_system_pio_0_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_0:   Generation command is [exec /home/sean/app/quartus/quartus/linux64/perl/bin/perl -I /home/sean/app/quartus/quartus/linux64/perl/lib -I /home/sean/app/quartus/quartus/sopc_builder/bin/europa -I /home/sean/app/quartus/quartus/sopc_builder/bin/perl_lib -I /home/sean/app/quartus/quartus/sopc_builder/bin -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/common -I /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/sean/app/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_0 --dir=/tmp/alt7984_8801949417349764644.dir/0005_pio_0_gen/ --quartus_dir=/home/sean/app/quartus/quartus --verilog --config=/tmp/alt7984_8801949417349764644.dir/0005_pio_0_gen//soc_system_pio_0_component_configuration.pl  --do_build_sim=0  ]
 Info: pio_0: Done RTL generation for module 'soc_system_pio_0'
 Info: pio_0: "soc_system" instantiated altera_avalon_pio "pio_0"
 Info: pll_0: "soc_system" instantiated altera_pll "pll_0"
@@ -129,18 +131,18 @@ Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodule
 Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_001: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
 Info: dma_0_read_master_translator: "mm_interconnect_2" instantiated altera_merlin_master_translator "dma_0_read_master_translator"
-Info: dma_0_read_master_agent: "mm_interconnect_2" instantiated altera_merlin_master_agent "dma_0_read_master_agent"
-Info: axi_conduit_merger_0_altera_axi_slave_agent: "mm_interconnect_2" instantiated altera_merlin_axi_slave_ni "axi_conduit_merger_0_altera_axi_slave_agent"
+Info: dma_0_write_master_agent: "mm_interconnect_3" instantiated altera_merlin_master_agent "dma_0_write_master_agent"
+Info: axi_conduit_merger_0_altera_axi_slave_agent: "mm_interconnect_3" instantiated altera_merlin_axi_slave_ni "axi_conduit_merger_0_altera_axi_slave_agent"
 Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
-Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
-Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: router: "mm_interconnect_3" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_3" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
-Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: rsp_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/sean/Documents/shc/HELEN/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
