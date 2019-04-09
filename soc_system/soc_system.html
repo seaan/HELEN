@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2019.04.08.19:16:14</td>
+    <td class="l">2019.04.09.15:53:54</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -149,8 +149,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="slaveb">altera_axi_slave&#160;</td>
     <td class="empty"></td>
-    <td class="empty"></td>
     <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1165,8 +1165,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="slavem">s2&#160;</td>
     <td class="empty"></td>
-    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
     <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -1207,7 +1207,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="neighbor" rowspan="2">
        <a href="#module_dma_0">dma_0</a>
       </td>
-      <td class="from">write_master&#160;&#160;</td>
+      <td class="from">read_master&#160;&#160;</td>
       <td class="main" rowspan="10">axi_conduit_merger_0</td>
      </tr>
      <tr>
@@ -1423,13 +1423,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">read_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_onchip_memory_0">onchip_memory_0</a>
+       <a href="#module_axi_conduit_merger_0">axi_conduit_merger_0</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;s2</td>
+      <td class="to">&#160;&#160;altera_axi_slave</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -1439,13 +1439,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">write_master&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_axi_conduit_merger_0">axi_conduit_merger_0</a>
+       <a href="#module_onchip_memory_0">onchip_memory_0</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;altera_axi_slave</td>
+      <td class="to">&#160;&#160;s2</td>
      </tr>
     </table>
    </div>
@@ -1510,11 +1510,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">readAddressMap</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='onchip_memory_0.s2' start='0x0' end='0x400' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='axi_conduit_merger_0.altera_axi_slave' start='0x0' end='0x100000000' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">readSlaveAddressWidthMax</td>
-        <td class="parametervalue">10</td>
+        <td class="parametervalue">32</td>
        </tr>
        <tr>
         <td class="parametername">readSlaveDataWidthMax</td>
@@ -1522,11 +1522,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">writeAddressMap</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='axi_conduit_merger_0.altera_axi_slave' start='0x0' end='0x100000000' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='onchip_memory_0.s2' start='0x0' end='0x400' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">writeSlaveAddressWidthMax</td>
-        <td class="parametervalue">32</td>
+        <td class="parametervalue">10</td>
        </tr>
        <tr>
         <td class="parametername">writeSlaveDataWidthMax</td>
@@ -1546,11 +1546,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">readMaximumSlaveSpan</td>
-        <td class="parametervalue">1024</td>
+        <td class="parametervalue">4294967296</td>
        </tr>
        <tr>
         <td class="parametername">writeMaximumSlaveSpan</td>
-        <td class="parametervalue">4294967296</td>
+        <td class="parametervalue">1024</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -29097,7 +29097,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="neighbor" rowspan="2">
        <a href="#module_dma_0">dma_0</a>
       </td>
-      <td class="from">read_master&#160;&#160;</td>
+      <td class="from">write_master&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s2</td>
@@ -31595,8 +31595,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0.00 seconds</td>
-    <td class="r">rendering took 0.21 seconds</td>
+    <td class="l">generation took 0.01 seconds</td>
+    <td class="r">rendering took 0.25 seconds</td>
    </tr>
   </table>
  </body>

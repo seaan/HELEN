@@ -55,7 +55,7 @@ module soc_system_dma_0_read_data_mux (
   input            quadword;
   input   [127: 0] read_readdata;
   input            read_readdatavalid;
-  input   [  9: 0] readaddress;
+  input   [ 31: 0] readaddress;
   input   [  4: 0] readaddress_inc;
   input            reset_n;
   input            word;
@@ -175,7 +175,7 @@ module soc_system_dma_0_byteenables (
   input            hw;
   input            quadword;
   input            word;
-  input   [ 31: 0] write_address;
+  input   [  9: 0] write_address;
 
 
 wire             wa_3_is_0;
@@ -653,9 +653,9 @@ endmodule
 
 //DMA peripheral soc_system_dma_0
 //Read slaves:
-//onchip_memory_0.s2; 
-//Write slaves:
 //axi_conduit_merger_0.altera_axi_slave; 
+//Write slaves:
+//onchip_memory_0.s2; 
 
 
 module soc_system_dma_0 (
@@ -687,10 +687,10 @@ module soc_system_dma_0 (
 
   output           dma_ctl_irq;
   output  [ 31: 0] dma_ctl_readdata;
-  output  [  9: 0] read_address;
+  output  [ 31: 0] read_address;
   output           read_chipselect;
   output           read_read_n;
-  output  [ 31: 0] write_address;
+  output  [  9: 0] write_address;
   output  [ 15: 0] write_byteenable;
   output           write_chipselect;
   output           write_write_n;
@@ -754,19 +754,19 @@ wire             p1_fifo_full;
 wire    [ 31: 0] p1_length;
 wire             p1_length_eq_0;
 wire             p1_read_got_endofpacket;
-wire    [  9: 0] p1_readaddress;
+wire    [ 31: 0] p1_readaddress;
 wire             p1_write_got_endofpacket;
-wire    [ 31: 0] p1_writeaddress;
+wire    [  9: 0] p1_writeaddress;
 wire    [ 31: 0] p1_writelength;
 wire             p1_writelength_eq_0;
 wire             quadword;
 wire             rcon;
-wire    [  9: 0] read_address;
+wire    [ 31: 0] read_address;
 wire             read_chipselect;
 wire             read_endofpacket;
 reg              read_got_endofpacket;
 wire             read_read_n;
-reg     [  9: 0] readaddress;
+reg     [ 31: 0] readaddress;
 wire    [  4: 0] readaddress_inc;
 wire             reen;
 reg              reop;
@@ -780,7 +780,7 @@ wire             wcon;
 wire             ween;
 reg              weop;
 wire             word;
-wire    [ 31: 0] write_address;
+wire    [  9: 0] write_address;
 wire    [ 15: 0] write_byteenable;
 wire             write_chipselect;
 wire             write_endofpacket;
@@ -788,7 +788,7 @@ reg              write_got_endofpacket;
 wire             write_select;
 wire             write_write_n;
 wire    [127: 0] write_writedata;
-reg     [ 31: 0] writeaddress;
+reg     [  9: 0] writeaddress;
 wire    [  4: 0] writeaddress_inc;
 reg     [ 31: 0] writelength;
 reg              writelength_eq_0;
@@ -834,7 +834,7 @@ reg              writelength_eq_0;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          readaddress <= 10'h0;
+          readaddress <= 32'h0;
       else if (clk_en)
           readaddress <= p1_readaddress;
     end
@@ -848,7 +848,7 @@ reg              writelength_eq_0;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          writeaddress <= 32'h0;
+          writeaddress <= 10'h0;
       else if (clk_en)
           writeaddress <= p1_writeaddress;
     end

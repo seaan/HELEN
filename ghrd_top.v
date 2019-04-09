@@ -372,15 +372,15 @@ altera_edge_detector pulse_debug_reset (
   defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
   
 soc_system_onchip_memory_0 m(
-  .address(32'hC0000000), 
+  .address(0),
   .byteenable(4'b1111),
-  .chipselect(1), 
-  .clk(pll_0_outclk1), 
-  .clken(1'b1), 
+  .chipselect(1),
+  .clk(pll_0_outclk1),
+  .clken(1'b1),
   .reset(hps_fpga_reset_n), 
   .reset_req(1'b0),
-  .write(1'b1), 
-  .writedata(32'hFFFFFFFF), 
+  .write(1'b1),
+  .writedata(32'hFFFFFFFF),
   .readdata(datain)
 );
  

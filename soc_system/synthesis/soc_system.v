@@ -188,60 +188,60 @@ module soc_system (
 	wire          dma_0_read_master_chipselect;                                    // dma_0:read_chipselect -> mm_interconnect_2:dma_0_read_master_chipselect
 	wire  [127:0] dma_0_read_master_readdata;                                      // mm_interconnect_2:dma_0_read_master_readdata -> dma_0:read_readdata
 	wire          dma_0_read_master_waitrequest;                                   // mm_interconnect_2:dma_0_read_master_waitrequest -> dma_0:read_waitrequest
-	wire    [9:0] dma_0_read_master_address;                                       // dma_0:read_address -> mm_interconnect_2:dma_0_read_master_address
+	wire   [31:0] dma_0_read_master_address;                                       // dma_0:read_address -> mm_interconnect_2:dma_0_read_master_address
 	wire          dma_0_read_master_read;                                          // dma_0:read_read_n -> mm_interconnect_2:dma_0_read_master_read
 	wire          dma_0_read_master_readdatavalid;                                 // mm_interconnect_2:dma_0_read_master_readdatavalid -> dma_0:read_readdatavalid
-	wire          mm_interconnect_2_onchip_memory_0_s2_chipselect;                 // mm_interconnect_2:onchip_memory_0_s2_chipselect -> onchip_memory_0:chipselect2
-	wire  [127:0] mm_interconnect_2_onchip_memory_0_s2_readdata;                   // onchip_memory_0:readdata2 -> mm_interconnect_2:onchip_memory_0_s2_readdata
-	wire    [5:0] mm_interconnect_2_onchip_memory_0_s2_address;                    // mm_interconnect_2:onchip_memory_0_s2_address -> onchip_memory_0:address2
-	wire   [15:0] mm_interconnect_2_onchip_memory_0_s2_byteenable;                 // mm_interconnect_2:onchip_memory_0_s2_byteenable -> onchip_memory_0:byteenable2
-	wire          mm_interconnect_2_onchip_memory_0_s2_write;                      // mm_interconnect_2:onchip_memory_0_s2_write -> onchip_memory_0:write2
-	wire  [127:0] mm_interconnect_2_onchip_memory_0_s2_writedata;                  // mm_interconnect_2:onchip_memory_0_s2_writedata -> onchip_memory_0:writedata2
-	wire          mm_interconnect_2_onchip_memory_0_s2_clken;                      // mm_interconnect_2:onchip_memory_0_s2_clken -> onchip_memory_0:clken2
+	wire    [1:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awburst; // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awburst -> axi_conduit_merger_0:s_awburst
+	wire    [4:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awuser;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awuser -> axi_conduit_merger_0:s_awuser
+	wire    [3:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arlen;   // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arlen -> axi_conduit_merger_0:s_arlen
+	wire   [15:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wstrb;   // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_wstrb -> axi_conduit_merger_0:s_wstrb
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wready;  // axi_conduit_merger_0:s_wready -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_wready
+	wire    [7:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rid;     // axi_conduit_merger_0:s_rid -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_rid
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rready;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_rready -> axi_conduit_merger_0:s_rready
+	wire    [3:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awlen;   // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awlen -> axi_conduit_merger_0:s_awlen
+	wire    [7:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wid;     // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_wid -> axi_conduit_merger_0:s_wid
+	wire    [3:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arcache; // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arcache -> axi_conduit_merger_0:s_arcache
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wvalid;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_wvalid -> axi_conduit_merger_0:s_wvalid
+	wire   [31:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_araddr;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_araddr -> axi_conduit_merger_0:s_araddr
+	wire    [2:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arprot;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arprot -> axi_conduit_merger_0:s_arprot
+	wire    [2:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awprot;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awprot -> axi_conduit_merger_0:s_awprot
+	wire  [127:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wdata;   // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_wdata -> axi_conduit_merger_0:s_wdata
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arvalid; // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arvalid -> axi_conduit_merger_0:s_arvalid
+	wire    [3:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awcache; // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awcache -> axi_conduit_merger_0:s_awcache
+	wire    [7:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arid;    // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arid -> axi_conduit_merger_0:s_arid
+	wire    [1:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arlock;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arlock -> axi_conduit_merger_0:s_arlock
+	wire    [1:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awlock;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awlock -> axi_conduit_merger_0:s_awlock
+	wire   [31:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awaddr;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awaddr -> axi_conduit_merger_0:s_awaddr
+	wire    [1:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bresp;   // axi_conduit_merger_0:s_bresp -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_bresp
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arready; // axi_conduit_merger_0:s_arready -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arready
+	wire  [127:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rdata;   // axi_conduit_merger_0:s_rdata -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_rdata
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awready; // axi_conduit_merger_0:s_awready -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awready
+	wire    [1:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arburst; // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arburst -> axi_conduit_merger_0:s_arburst
+	wire    [2:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arsize;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_arsize -> axi_conduit_merger_0:s_arsize
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bready;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_bready -> axi_conduit_merger_0:s_bready
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rlast;   // axi_conduit_merger_0:s_rlast -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_rlast
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wlast;   // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_wlast -> axi_conduit_merger_0:s_wlast
+	wire    [1:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rresp;   // axi_conduit_merger_0:s_rresp -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_rresp
+	wire    [7:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awid;    // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awid -> axi_conduit_merger_0:s_awid
+	wire    [7:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bid;     // axi_conduit_merger_0:s_bid -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_bid
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bvalid;  // axi_conduit_merger_0:s_bvalid -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_bvalid
+	wire    [2:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awsize;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awsize -> axi_conduit_merger_0:s_awsize
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awvalid; // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_awvalid -> axi_conduit_merger_0:s_awvalid
+	wire    [4:0] mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_aruser;  // mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_aruser -> axi_conduit_merger_0:s_aruser
+	wire          mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rvalid;  // axi_conduit_merger_0:s_rvalid -> mm_interconnect_2:axi_conduit_merger_0_altera_axi_slave_rvalid
 	wire          dma_0_write_master_chipselect;                                   // dma_0:write_chipselect -> mm_interconnect_3:dma_0_write_master_chipselect
 	wire          dma_0_write_master_waitrequest;                                  // mm_interconnect_3:dma_0_write_master_waitrequest -> dma_0:write_waitrequest
-	wire   [31:0] dma_0_write_master_address;                                      // dma_0:write_address -> mm_interconnect_3:dma_0_write_master_address
+	wire    [9:0] dma_0_write_master_address;                                      // dma_0:write_address -> mm_interconnect_3:dma_0_write_master_address
 	wire   [15:0] dma_0_write_master_byteenable;                                   // dma_0:write_byteenable -> mm_interconnect_3:dma_0_write_master_byteenable
 	wire          dma_0_write_master_write;                                        // dma_0:write_write_n -> mm_interconnect_3:dma_0_write_master_write
 	wire  [127:0] dma_0_write_master_writedata;                                    // dma_0:write_writedata -> mm_interconnect_3:dma_0_write_master_writedata
-	wire    [1:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awburst; // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awburst -> axi_conduit_merger_0:s_awburst
-	wire    [4:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awuser;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awuser -> axi_conduit_merger_0:s_awuser
-	wire    [3:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arlen;   // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arlen -> axi_conduit_merger_0:s_arlen
-	wire   [15:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wstrb;   // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_wstrb -> axi_conduit_merger_0:s_wstrb
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wready;  // axi_conduit_merger_0:s_wready -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_wready
-	wire    [7:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rid;     // axi_conduit_merger_0:s_rid -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_rid
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rready;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_rready -> axi_conduit_merger_0:s_rready
-	wire    [3:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awlen;   // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awlen -> axi_conduit_merger_0:s_awlen
-	wire    [7:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wid;     // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_wid -> axi_conduit_merger_0:s_wid
-	wire    [3:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arcache; // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arcache -> axi_conduit_merger_0:s_arcache
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wvalid;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_wvalid -> axi_conduit_merger_0:s_wvalid
-	wire   [31:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_araddr;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_araddr -> axi_conduit_merger_0:s_araddr
-	wire    [2:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arprot;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arprot -> axi_conduit_merger_0:s_arprot
-	wire    [2:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awprot;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awprot -> axi_conduit_merger_0:s_awprot
-	wire  [127:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wdata;   // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_wdata -> axi_conduit_merger_0:s_wdata
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arvalid; // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arvalid -> axi_conduit_merger_0:s_arvalid
-	wire    [3:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awcache; // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awcache -> axi_conduit_merger_0:s_awcache
-	wire    [7:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arid;    // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arid -> axi_conduit_merger_0:s_arid
-	wire    [1:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arlock;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arlock -> axi_conduit_merger_0:s_arlock
-	wire    [1:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awlock;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awlock -> axi_conduit_merger_0:s_awlock
-	wire   [31:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awaddr;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awaddr -> axi_conduit_merger_0:s_awaddr
-	wire    [1:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bresp;   // axi_conduit_merger_0:s_bresp -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_bresp
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arready; // axi_conduit_merger_0:s_arready -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arready
-	wire  [127:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rdata;   // axi_conduit_merger_0:s_rdata -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_rdata
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awready; // axi_conduit_merger_0:s_awready -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awready
-	wire    [1:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arburst; // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arburst -> axi_conduit_merger_0:s_arburst
-	wire    [2:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arsize;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_arsize -> axi_conduit_merger_0:s_arsize
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bready;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_bready -> axi_conduit_merger_0:s_bready
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rlast;   // axi_conduit_merger_0:s_rlast -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_rlast
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wlast;   // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_wlast -> axi_conduit_merger_0:s_wlast
-	wire    [1:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rresp;   // axi_conduit_merger_0:s_rresp -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_rresp
-	wire    [7:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awid;    // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awid -> axi_conduit_merger_0:s_awid
-	wire    [7:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bid;     // axi_conduit_merger_0:s_bid -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_bid
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bvalid;  // axi_conduit_merger_0:s_bvalid -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_bvalid
-	wire    [2:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awsize;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awsize -> axi_conduit_merger_0:s_awsize
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awvalid; // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_awvalid -> axi_conduit_merger_0:s_awvalid
-	wire    [4:0] mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_aruser;  // mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_aruser -> axi_conduit_merger_0:s_aruser
-	wire          mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rvalid;  // axi_conduit_merger_0:s_rvalid -> mm_interconnect_3:axi_conduit_merger_0_altera_axi_slave_rvalid
+	wire          mm_interconnect_3_onchip_memory_0_s2_chipselect;                 // mm_interconnect_3:onchip_memory_0_s2_chipselect -> onchip_memory_0:chipselect2
+	wire  [127:0] mm_interconnect_3_onchip_memory_0_s2_readdata;                   // onchip_memory_0:readdata2 -> mm_interconnect_3:onchip_memory_0_s2_readdata
+	wire    [5:0] mm_interconnect_3_onchip_memory_0_s2_address;                    // mm_interconnect_3:onchip_memory_0_s2_address -> onchip_memory_0:address2
+	wire   [15:0] mm_interconnect_3_onchip_memory_0_s2_byteenable;                 // mm_interconnect_3:onchip_memory_0_s2_byteenable -> onchip_memory_0:byteenable2
+	wire          mm_interconnect_3_onchip_memory_0_s2_write;                      // mm_interconnect_3:onchip_memory_0_s2_write -> onchip_memory_0:write2
+	wire  [127:0] mm_interconnect_3_onchip_memory_0_s2_writedata;                  // mm_interconnect_3:onchip_memory_0_s2_writedata -> onchip_memory_0:writedata2
+	wire          mm_interconnect_3_onchip_memory_0_s2_clken;                      // mm_interconnect_3:onchip_memory_0_s2_clken -> onchip_memory_0:clken2
 	wire   [31:0] hps_0_f2h_irq0_irq;                                              // irq_mapper:sender_irq -> hps_0:f2h_irq_p0
 	wire   [31:0] hps_0_f2h_irq1_irq;                                              // irq_mapper_001:sender_irq -> hps_0:f2h_irq_p1
 	wire          rst_controller_reset_out_reset;                                  // rst_controller:reset_out -> [axi_conduit_merger_0:rst_n, dma_0:system_reset_n, mm_interconnect_1:dma_0_reset_reset_bridge_in_reset_reset, mm_interconnect_2:dma_0_reset_reset_bridge_in_reset_reset, mm_interconnect_3:dma_0_reset_reset_bridge_in_reset_reset, onchip_memory_0:reset, pio_0:reset_n, rst_translator:in_reset]
@@ -294,44 +294,44 @@ module soc_system (
 		.m_wstrb   (axi_conduit_merger_0_altera_axi_master_wstrb),                    //                  .wstrb
 		.m_wid     (axi_conduit_merger_0_altera_axi_master_wid),                      //                  .wid
 		.m_bid     (axi_conduit_merger_0_altera_axi_master_bid),                      //                  .bid
-		.s_awvalid (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awvalid), //  altera_axi_slave.awvalid
-		.s_awlen   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awlen),   //                  .awlen
-		.s_awsize  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awsize),  //                  .awsize
-		.s_awburst (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awburst), //                  .awburst
-		.s_awlock  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awlock),  //                  .awlock
-		.s_awcache (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awcache), //                  .awcache
-		.s_awprot  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awprot),  //                  .awprot
-		.s_awready (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awready), //                  .awready
-		.s_awuser  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awuser),  //                  .awuser
-		.s_arvalid (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arvalid), //                  .arvalid
-		.s_arlen   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arlen),   //                  .arlen
-		.s_arsize  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arsize),  //                  .arsize
-		.s_arburst (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arburst), //                  .arburst
-		.s_arlock  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arlock),  //                  .arlock
-		.s_arcache (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arcache), //                  .arcache
-		.s_arprot  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arprot),  //                  .arprot
-		.s_arready (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arready), //                  .arready
-		.s_aruser  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_aruser),  //                  .aruser
-		.s_rvalid  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rvalid),  //                  .rvalid
-		.s_rlast   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rlast),   //                  .rlast
-		.s_rresp   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rresp),   //                  .rresp
-		.s_rready  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rready),  //                  .rready
-		.s_wvalid  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wvalid),  //                  .wvalid
-		.s_wlast   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wlast),   //                  .wlast
-		.s_wready  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wready),  //                  .wready
-		.s_bvalid  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bvalid),  //                  .bvalid
-		.s_bresp   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bresp),   //                  .bresp
-		.s_bready  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bready),  //                  .bready
-		.s_awaddr  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awaddr),  //                  .awaddr
-		.s_awid    (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awid),    //                  .awid
-		.s_araddr  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_araddr),  //                  .araddr
-		.s_arid    (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arid),    //                  .arid
-		.s_rdata   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rdata),   //                  .rdata
-		.s_rid     (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rid),     //                  .rid
-		.s_wdata   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wdata),   //                  .wdata
-		.s_wstrb   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wstrb),   //                  .wstrb
-		.s_wid     (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wid),     //                  .wid
-		.s_bid     (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bid),     //                  .bid
+		.s_awvalid (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awvalid), //  altera_axi_slave.awvalid
+		.s_awlen   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awlen),   //                  .awlen
+		.s_awsize  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awsize),  //                  .awsize
+		.s_awburst (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awburst), //                  .awburst
+		.s_awlock  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awlock),  //                  .awlock
+		.s_awcache (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awcache), //                  .awcache
+		.s_awprot  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awprot),  //                  .awprot
+		.s_awready (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awready), //                  .awready
+		.s_awuser  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awuser),  //                  .awuser
+		.s_arvalid (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arvalid), //                  .arvalid
+		.s_arlen   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arlen),   //                  .arlen
+		.s_arsize  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arsize),  //                  .arsize
+		.s_arburst (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arburst), //                  .arburst
+		.s_arlock  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arlock),  //                  .arlock
+		.s_arcache (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arcache), //                  .arcache
+		.s_arprot  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arprot),  //                  .arprot
+		.s_arready (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arready), //                  .arready
+		.s_aruser  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_aruser),  //                  .aruser
+		.s_rvalid  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rvalid),  //                  .rvalid
+		.s_rlast   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rlast),   //                  .rlast
+		.s_rresp   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rresp),   //                  .rresp
+		.s_rready  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rready),  //                  .rready
+		.s_wvalid  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wvalid),  //                  .wvalid
+		.s_wlast   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wlast),   //                  .wlast
+		.s_wready  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wready),  //                  .wready
+		.s_bvalid  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bvalid),  //                  .bvalid
+		.s_bresp   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bresp),   //                  .bresp
+		.s_bready  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bready),  //                  .bready
+		.s_awaddr  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awaddr),  //                  .awaddr
+		.s_awid    (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awid),    //                  .awid
+		.s_araddr  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_araddr),  //                  .araddr
+		.s_arid    (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arid),    //                  .arid
+		.s_rdata   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rdata),   //                  .rdata
+		.s_rid     (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rid),     //                  .rid
+		.s_wdata   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wdata),   //                  .wdata
+		.s_wstrb   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wstrb),   //                  .wstrb
+		.s_wid     (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wid),     //                  .wid
+		.s_bid     (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bid),     //                  .bid
 		.c_awcache (axi_signals_awcache),                                             //       conduit_end.export
 		.c_awprot  (axi_signals_awprot),                                              //                  .export
 		.c_awuser  (axi_signals_awuser),                                              //                  .export
@@ -570,13 +570,13 @@ module soc_system (
 		.readdata    (mm_interconnect_1_onchip_memory_0_s1_readdata),   //       .readdata
 		.writedata   (mm_interconnect_1_onchip_memory_0_s1_writedata),  //       .writedata
 		.byteenable  (mm_interconnect_1_onchip_memory_0_s1_byteenable), //       .byteenable
-		.address2    (mm_interconnect_2_onchip_memory_0_s2_address),    //     s2.address
-		.chipselect2 (mm_interconnect_2_onchip_memory_0_s2_chipselect), //       .chipselect
-		.clken2      (mm_interconnect_2_onchip_memory_0_s2_clken),      //       .clken
-		.write2      (mm_interconnect_2_onchip_memory_0_s2_write),      //       .write
-		.readdata2   (mm_interconnect_2_onchip_memory_0_s2_readdata),   //       .readdata
-		.writedata2  (mm_interconnect_2_onchip_memory_0_s2_writedata),  //       .writedata
-		.byteenable2 (mm_interconnect_2_onchip_memory_0_s2_byteenable), //       .byteenable
+		.address2    (mm_interconnect_3_onchip_memory_0_s2_address),    //     s2.address
+		.chipselect2 (mm_interconnect_3_onchip_memory_0_s2_chipselect), //       .chipselect
+		.clken2      (mm_interconnect_3_onchip_memory_0_s2_clken),      //       .clken
+		.write2      (mm_interconnect_3_onchip_memory_0_s2_write),      //       .write
+		.readdata2   (mm_interconnect_3_onchip_memory_0_s2_readdata),   //       .readdata
+		.writedata2  (mm_interconnect_3_onchip_memory_0_s2_writedata),  //       .writedata
+		.byteenable2 (mm_interconnect_3_onchip_memory_0_s2_byteenable), //       .byteenable
 		.clk         (pll_0_outclk0_clk),                               //   clk1.clk
 		.reset       (rst_controller_reset_out_reset),                  // reset1.reset
 		.reset_req   (rst_controller_reset_out_reset_req),              //       .reset_req
@@ -663,70 +663,70 @@ module soc_system (
 	);
 
 	soc_system_mm_interconnect_2 mm_interconnect_2 (
-		.pll_0_outclk0_clk                       (pll_0_outclk0_clk),                               //                     pll_0_outclk0.clk
-		.dma_0_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                  // dma_0_reset_reset_bridge_in_reset.reset
-		.dma_0_read_master_address               (dma_0_read_master_address),                       //                 dma_0_read_master.address
-		.dma_0_read_master_waitrequest           (dma_0_read_master_waitrequest),                   //                                  .waitrequest
-		.dma_0_read_master_chipselect            (dma_0_read_master_chipselect),                    //                                  .chipselect
-		.dma_0_read_master_read                  (~dma_0_read_master_read),                         //                                  .read
-		.dma_0_read_master_readdata              (dma_0_read_master_readdata),                      //                                  .readdata
-		.dma_0_read_master_readdatavalid         (dma_0_read_master_readdatavalid),                 //                                  .readdatavalid
-		.onchip_memory_0_s2_address              (mm_interconnect_2_onchip_memory_0_s2_address),    //                onchip_memory_0_s2.address
-		.onchip_memory_0_s2_write                (mm_interconnect_2_onchip_memory_0_s2_write),      //                                  .write
-		.onchip_memory_0_s2_readdata             (mm_interconnect_2_onchip_memory_0_s2_readdata),   //                                  .readdata
-		.onchip_memory_0_s2_writedata            (mm_interconnect_2_onchip_memory_0_s2_writedata),  //                                  .writedata
-		.onchip_memory_0_s2_byteenable           (mm_interconnect_2_onchip_memory_0_s2_byteenable), //                                  .byteenable
-		.onchip_memory_0_s2_chipselect           (mm_interconnect_2_onchip_memory_0_s2_chipselect), //                                  .chipselect
-		.onchip_memory_0_s2_clken                (mm_interconnect_2_onchip_memory_0_s2_clken)       //                                  .clken
+		.axi_conduit_merger_0_altera_axi_slave_awid    (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awid),    // axi_conduit_merger_0_altera_axi_slave.awid
+		.axi_conduit_merger_0_altera_axi_slave_awaddr  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awaddr),  //                                      .awaddr
+		.axi_conduit_merger_0_altera_axi_slave_awlen   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awlen),   //                                      .awlen
+		.axi_conduit_merger_0_altera_axi_slave_awsize  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awsize),  //                                      .awsize
+		.axi_conduit_merger_0_altera_axi_slave_awburst (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awburst), //                                      .awburst
+		.axi_conduit_merger_0_altera_axi_slave_awlock  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awlock),  //                                      .awlock
+		.axi_conduit_merger_0_altera_axi_slave_awcache (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awcache), //                                      .awcache
+		.axi_conduit_merger_0_altera_axi_slave_awprot  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awprot),  //                                      .awprot
+		.axi_conduit_merger_0_altera_axi_slave_awuser  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awuser),  //                                      .awuser
+		.axi_conduit_merger_0_altera_axi_slave_awvalid (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awvalid), //                                      .awvalid
+		.axi_conduit_merger_0_altera_axi_slave_awready (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_awready), //                                      .awready
+		.axi_conduit_merger_0_altera_axi_slave_wid     (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wid),     //                                      .wid
+		.axi_conduit_merger_0_altera_axi_slave_wdata   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wdata),   //                                      .wdata
+		.axi_conduit_merger_0_altera_axi_slave_wstrb   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wstrb),   //                                      .wstrb
+		.axi_conduit_merger_0_altera_axi_slave_wlast   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wlast),   //                                      .wlast
+		.axi_conduit_merger_0_altera_axi_slave_wvalid  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wvalid),  //                                      .wvalid
+		.axi_conduit_merger_0_altera_axi_slave_wready  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_wready),  //                                      .wready
+		.axi_conduit_merger_0_altera_axi_slave_bid     (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bid),     //                                      .bid
+		.axi_conduit_merger_0_altera_axi_slave_bresp   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bresp),   //                                      .bresp
+		.axi_conduit_merger_0_altera_axi_slave_bvalid  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bvalid),  //                                      .bvalid
+		.axi_conduit_merger_0_altera_axi_slave_bready  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_bready),  //                                      .bready
+		.axi_conduit_merger_0_altera_axi_slave_arid    (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arid),    //                                      .arid
+		.axi_conduit_merger_0_altera_axi_slave_araddr  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_araddr),  //                                      .araddr
+		.axi_conduit_merger_0_altera_axi_slave_arlen   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arlen),   //                                      .arlen
+		.axi_conduit_merger_0_altera_axi_slave_arsize  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arsize),  //                                      .arsize
+		.axi_conduit_merger_0_altera_axi_slave_arburst (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arburst), //                                      .arburst
+		.axi_conduit_merger_0_altera_axi_slave_arlock  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arlock),  //                                      .arlock
+		.axi_conduit_merger_0_altera_axi_slave_arcache (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arcache), //                                      .arcache
+		.axi_conduit_merger_0_altera_axi_slave_arprot  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arprot),  //                                      .arprot
+		.axi_conduit_merger_0_altera_axi_slave_aruser  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_aruser),  //                                      .aruser
+		.axi_conduit_merger_0_altera_axi_slave_arvalid (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arvalid), //                                      .arvalid
+		.axi_conduit_merger_0_altera_axi_slave_arready (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_arready), //                                      .arready
+		.axi_conduit_merger_0_altera_axi_slave_rid     (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rid),     //                                      .rid
+		.axi_conduit_merger_0_altera_axi_slave_rdata   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rdata),   //                                      .rdata
+		.axi_conduit_merger_0_altera_axi_slave_rresp   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rresp),   //                                      .rresp
+		.axi_conduit_merger_0_altera_axi_slave_rlast   (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rlast),   //                                      .rlast
+		.axi_conduit_merger_0_altera_axi_slave_rvalid  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rvalid),  //                                      .rvalid
+		.axi_conduit_merger_0_altera_axi_slave_rready  (mm_interconnect_2_axi_conduit_merger_0_altera_axi_slave_rready),  //                                      .rready
+		.pll_0_outclk0_clk                             (pll_0_outclk0_clk),                                               //                         pll_0_outclk0.clk
+		.dma_0_reset_reset_bridge_in_reset_reset       (rst_controller_reset_out_reset),                                  //     dma_0_reset_reset_bridge_in_reset.reset
+		.dma_0_read_master_address                     (dma_0_read_master_address),                                       //                     dma_0_read_master.address
+		.dma_0_read_master_waitrequest                 (dma_0_read_master_waitrequest),                                   //                                      .waitrequest
+		.dma_0_read_master_chipselect                  (dma_0_read_master_chipselect),                                    //                                      .chipselect
+		.dma_0_read_master_read                        (~dma_0_read_master_read),                                         //                                      .read
+		.dma_0_read_master_readdata                    (dma_0_read_master_readdata),                                      //                                      .readdata
+		.dma_0_read_master_readdatavalid               (dma_0_read_master_readdatavalid)                                  //                                      .readdatavalid
 	);
 
 	soc_system_mm_interconnect_3 mm_interconnect_3 (
-		.axi_conduit_merger_0_altera_axi_slave_awid    (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awid),    // axi_conduit_merger_0_altera_axi_slave.awid
-		.axi_conduit_merger_0_altera_axi_slave_awaddr  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awaddr),  //                                      .awaddr
-		.axi_conduit_merger_0_altera_axi_slave_awlen   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awlen),   //                                      .awlen
-		.axi_conduit_merger_0_altera_axi_slave_awsize  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awsize),  //                                      .awsize
-		.axi_conduit_merger_0_altera_axi_slave_awburst (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awburst), //                                      .awburst
-		.axi_conduit_merger_0_altera_axi_slave_awlock  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awlock),  //                                      .awlock
-		.axi_conduit_merger_0_altera_axi_slave_awcache (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awcache), //                                      .awcache
-		.axi_conduit_merger_0_altera_axi_slave_awprot  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awprot),  //                                      .awprot
-		.axi_conduit_merger_0_altera_axi_slave_awuser  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awuser),  //                                      .awuser
-		.axi_conduit_merger_0_altera_axi_slave_awvalid (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awvalid), //                                      .awvalid
-		.axi_conduit_merger_0_altera_axi_slave_awready (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_awready), //                                      .awready
-		.axi_conduit_merger_0_altera_axi_slave_wid     (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wid),     //                                      .wid
-		.axi_conduit_merger_0_altera_axi_slave_wdata   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wdata),   //                                      .wdata
-		.axi_conduit_merger_0_altera_axi_slave_wstrb   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wstrb),   //                                      .wstrb
-		.axi_conduit_merger_0_altera_axi_slave_wlast   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wlast),   //                                      .wlast
-		.axi_conduit_merger_0_altera_axi_slave_wvalid  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wvalid),  //                                      .wvalid
-		.axi_conduit_merger_0_altera_axi_slave_wready  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_wready),  //                                      .wready
-		.axi_conduit_merger_0_altera_axi_slave_bid     (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bid),     //                                      .bid
-		.axi_conduit_merger_0_altera_axi_slave_bresp   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bresp),   //                                      .bresp
-		.axi_conduit_merger_0_altera_axi_slave_bvalid  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bvalid),  //                                      .bvalid
-		.axi_conduit_merger_0_altera_axi_slave_bready  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_bready),  //                                      .bready
-		.axi_conduit_merger_0_altera_axi_slave_arid    (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arid),    //                                      .arid
-		.axi_conduit_merger_0_altera_axi_slave_araddr  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_araddr),  //                                      .araddr
-		.axi_conduit_merger_0_altera_axi_slave_arlen   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arlen),   //                                      .arlen
-		.axi_conduit_merger_0_altera_axi_slave_arsize  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arsize),  //                                      .arsize
-		.axi_conduit_merger_0_altera_axi_slave_arburst (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arburst), //                                      .arburst
-		.axi_conduit_merger_0_altera_axi_slave_arlock  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arlock),  //                                      .arlock
-		.axi_conduit_merger_0_altera_axi_slave_arcache (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arcache), //                                      .arcache
-		.axi_conduit_merger_0_altera_axi_slave_arprot  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arprot),  //                                      .arprot
-		.axi_conduit_merger_0_altera_axi_slave_aruser  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_aruser),  //                                      .aruser
-		.axi_conduit_merger_0_altera_axi_slave_arvalid (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arvalid), //                                      .arvalid
-		.axi_conduit_merger_0_altera_axi_slave_arready (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_arready), //                                      .arready
-		.axi_conduit_merger_0_altera_axi_slave_rid     (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rid),     //                                      .rid
-		.axi_conduit_merger_0_altera_axi_slave_rdata   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rdata),   //                                      .rdata
-		.axi_conduit_merger_0_altera_axi_slave_rresp   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rresp),   //                                      .rresp
-		.axi_conduit_merger_0_altera_axi_slave_rlast   (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rlast),   //                                      .rlast
-		.axi_conduit_merger_0_altera_axi_slave_rvalid  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rvalid),  //                                      .rvalid
-		.axi_conduit_merger_0_altera_axi_slave_rready  (mm_interconnect_3_axi_conduit_merger_0_altera_axi_slave_rready),  //                                      .rready
-		.pll_0_outclk0_clk                             (pll_0_outclk0_clk),                                               //                         pll_0_outclk0.clk
-		.dma_0_reset_reset_bridge_in_reset_reset       (rst_controller_reset_out_reset),                                  //     dma_0_reset_reset_bridge_in_reset.reset
-		.dma_0_write_master_address                    (dma_0_write_master_address),                                      //                    dma_0_write_master.address
-		.dma_0_write_master_waitrequest                (dma_0_write_master_waitrequest),                                  //                                      .waitrequest
-		.dma_0_write_master_byteenable                 (dma_0_write_master_byteenable),                                   //                                      .byteenable
-		.dma_0_write_master_chipselect                 (dma_0_write_master_chipselect),                                   //                                      .chipselect
-		.dma_0_write_master_write                      (~dma_0_write_master_write),                                       //                                      .write
-		.dma_0_write_master_writedata                  (dma_0_write_master_writedata)                                     //                                      .writedata
+		.pll_0_outclk0_clk                       (pll_0_outclk0_clk),                               //                     pll_0_outclk0.clk
+		.dma_0_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                  // dma_0_reset_reset_bridge_in_reset.reset
+		.dma_0_write_master_address              (dma_0_write_master_address),                      //                dma_0_write_master.address
+		.dma_0_write_master_waitrequest          (dma_0_write_master_waitrequest),                  //                                  .waitrequest
+		.dma_0_write_master_byteenable           (dma_0_write_master_byteenable),                   //                                  .byteenable
+		.dma_0_write_master_chipselect           (dma_0_write_master_chipselect),                   //                                  .chipselect
+		.dma_0_write_master_write                (~dma_0_write_master_write),                       //                                  .write
+		.dma_0_write_master_writedata            (dma_0_write_master_writedata),                    //                                  .writedata
+		.onchip_memory_0_s2_address              (mm_interconnect_3_onchip_memory_0_s2_address),    //                onchip_memory_0_s2.address
+		.onchip_memory_0_s2_write                (mm_interconnect_3_onchip_memory_0_s2_write),      //                                  .write
+		.onchip_memory_0_s2_readdata             (mm_interconnect_3_onchip_memory_0_s2_readdata),   //                                  .readdata
+		.onchip_memory_0_s2_writedata            (mm_interconnect_3_onchip_memory_0_s2_writedata),  //                                  .writedata
+		.onchip_memory_0_s2_byteenable           (mm_interconnect_3_onchip_memory_0_s2_byteenable), //                                  .byteenable
+		.onchip_memory_0_s2_chipselect           (mm_interconnect_3_onchip_memory_0_s2_chipselect), //                                  .chipselect
+		.onchip_memory_0_s2_clken                (mm_interconnect_3_onchip_memory_0_s2_clken)       //                                  .clken
 	);
 
 	soc_system_irq_mapper irq_mapper (

@@ -52,29 +52,30 @@ preplace inst soc_system.hps_0.nand0 -pg 1
 preplace inst soc_system.hps_0.gpio2 -pg 1
 preplace inst soc_system.hps_0.arm_gic_0 -pg 1
 preplace inst soc_system.hps_0 -pg 1 -lvl 5 -y 470
-preplace inst soc_system.clk_0 -pg 1 -lvl 1 -y 650
+preplace inst soc_system.clk_0 -pg 1 -lvl 1 -y 610
 preplace inst soc_system.hps_0.f2s_periph_ref_clk -pg 1
 preplace inst soc_system.hps_0.fpga_interfaces -pg 1
 preplace inst soc_system.dma_0 -pg 1 -lvl 3 -y 130
-preplace inst soc_system.pll_0 -pg 1 -lvl 2 -y 650
+preplace inst soc_system.pll_0 -pg 1 -lvl 2 -y 610
 preplace inst soc_system.hps_0.axi_sdram -pg 1
-preplace netloc FAN_OUT<net_container>soc_system</net_container>(SLAVE)pio_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)axi_conduit_merger_0.reset_sink,(SLAVE)pll_0.reset,(SLAVE)dma_0.reset,(SLAVE)onchip_memory_0.reset1) 1 1 3 380 740 560 440 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(MASTER)pll_0.outclk1,(MASTER)soc_system.pll_0_outclk1) 1 2 4 NJ 640 NJ 640 NJ 710 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.hps_0_f2h_debug_reset_req,(SLAVE)hps_0.f2h_debug_reset_req) 1 0 5 NJ 540 NJ 540 NJ 540 NJ 540 NJ
+preplace netloc FAN_OUT<net_container>soc_system</net_container>(MASTER)pll_0.outclk0,(SLAVE)pio_0.clk,(SLAVE)hps_0.f2h_axi_clock,(SLAVE)dma_0.clk,(SLAVE)onchip_memory_0.clk1,(SLAVE)axi_conduit_merger_0.clock,(SLAVE)hps_0.h2f_lw_axi_clock,(SLAVE)hps_0.h2f_axi_clock) 1 2 3 540 400 890 480 1200
+preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)clk_0.clk,(SLAVE)pll_0.refclk) 1 1 1 N
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)hps_0.memory,(SLAVE)soc_system.memory) 1 0 5 NJ 720 NJ 720 NJ 660 NJ 660 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.axi_signals,(SLAVE)axi_conduit_merger_0.conduit_end) 1 0 4 NJ 420 NJ 420 NJ 420 NJ
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.hps_0_f2h_warm_reset_req,(SLAVE)hps_0.f2h_warm_reset_req) 1 0 5 NJ 580 NJ 580 NJ 580 NJ 580 NJ
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.hps_0_f2h_cold_reset_req,(SLAVE)hps_0.f2h_cold_reset_req) 1 0 5 NJ 520 NJ 520 NJ 520 NJ 520 NJ
 preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)dma_0.write_master,(SLAVE)axi_conduit_merger_0.altera_axi_slave) 1 3 1 910
-preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)axi_conduit_merger_0.altera_axi_master,(SLAVE)hps_0.f2h_axi_slave) 1 4 1 1160
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.hps_0_f2h_stm_hw_events,(SLAVE)hps_0.f2h_stm_hw_events) 1 0 5 NJ 560 NJ 560 NJ 560 NJ 560 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(MASTER)soc_system.hps_0_h2f_reset,(MASTER)hps_0.h2f_reset) 1 5 1 N
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)clk_0.clk_in,(SLAVE)soc_system.clk) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(SLAVE)pll_0.refclk,(MASTER)clk_0.clk) 1 1 1 N
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)hps_0.f2h_stm_hw_events,(SLAVE)soc_system.hps_0_f2h_stm_hw_events) 1 0 5 NJ 560 NJ 560 NJ 560 NJ 560 NJ
+preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(SLAVE)hps_0.f2h_axi_slave,(MASTER)axi_conduit_merger_0.altera_axi_master) 1 4 1 1180
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mcu_axi_signals,(SLAVE)pio_0.external_connection) 1 0 3 NJ 280 NJ 280 NJ
-preplace netloc FAN_OUT<net_container>soc_system</net_container>(SLAVE)onchip_memory_0.s1,(MASTER)hps_0.h2f_axi_master,(SLAVE)dma_0.control_port_slave,(SLAVE)pio_0.s1) 1 2 4 580 620 NJ 620 NJ 710 1570
+preplace netloc FAN_OUT<net_container>soc_system</net_container>(SLAVE)pio_0.reset,(SLAVE)pll_0.reset,(SLAVE)dma_0.reset,(SLAVE)axi_conduit_merger_0.reset_sink,(SLAVE)onchip_memory_0.reset1,(MASTER)clk_0.clk_reset) 1 1 3 380 680 560 440 NJ
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.hps_0_hps_io,(SLAVE)hps_0.hps_io) 1 0 5 NJ 600 NJ 600 NJ 600 NJ 600 NJ
-preplace netloc FAN_OUT<net_container>soc_system</net_container>(MASTER)pll_0.outclk0,(SLAVE)hps_0.h2f_axi_clock,(SLAVE)onchip_memory_0.clk1,(SLAVE)pio_0.clk,(SLAVE)hps_0.f2h_axi_clock,(SLAVE)axi_conduit_merger_0.clock,(SLAVE)dma_0.clk,(SLAVE)hps_0.h2f_lw_axi_clock) 1 2 3 540 400 890 480 1180
+preplace netloc EXPORT<net_container>soc_system</net_container>(MASTER)hps_0.h2f_reset,(MASTER)soc_system.hps_0_h2f_reset) 1 5 1 NJ
 preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)dma_0.read_master,(SLAVE)onchip_memory_0.s2) 1 2 2 600 240 890
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)hps_0.f2h_debug_reset_req,(SLAVE)soc_system.hps_0_f2h_debug_reset_req) 1 0 5 NJ 540 NJ 540 NJ 540 NJ 540 NJ
+preplace netloc FAN_OUT<net_container>soc_system</net_container>(SLAVE)dma_0.control_port_slave,(MASTER)hps_0.h2f_axi_master,(SLAVE)onchip_memory_0.s1,(SLAVE)pio_0.s1) 1 2 4 580 500 NJ 500 NJ 430 1570
 levelinfo -pg 1 0 170 1720
 levelinfo -hier soc_system 180 210 410 670 980 1380 1590

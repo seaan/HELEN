@@ -208,13 +208,13 @@
   <parameter name="fifoDepth" value="128" />
   <parameter name="maxBurstSize" value="8" />
   <parameter name="minimumDmaTransactionRegisterWidth" value="24" />
-  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='onchip_memory_0.s2' start='0x0' end='0x400' /></address-map>]]></parameter>
-  <parameter name="readSlaveAddressWidthMax" value="10" />
+  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='axi_conduit_merger_0.altera_axi_slave' start='0x0' end='0x100000000' /></address-map>]]></parameter>
+  <parameter name="readSlaveAddressWidthMax" value="32" />
   <parameter name="readSlaveDataWidthMax" value="128" />
   <parameter name="softresetEnable" value="true" />
   <parameter name="useRegistersForFIFO" value="false" />
-  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='axi_conduit_merger_0.altera_axi_slave' start='0x0' end='0x100000000' /></address-map>]]></parameter>
-  <parameter name="writeSlaveAddressWidthMax" value="32" />
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='onchip_memory_0.s2' start='0x0' end='0x400' /></address-map>]]></parameter>
+  <parameter name="writeSlaveAddressWidthMax" value="10" />
   <parameter name="writeSlaveDataWidthMax" value="128" />
  </module>
  <module name="hps_0" kind="altera_hps" version="18.1" enabled="1">
@@ -1036,7 +1036,7 @@
    kind="avalon"
    version="18.1"
    start="dma_0.read_master"
-   end="onchip_memory_0.s2">
+   end="axi_conduit_merger_0.altera_axi_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -1045,7 +1045,7 @@
    kind="avalon"
    version="18.1"
    start="dma_0.write_master"
-   end="axi_conduit_merger_0.altera_axi_slave">
+   end="onchip_memory_0.s2">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />

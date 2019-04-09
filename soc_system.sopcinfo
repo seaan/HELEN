@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2019.04.08.19:16:13 -->
+ <!-- 2019.04.09.15:53:53 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1554768964</value>
+  <value>1554843224</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -1830,7 +1830,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="readAddressMap">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory_0.s2' start='0x0' end='0x400' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='axi_conduit_merger_0.altera_axi_slave' start='0x0' end='0x100000000' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1840,7 +1840,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="readSlaveAddressWidthMax">
    <type>int</type>
-   <value>10</value>
+   <value>32</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1860,7 +1860,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeAddressMap">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='axi_conduit_merger_0.altera_axi_slave' start='0x0' end='0x100000000' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory_0.s2' start='0x0' end='0x400' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1870,7 +1870,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeSlaveAddressWidthMax">
    <type>int</type>
-   <value>32</value>
+   <value>10</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1914,7 +1914,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="readMaximumSlaveSpan">
    <type>long</type>
-   <value>1024</value>
+   <value>4294967296</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1922,7 +1922,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeMaximumSlaveSpan">
    <type>long</type>
-   <value>4294967296</value>
+   <value>1024</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2745,7 +2745,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>read_address</name>
     <direction>Output</direction>
-    <width>10</width>
+    <width>32</width>
     <role>address</role>
    </port>
    <port>
@@ -2780,11 +2780,11 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>onchip_memory_0</moduleName>
-    <slaveName>s2</slaveName>
-    <name>onchip_memory_0.s2</name>
+    <moduleName>axi_conduit_merger_0</moduleName>
+    <slaveName>altera_axi_slave</slaveName>
+    <name>axi_conduit_merger_0.altera_axi_slave</name>
     <baseAddress>0</baseAddress>
-    <span>1024</span>
+    <span>4294967296</span>
    </memoryBlock>
   </interface>
   <interface name="write_master" kind="avalon_master" version="18.1">
@@ -3052,7 +3052,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>write_address</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>10</width>
     <role>address</role>
    </port>
    <port>
@@ -3087,11 +3087,11 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>axi_conduit_merger_0</moduleName>
-    <slaveName>altera_axi_slave</slaveName>
-    <name>axi_conduit_merger_0.altera_axi_slave</name>
+    <moduleName>onchip_memory_0</moduleName>
+    <slaveName>s2</slaveName>
+    <name>onchip_memory_0.s2</name>
     <baseAddress>0</baseAddress>
-    <span>4294967296</span>
+    <span>1024</span>
    </memoryBlock>
   </interface>
  </module>
@@ -93292,61 +93292,10 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="dma_0.read_master/onchip_memory_0.s2"
+   name="dma_0.read_master/axi_conduit_merger_0.altera_axi_slave"
    kind="avalon"
    version="18.1"
    start="dma_0.read_master"
-   end="onchip_memory_0.s2">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x0000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>dma_0</startModule>
-  <startConnectionPoint>read_master</startConnectionPoint>
-  <endModule>onchip_memory_0</endModule>
-  <endConnectionPoint>s2</endConnectionPoint>
- </connection>
- <connection
-   name="dma_0.write_master/axi_conduit_merger_0.altera_axi_slave"
-   kind="avalon"
-   version="18.1"
-   start="dma_0.write_master"
    end="axi_conduit_merger_0.altera_axi_slave">
   <parameter name="arbitrationPriority">
    <type>int</type>
@@ -93389,9 +93338,60 @@ parameters are a RESULT of the module parameters. -->
    <valid>true</valid>
   </parameter>
   <startModule>dma_0</startModule>
-  <startConnectionPoint>write_master</startConnectionPoint>
+  <startConnectionPoint>read_master</startConnectionPoint>
   <endModule>axi_conduit_merger_0</endModule>
   <endConnectionPoint>altera_axi_slave</endConnectionPoint>
+ </connection>
+ <connection
+   name="dma_0.write_master/onchip_memory_0.s2"
+   kind="avalon"
+   version="18.1"
+   start="dma_0.write_master"
+   end="onchip_memory_0.s2">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x0000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>dma_0</startModule>
+  <startConnectionPoint>write_master</startConnectionPoint>
+  <endModule>onchip_memory_0</endModule>
+  <endConnectionPoint>s2</endConnectionPoint>
  </connection>
  <connection
    name="clk_0.clk/pll_0.refclk"
