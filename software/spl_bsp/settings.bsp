@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>spl</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 29, 2019 5:44:03 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1553899443649</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Apr 9, 2019 1:51:16 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1554835876622</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>./</BspGeneratedLocation>
-        <BspSettingsFile>/home/sean/Documents/shc/HELEN/software/spl_bsp/settings.bsp</BspSettingsFile>
+        <BspSettingsFile>/home/chris/HELEN/software/spl_bsp/settings.bsp</BspSettingsFile>
         <HpsSettingsPath>../../hps_isw_handoff/soc_system_hps_0</HpsSettingsPath>
         <JdiFile>default</JdiFile>
         <Cpu xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
